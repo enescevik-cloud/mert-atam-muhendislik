@@ -1,0 +1,302 @@
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 680px;
+  overflow: hidden;
+  background: #06111f;
+}
+
+/* ===============================
+   HERO FOTOĞRAF ALANI
+================================ */
+
+.hero-backgrounds {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.018);
+  transition:
+    opacity 2.2s ease,
+    transform 22s ease;
+}
+
+.hero-background.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(1.30) contrast(1.04) saturate(1.03);
+}
+
+/* ===============================
+   DAHA HAFİF OVERLAY
+   Fotoğraf daha belirgin kalsın diye
+   karartma azaltıldı.
+================================ */
+
+.hero-dark-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.34) 0%,
+      rgba(0, 0, 0, 0.22) 34%,
+      rgba(0, 0, 0, 0.08) 68%,
+      rgba(0, 0, 0, 0.04) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.12) 0%,
+      rgba(0, 0, 0, 0.02) 55%,
+      rgba(0, 0, 0, 0.18) 100%
+    );
+  pointer-events: none;
+}
+
+/* ===============================
+   HERO İÇERİK
+================================ */
+
+.hero-content-area {
+  position: relative;
+  z-index: 5;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  width: min(1420px, calc(100% - 140px));
+  margin: 0 auto;
+  padding-top: 68px;
+  transform: translate(-220px, -50px);
+}
+
+/* ===============================
+   HERO BAŞLIK
+   Daha ince, daha premium.
+================================ */
+
+.hero-content h1 {
+  margin: 0;
+  max-width: 560px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(40px, 3.9vw, 64px);
+  line-height: 0.98;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  color: #ffffff;
+  text-shadow: 0 8px 26px rgba(0, 0, 0, 0.36);
+}
+
+.hero-content h1 span {
+  display: block;
+}
+
+/* ===============================
+   ALT AÇIKLAMA
+================================ */
+
+.hero-content p {
+  margin: 22px 0 0;
+  max-width: 500px;
+  font-size: 15px;
+  line-height: 1.55;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 7px 22px rgba(0, 0, 0, 0.34);
+}
+
+/* ===============================
+   BUTON
+================================ */
+
+.hero-button {
+  margin-top: 30px;
+  min-width: 166px;
+  height: 50px;
+  padding: 0 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  background: #ff3b35;
+  color: #fff;
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  box-shadow: 0 16px 40px rgba(255, 59, 53, 0.22);
+}
+
+.hero-button span {
+  font-size: 17px;
+  transition: transform 0.25s ease;
+}
+
+.hero-button:hover {
+  background: #e62f2a;
+  transform: translateY(-2px);
+  box-shadow: 0 22px 52px rgba(255, 59, 53, 0.3);
+}
+
+.hero-button:hover span {
+  transform: translateX(4px);
+}
+
+/* ===============================
+   OKLAR
+================================ */
+
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  width: 34px;
+  height: 58px;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(0, 0, 0, 0.28);
+  color: #ffffff;
+  font-size: 34px;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition:
+    background 0.25s ease,
+    width 0.25s ease;
+}
+
+.hero-arrow:hover {
+  width: 44px;
+  background: rgba(255, 59, 53, 0.86);
+}
+
+.hero-arrow-left {
+  left: 0;
+}
+
+.hero-arrow-right {
+  right: 0;
+}
+
+/* ===============================
+   ALT SLIDE NOKTALARI
+================================ */
+
+.hero-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 34px;
+  z-index: 10;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.44);
+  cursor: pointer;
+  transition:
+    width 0.25s ease,
+    background 0.25s ease;
+}
+
+.hero-dot.active {
+  width: 36px;
+  background: #ffffff;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1500px) {
+  .hero-content {
+    transform: translateX(-160px);
+  }
+}
+
+@media (max-width: 1300px) {
+  .hero-content {
+    transform: translateX(-90px);
+  }
+}
+
+@media (max-width: 1100px) {
+  .hero-content {
+    width: calc(100% - 80px);
+    transform: translateX(0);
+  }
+
+  .hero-content h1 {
+    font-size: clamp(42px, 6vw, 62px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-slider {
+    min-height: 720px;
+  }
+
+  .hero-content {
+    width: calc(100% - 44px);
+    padding-top: 90px;
+    transform: translateX(0);
+  }
+
+  .hero-content h1 {
+    max-width: 520px;
+    font-size: 44px;
+    line-height: 1;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+    max-width: 420px;
+  }
+
+  .hero-button {
+    height: 48px;
+    min-width: 156px;
+  }
+
+  .hero-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 38px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+}

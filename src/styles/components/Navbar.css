@@ -1,0 +1,425 @@
+/* ======================================================
+   NAVBAR CLEAN / SCROLL AWARE
+====================================================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1400;
+
+  width: 100%;
+  height: 92px;
+
+  border: none;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Ana sayfa en üstte */
+.navbar-transparent {
+  background: transparent;
+  color: #ffffff;
+  box-shadow: none;
+  border-bottom: 1px solid transparent;
+}
+
+/* Scroll sonrası veya site içi sayfalar */
+.navbar-solid,
+.navbar-open,
+.navbar-scrolled {
+  background: #ffffff;
+  color: #111827;
+  border-bottom: 1px solid rgba(17, 24, 39, 0.1);
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.06);
+}
+
+/* ======================================================
+   INNER
+====================================================== */
+
+.navbar-inner {
+  width: min(1640px, calc(100% - 96px));
+  height: 92px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 300px 1fr 250px;
+  align-items: center;
+  gap: 32px;
+}
+
+/* ======================================================
+   LOGO
+====================================================== */
+
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  width: fit-content;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+.navbar-logo {
+  width: 72px;
+  height: 72px;
+
+  object-fit: contain;
+  display: block;
+
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.navbar-brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  line-height: 1;
+  color: inherit;
+}
+
+.navbar-brand-text strong {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: currentColor;
+}
+
+.navbar-brand-text small {
+  margin-top: 7px;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+
+  color: currentColor;
+  opacity: 0.86;
+}
+
+/* ======================================================
+   MENU
+====================================================== */
+
+.navbar-menu {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 44px;
+
+  color: inherit;
+}
+
+.navbar-link {
+  position: relative;
+
+  height: 92px;
+  padding: 0;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  border: none;
+  background: transparent;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+
+  color: inherit;
+  text-decoration: none;
+
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.navbar-button {
+  appearance: none;
+}
+
+.navbar-arrow,
+.navbar-link span {
+  font-size: 12px;
+  line-height: 1;
+  color: #ff3b35;
+  transform: translateY(-1px);
+}
+
+.navbar-link::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 18px;
+
+  width: 0;
+  height: 2px;
+
+  background: #ff3b35;
+
+  transition: width 0.25s ease;
+}
+
+.navbar-link:hover::after {
+  width: 100%;
+}
+
+/* ======================================================
+   RIGHT ACTIONS
+====================================================== */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+
+  color: inherit;
+}
+
+.navbar-search {
+  position: relative;
+
+  width: 30px;
+  height: 30px;
+
+  border: none;
+  background: transparent;
+  color: inherit;
+
+  cursor: pointer;
+}
+
+.navbar-search::before {
+  content: "";
+
+  position: absolute;
+  top: 5px;
+  left: 4px;
+
+  width: 15px;
+  height: 15px;
+
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.navbar-search::after {
+  content: "";
+
+  position: absolute;
+  top: 20px;
+  left: 19px;
+
+  width: 10px;
+  height: 2px;
+
+  background: currentColor;
+  border-radius: 999px;
+
+  transform: rotate(45deg);
+}
+
+.navbar-whatsapp {
+  height: 46px;
+  min-width: 122px;
+  padding: 0 24px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid currentColor;
+  border-radius: 999px;
+
+  color: inherit;
+  background: rgba(255, 255, 255, 0.04);
+
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.navbar-solid .navbar-whatsapp,
+.navbar-open .navbar-whatsapp,
+.navbar-scrolled .navbar-whatsapp {
+  border-color: rgba(17, 24, 39, 0.24);
+  background: #ffffff;
+}
+
+.navbar-whatsapp:hover {
+  background: #25d366;
+  border-color: #25d366;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* ======================================================
+   SOLID MODE FIX
+   Beyaz navbar modunda her eleman kesin siyah görünür.
+====================================================== */
+
+.navbar-solid,
+.navbar-open,
+.navbar-scrolled {
+  color: #111827 !important;
+}
+
+.navbar-solid .navbar-brand,
+.navbar-solid .navbar-brand-text,
+.navbar-solid .navbar-brand-text strong,
+.navbar-solid .navbar-brand-text small,
+.navbar-solid .navbar-menu,
+.navbar-solid .navbar-link,
+.navbar-solid .navbar-button,
+.navbar-solid .navbar-actions,
+.navbar-solid .navbar-search,
+.navbar-solid .navbar-whatsapp,
+.navbar-open .navbar-brand,
+.navbar-open .navbar-brand-text,
+.navbar-open .navbar-brand-text strong,
+.navbar-open .navbar-brand-text small,
+.navbar-open .navbar-menu,
+.navbar-open .navbar-link,
+.navbar-open .navbar-button,
+.navbar-open .navbar-actions,
+.navbar-open .navbar-search,
+.navbar-open .navbar-whatsapp,
+.navbar-scrolled .navbar-brand,
+.navbar-scrolled .navbar-brand-text,
+.navbar-scrolled .navbar-brand-text strong,
+.navbar-scrolled .navbar-brand-text small,
+.navbar-scrolled .navbar-menu,
+.navbar-scrolled .navbar-link,
+.navbar-scrolled .navbar-button,
+.navbar-scrolled .navbar-actions,
+.navbar-scrolled .navbar-search,
+.navbar-scrolled .navbar-whatsapp {
+  color: #111827 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.navbar-solid .navbar-arrow,
+.navbar-solid .navbar-link span,
+.navbar-open .navbar-arrow,
+.navbar-open .navbar-link span,
+.navbar-scrolled .navbar-arrow,
+.navbar-scrolled .navbar-link span {
+  color: #ff3b35 !important;
+}
+
+.navbar-solid .navbar-search::before,
+.navbar-open .navbar-search::before,
+.navbar-scrolled .navbar-search::before {
+  border-color: #111827 !important;
+}
+
+.navbar-solid .navbar-search::after,
+.navbar-open .navbar-search::after,
+.navbar-scrolled .navbar-search::after {
+  background: #111827 !important;
+}
+
+/* ======================================================
+   OVERLAY
+   Mega menünün altındaki sayfayı karartır.
+====================================================== */
+
+.navbar-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 522px;
+  bottom: 0;
+
+  z-index: 900;
+
+  border: none;
+  background: rgba(7, 17, 31, 0.54);
+  backdrop-filter: blur(4px);
+
+  cursor: default;
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (max-width: 1300px) {
+  .navbar-inner {
+    width: calc(100% - 64px);
+    grid-template-columns: 260px 1fr 220px;
+  }
+
+  .navbar-menu {
+    gap: 30px;
+  }
+
+  .navbar-logo {
+    width: 64px;
+    height: 64px;
+  }
+
+  .navbar-brand-text strong {
+    font-size: 16px;
+  }
+
+  .navbar-brand-text small {
+    font-size: 9px;
+    letter-spacing: 0.28em;
+  }
+}
+
+@media (max-width: 1000px) {
+  .navbar-inner {
+    width: calc(100% - 40px);
+    grid-template-columns: 1fr auto;
+  }
+
+  .navbar-menu {
+    display: none;
+  }
+
+  .navbar-whatsapp {
+    display: none;
+  }
+
+  .navbar-overlay {
+    display: none;
+  }
+}/* LOGO TIKLAMA GARANTİ */
+
+.navbar-brand {
+  position: relative;
+  z-index: 1600;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.navbar-brand img,
+.navbar-brand-text {
+  pointer-events: none;
+}

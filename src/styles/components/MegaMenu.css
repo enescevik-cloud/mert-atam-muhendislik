@@ -1,0 +1,307 @@
+/* ======================================================
+   MERT ATAM MÜHENDİSLİK
+   MEGA MENU - CLEAN PREMIUM VERSION
+====================================================== */
+
+.mega-menu {
+  position: absolute;
+  top: 92px;
+  left: 0;
+  z-index: 1500;
+
+  width: 100%;
+  height: 430px;
+
+  background: #ffffff;
+  color: #111827;
+
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.08);
+
+  animation: megaMenuEnter 0.24s ease forwards;
+}
+
+@keyframes megaMenuEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ANA TAŞIYICI */
+
+.mega-menu-shell {
+  width: min(1580px, calc(100% - 120px));
+  height: 100%;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 640px 1fr;
+  align-items: center;
+  gap: 72px;
+}
+
+/* SOL GÖRSEL KART */
+
+.mega-menu-card {
+  position: relative;
+
+  width: 100%;
+  height: 310px;
+
+  display: block;
+  overflow: hidden;
+
+  color: #ffffff;
+  text-decoration: none;
+  background: #07111f;
+}
+
+.mega-menu-card img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  filter: brightness(0.78) contrast(1.04) saturate(0.98);
+  transform: scale(1.015);
+
+  transition:
+    transform 0.55s ease,
+    filter 0.55s ease;
+}
+
+.mega-menu-card:hover img {
+  transform: scale(1.055);
+  filter: brightness(0.88) contrast(1.05) saturate(1);
+}
+
+.mega-menu-card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 10, 22, 0.72) 0%,
+      rgba(3, 10, 22, 0.45) 52%,
+      rgba(3, 10, 22, 0.16) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(3, 10, 22, 0.46) 0%,
+      rgba(3, 10, 22, 0.12) 58%,
+      rgba(3, 10, 22, 0.12) 100%
+    );
+}
+
+.mega-menu-card-content {
+  position: relative;
+  z-index: 3;
+
+  height: 100%;
+  padding: 38px 44px 34px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.mega-menu-card-label {
+  margin-bottom: 10px;
+
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.mega-menu-card h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 46px;
+  line-height: 0.98;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+
+  color: #ffffff;
+  text-shadow: 0 12px 34px rgba(0, 0, 0, 0.36);
+}
+
+.mega-menu-card-link {
+  position: relative;
+
+  width: 100%;
+  margin-top: 24px;
+  padding-bottom: 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+.mega-menu-card-link::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: #ff3b35;
+}
+
+.mega-menu-card-link strong {
+  color: #ff3b35;
+  font-size: 15px;
+  line-height: 1;
+
+  transform: translateX(0);
+  transition: transform 0.22s ease;
+}
+
+.mega-menu-card:hover .mega-menu-card-link strong {
+  transform: translateX(6px);
+}
+
+/* SAĞ LİNK ALANI */
+
+.mega-menu-links {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 64px;
+
+  padding: 10px 84px 10px 0;
+}
+
+.mega-menu-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* SATIRLAR */
+
+.mega-menu-row {
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+
+  border-bottom: 1px solid rgba(17, 24, 39, 0.13);
+
+  color: #111827;
+  text-decoration: none;
+
+  transition:
+    color 0.22s ease,
+    padding-left 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.mega-menu-row:first-child {
+  border-top: 1px solid rgba(17, 24, 39, 0.13);
+}
+
+.mega-menu-row span {
+  font-size: 15.5px;
+  line-height: 1.35;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+
+  color: currentColor;
+}
+
+.mega-menu-row strong {
+  color: #ff3b35;
+
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 700;
+
+  opacity: 0.7;
+  transform: translateX(-5px);
+
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease;
+}
+
+.mega-menu-row:hover {
+  color: #ff3b35;
+  padding-left: 10px;
+  border-color: rgba(255, 59, 53, 0.34);
+}
+
+.mega-menu-row:hover strong {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1400px) {
+  .mega-menu-shell {
+    width: calc(100% - 80px);
+    grid-template-columns: 560px 1fr;
+    gap: 54px;
+  }
+
+  .mega-menu-links {
+    gap: 44px;
+    padding-right: 44px;
+  }
+
+  .mega-menu-card h2 {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .mega-menu {
+    height: auto;
+  }
+
+  .mega-menu-shell {
+    padding: 36px 0;
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .mega-menu-card {
+    height: 270px;
+  }
+
+  .mega-menu-links {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .mega-menu {
+    display: none;
+  }
+}
