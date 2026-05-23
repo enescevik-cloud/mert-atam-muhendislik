@@ -26,7 +26,7 @@ const slides = [
     id: 3,
     image: heroThree,
     title: "Teknik Proje\nMühendisliği",
-    subtitle: "AG, OG, trafo, keşif, metraj ve AutoCAD teknik çizim hizmetleri.",
+    subtitle: "AG, OG, trafo, keşif, metraj ve AutoCAsD teknik çizim hizmetleri.",
     buttonText: "İletişime Geç",
     buttonLink: "/iletisim",
   },
