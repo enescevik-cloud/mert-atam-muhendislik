@@ -11,8 +11,8 @@ const slides = [
     image: heroMain,
     title: "Güçlü Enerji\nAltyapıları",
     subtitle: "Modern ve sürdürülebilir mühendislik yaklaşımı.",
-    buttonText: "Projeleri İncele",
-    buttonLink: "/projeler",
+    buttonText: "Hizmetlerimiz",
+    buttonLink: "/hizmetler",
   },
   {
     id: 2,
