@@ -1,115 +1,264 @@
-import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import {
+  useEffect,
+  useState,
+} from "react";
+
+import {
+  Link,
+  useLocation,
+} from "react-router-dom";
+
 import MegaMenu from "./MegaMenu";
+
 import "../styles/components/Navbar.css";
 
 import logoIcon from "../assets/logo/logo-icon.png";
 
 function Navbar() {
-  const [activeMenu, setActiveMenu] = useState(null);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [
+    activeMenu,
+    setActiveMenu,
+  ] = useState(null);
+
+  const [
+    isScrolled,
+    setIsScrolled,
+  ] = useState(false);
 
   const location = useLocation();
 
-  const isHomePage = location.pathname === "/";
-  const isMegaOpen = Boolean(activeMenu);
+  const isMegaOpen =
+    Boolean(activeMenu);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 24);
+      setIsScrolled(
+        window.scrollY > 24,
+      );
     };
 
     handleScroll();
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener(
+      "scroll",
+      handleScroll,
+      {
+        passive: true,
+      },
+    );
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener(
+        "scroll",
+        handleScroll,
+      );
     };
   }, []);
 
   useEffect(() => {
     setActiveMenu(null);
+
+    /*
+      Yeni sayfaya geçildiğinde ScrollToTop
+      henüz çalışmadan önce eski scroll değeri
+      kısa süreliğine kalabilir. Navbar görünümünü
+      bulunduğu gerçek konuma göre yeniden kontrol eder.
+    */
+    const frameId =
+      window.requestAnimationFrame(
+        () => {
+          setIsScrolled(
+            window.scrollY > 24,
+          );
+        },
+      );
+
+    return () => {
+      window.cancelAnimationFrame(
+        frameId,
+      );
+    };
   }, [location.pathname]);
 
-  const toggleMenu = (menuName) => {
-    setActiveMenu((currentMenu) => {
-      if (currentMenu === menuName) {
-        return null;
+  useEffect(() => {
+    const handleEscape = (
+      event,
+    ) => {
+      if (
+        event.key === "Escape"
+      ) {
+        setActiveMenu(null);
       }
+    };
 
-      return menuName;
-    });
+    window.addEventListener(
+      "keydown",
+      handleEscape,
+    );
+
+    return () => {
+      window.removeEventListener(
+        "keydown",
+        handleEscape,
+      );
+    };
+  }, []);
+
+  const toggleMenu = (
+    menuName,
+  ) => {
+    setActiveMenu(
+      (currentMenu) =>
+        currentMenu === menuName
+          ? null
+          : menuName,
+    );
   };
 
   const closeMenu = () => {
     setActiveMenu(null);
   };
 
-  const shouldBeSolid = !isHomePage || isScrolled || isMegaOpen;
+  /*
+    Artık sayfa adresine bakmıyoruz.
 
+    Tüm sayfalarda:
+    - Sayfanın tepesinde: şeffaf
+    - Scroll sonrası: beyaz
+    - MegaMenu açıkken: beyaz
+  */
   const navbarClassName = [
     "navbar",
-    shouldBeSolid ? "navbar-solid" : "navbar-transparent",
-    isMegaOpen ? "navbar-open" : "",
-    isScrolled ? "navbar-scrolled" : "",
+
+    isMegaOpen
+      ? "navbar-open"
+      : isScrolled
+        ? "navbar-scrolled"
+        : "navbar-transparent",
   ]
     .filter(Boolean)
     .join(" ");
 
   return (
     <>
-      <header className={navbarClassName}>
+      <header
+        className={
+          navbarClassName
+        }
+      >
         <div className="navbar-inner">
-          <Link to="/" className="navbar-brand" onClick={closeMenu}>
+          <Link
+            to="/"
+            className="navbar-brand"
+            onClick={closeMenu}
+            aria-label="MERT ATAM MÜHENDİSLİK ana sayfa"
+          >
             <img
               src={logoIcon}
-              alt="Mert Atam Mühendislik"
+              alt="MERT ATAM MÜHENDİSLİK"
               className="navbar-logo"
             />
 
             <span className="navbar-brand-text">
-              <strong>Mert Atam</strong>
-              <small>Mühendislik</small>
+              <strong>
+                MERT ATAM
+              </strong>
+
+              <small>
+                MÜHENDİSLİK
+              </small>
             </span>
           </Link>
 
-          <nav className="navbar-menu" aria-label="Ana menü">
-            <Link to="/" className="navbar-link" onClick={closeMenu}>
+          <nav
+            className="navbar-menu"
+            aria-label="Ana menü"
+          >
+            <Link
+              to="/"
+              className="navbar-link"
+              onClick={closeMenu}
+            >
               Ana Sayfa
             </Link>
 
             <button
               type="button"
               className="navbar-link navbar-button"
-              onClick={() => toggleMenu("about")}
-              aria-expanded={activeMenu === "about"}
+              onClick={() =>
+                toggleMenu(
+                  "about",
+                )
+              }
+              aria-expanded={
+                activeMenu ===
+                "about"
+              }
+              aria-controls="site-mega-menu"
             >
-              Hakkında
-              <span className="navbar-arrow">▾</span>
+              Kurumsal
+
+              <span
+                className="navbar-arrow"
+                aria-hidden="true"
+              >
+                ▾
+              </span>
             </button>
 
             <button
               type="button"
               className="navbar-link navbar-button"
-              onClick={() => toggleMenu("services")}
-              aria-expanded={activeMenu === "services"}
+              onClick={() =>
+                toggleMenu(
+                  "services",
+                )
+              }
+              aria-expanded={
+                activeMenu ===
+                "services"
+              }
+              aria-controls="site-mega-menu"
             >
               Hizmetlerimiz
-              <span className="navbar-arrow">▾</span>
+
+              <span
+                className="navbar-arrow"
+                aria-hidden="true"
+              >
+                ▾
+              </span>
             </button>
 
             <button
               type="button"
               className="navbar-link navbar-button"
-              onClick={() => toggleMenu("partners")}
-              aria-expanded={activeMenu === "partners"}
+              onClick={() =>
+                toggleMenu(
+                  "partners",
+                )
+              }
+              aria-expanded={
+                activeMenu ===
+                "partners"
+              }
+              aria-controls="site-mega-menu"
             >
-              Çözüm Ortaklarımız
-              <span className="navbar-arrow">▾</span>
+              Referanslarımız
+
+              <span
+                className="navbar-arrow"
+                aria-hidden="true"
+              >
+                ▾
+              </span>
             </button>
 
-            <Link to="/iletisim" className="navbar-link" onClick={closeMenu}>
+            <Link
+              to="/iletisim"
+              className="navbar-link"
+              onClick={closeMenu}
+            >
               İletişim
             </Link>
           </nav>
@@ -118,21 +267,29 @@ function Navbar() {
             <button
               className="navbar-search"
               type="button"
-              aria-label="Arama"
+              aria-label="Site içerisinde ara"
             />
 
             <a
               href="https://wa.me/905558889598"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="navbar-whatsapp"
+              aria-label="WhatsApp üzerinden iletişime geç"
             >
               WhatsApp
             </a>
           </div>
         </div>
 
-        {isMegaOpen && <MegaMenu type={activeMenu} closeMenu={closeMenu} />}
+        {isMegaOpen && (
+          <MegaMenu
+            type={activeMenu}
+            closeMenu={
+              closeMenu
+            }
+          />
+        )}
       </header>
 
       {isMegaOpen && (

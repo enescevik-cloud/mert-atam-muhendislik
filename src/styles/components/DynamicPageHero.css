@@ -1,0 +1,777 @@
+.dynamic-page-hero {
+  position: relative;
+
+  width: 100%;
+  height: 100svh;
+  min-height: 720px;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  color: #ffffff;
+  background: #07111d;
+}
+
+/* =====================================================
+   ARKA PLAN GÖRSELİ
+===================================================== */
+
+.dynamic-page-hero-image {
+  position: absolute;
+  inset: -5%;
+
+  z-index: 0;
+
+  will-change: transform;
+}
+
+.dynamic-page-hero-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  filter:
+    brightness(0.68)
+    saturate(0.88)
+    contrast(1.08);
+
+  transform: translateZ(0);
+}
+
+/* =====================================================
+   GÖRSEL KATMANLARI
+===================================================== */
+
+.dynamic-page-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 9, 16, 0.94) 0%,
+      rgba(3, 9, 16, 0.72) 32%,
+      rgba(3, 9, 16, 0.38) 58%,
+      rgba(3, 9, 16, 0.12) 82%,
+      rgba(3, 9, 16, 0.25) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(3, 9, 16, 0.34) 0%,
+      rgba(3, 9, 16, 0.04) 38%,
+      rgba(3, 9, 16, 0.68) 100%
+    );
+
+  pointer-events: none;
+}
+
+.dynamic-page-hero-vignette {
+  position: absolute;
+  inset: 0;
+
+  z-index: 2;
+
+  box-shadow:
+    inset 0 0 180px rgba(0, 0, 0, 0.18),
+    inset 0 -170px 180px rgba(0, 0, 0, 0.24);
+
+  pointer-events: none;
+}
+
+.dynamic-page-hero-grain {
+  position: absolute;
+
+  inset: -50%;
+
+  z-index: 3;
+
+  width: 200%;
+  height: 200%;
+
+  opacity: 0.035;
+
+  background-image:
+    radial-gradient(
+      rgba(255, 255, 255, 0.85) 0.6px,
+      transparent 0.72px
+    );
+
+  background-size: 4px 4px;
+
+  mix-blend-mode: soft-light;
+
+  animation:
+    dynamic-page-hero-grain
+    10s
+    steps(8)
+    infinite;
+
+  pointer-events: none;
+}
+
+/* =====================================================
+   ANA ÇERÇE
+===================================================== */
+
+.dynamic-page-hero-frame {
+  position: relative;
+
+  z-index: 5;
+
+  width:
+    min(
+      1690px,
+      calc(100% - 100px)
+    );
+
+  height: 100%;
+  margin: 0 auto;
+
+  padding:
+    clamp(
+      122px,
+      14vh,
+      158px
+    )
+    0
+    38px;
+
+  display: grid;
+
+  grid-template-rows:
+    auto
+    1fr
+    auto;
+
+  will-change:
+    transform,
+    opacity;
+}
+
+/* =====================================================
+   ÜST BİLGİ ÇİZGİSİ
+===================================================== */
+
+.dynamic-page-hero-meta {
+  display: grid;
+
+  grid-template-columns:
+    auto
+    minmax(70px, 1fr)
+    auto;
+
+  gap: 20px;
+  align-items: center;
+
+  color:
+    rgba(255, 255, 255, 0.72);
+
+  will-change: transform;
+}
+
+.dynamic-page-hero-index {
+  color: #ff5148;
+
+  font-size:
+    clamp(
+      13px,
+      1vw,
+      18px
+    );
+
+  line-height: 1;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+}
+
+.dynamic-page-hero-meta-rule {
+  width: 100%;
+  height: 1px;
+
+  background:
+    rgba(255, 255, 255, 0.22);
+}
+
+.dynamic-page-hero-meta strong {
+  color:
+    rgba(255, 255, 255, 0.72);
+
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 850;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+/* =====================================================
+   ANA METİN
+===================================================== */
+
+.dynamic-page-hero-copy {
+  align-self: center;
+
+  width:
+    min(
+      1130px,
+      78vw
+    );
+}
+
+.dynamic-page-hero-kicker {
+  display: inline-block;
+
+  margin-bottom:
+    clamp(
+      17px,
+      2.2vh,
+      27px
+    );
+
+  color: #ff5148;
+
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 850;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.dynamic-page-hero-copy h1 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      72px,
+      8.5vw,
+      162px
+    );
+
+  line-height: 0.84;
+  font-weight: 400;
+  letter-spacing: -0.07em;
+
+  text-wrap: balance;
+}
+
+.dynamic-page-hero-line-mask {
+  display: block;
+
+  overflow: hidden;
+
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+
+.dynamic-page-hero-line {
+  display: block;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 22px 58px
+    rgba(0, 0, 0, 0.28);
+
+  will-change:
+    opacity,
+    transform;
+}
+
+.dynamic-page-hero-copy > p {
+  max-width: 720px;
+
+  margin:
+    clamp(
+      24px,
+      3.2vh,
+      38px
+    )
+    0
+    0;
+
+  color:
+    rgba(255, 255, 255, 0.77);
+
+  font-size:
+    clamp(
+      17px,
+      1.35vw,
+      24px
+    );
+
+  line-height: 1.62;
+  font-weight: 420;
+
+  text-wrap: balance;
+}
+
+/* =====================================================
+   BAĞLANTI
+===================================================== */
+
+.dynamic-page-hero-link {
+  position: relative;
+
+  margin-top:
+    clamp(
+      28px,
+      4vh,
+      45px
+    );
+
+  padding-bottom: 13px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 17px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 820;
+}
+
+.dynamic-page-hero-link::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff5148 0 28%,
+      rgba(255, 255, 255, 0.34)
+      28% 100%
+    );
+
+  transform-origin: left center;
+
+  transition:
+    transform
+    600ms
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+}
+
+.dynamic-page-hero-link i {
+  color: #ff5148;
+
+  font-size: 18px;
+  font-style: normal;
+
+  transition:
+    transform
+    500ms
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+}
+
+.dynamic-page-hero-link:hover::after,
+.dynamic-page-hero-link:focus-visible::after {
+  transform: scaleX(0.67);
+}
+
+.dynamic-page-hero-link:hover i,
+.dynamic-page-hero-link:focus-visible i {
+  transform:
+    translate(
+      5px,
+      -5px
+    );
+}
+
+.dynamic-page-hero-link:focus-visible {
+  outline:
+    1px solid
+    rgba(255, 255, 255, 0.7);
+
+  outline-offset: 8px;
+}
+
+/* =====================================================
+   ALT BİLGİ
+===================================================== */
+
+.dynamic-page-hero-footer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  color:
+    rgba(255, 255, 255, 0.62);
+
+  font-size: 9px;
+  line-height: 1;
+  font-weight: 850;
+  letter-spacing: 0.23em;
+  text-transform: uppercase;
+}
+
+.dynamic-page-hero-footer-rule {
+  height: 1px;
+  flex: 1;
+
+  background:
+    rgba(255, 255, 255, 0.22);
+}
+
+/* =====================================================
+   KAYDIRMA İŞARETİ
+===================================================== */
+
+.dynamic-page-hero-scroll-mark {
+  position: absolute;
+
+  z-index: 6;
+
+  right:
+    clamp(
+      22px,
+      2.4vw,
+      46px
+    );
+
+  top: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+
+  color:
+    rgba(255, 255, 255, 0.48);
+
+  transform:
+    translateY(-50%);
+
+  pointer-events: none;
+}
+
+.dynamic-page-hero-scroll-mark > span {
+  position: relative;
+
+  width: 1px;
+  height: 82px;
+
+  overflow: hidden;
+
+  background:
+    rgba(255, 255, 255, 0.18);
+}
+
+.dynamic-page-hero-scroll-mark > span::after {
+  content: "";
+
+  position: absolute;
+
+  top: -100%;
+  left: 0;
+
+  width: 100%;
+  height: 52%;
+
+  background: #ff5148;
+
+  animation:
+    dynamic-page-scroll-line
+    2.7s
+    cubic-bezier(
+      0.45,
+      0,
+      0.55,
+      1
+    )
+    infinite;
+}
+
+.dynamic-page-hero-scroll-mark small {
+  display: block;
+
+  font-size: 8px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+
+  writing-mode:
+    vertical-rl;
+
+  transform:
+    rotate(180deg);
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1180px) {
+  .dynamic-page-hero {
+    min-height: 700px;
+  }
+
+  .dynamic-page-hero-frame {
+    width:
+      calc(100% - 64px);
+  }
+
+  .dynamic-page-hero-copy {
+    width:
+      min(
+        980px,
+        84vw
+      );
+  }
+
+  .dynamic-page-hero-copy h1 {
+    font-size:
+      clamp(
+        62px,
+        9.6vw,
+        118px
+      );
+  }
+
+  .dynamic-page-hero-scroll-mark {
+    display: none;
+  }
+}
+
+/* =====================================================
+   MOBİL
+===================================================== */
+
+@media (max-width: 700px) {
+  .dynamic-page-hero {
+    height: 100svh;
+    min-height: 650px;
+  }
+
+  .dynamic-page-hero-image {
+    inset: -7%;
+  }
+
+  .dynamic-page-hero-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(3, 9, 16, 0.48) 0%,
+        rgba(3, 9, 16, 0.28) 28%,
+        rgba(3, 9, 16, 0.76) 100%
+      ),
+      linear-gradient(
+        90deg,
+        rgba(3, 9, 16, 0.8) 0%,
+        rgba(3, 9, 16, 0.34) 100%
+      );
+  }
+
+  .dynamic-page-hero-frame {
+    width:
+      calc(100% - 36px);
+
+    padding:
+      108px
+      0
+      26px;
+  }
+
+  .dynamic-page-hero-meta {
+    grid-template-columns:
+      auto
+      1fr;
+
+    gap: 13px;
+  }
+
+  .dynamic-page-hero-meta strong {
+    grid-column:
+      1 / -1;
+
+    margin-top: 4px;
+  }
+
+  .dynamic-page-hero-copy {
+    width: 100%;
+  }
+
+  .dynamic-page-hero-kicker {
+    margin-bottom: 17px;
+  }
+
+  .dynamic-page-hero-copy h1 {
+    font-size:
+      clamp(
+        48px,
+        14.5vw,
+        76px
+      );
+
+    line-height: 0.88;
+    letter-spacing: -0.06em;
+  }
+
+  .dynamic-page-hero-copy > p {
+    max-width: 94%;
+
+    margin-top: 24px;
+
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .dynamic-page-hero-link {
+    margin-top: 27px;
+  }
+
+  .dynamic-page-hero-footer span:last-child {
+    display: none;
+  }
+}
+
+/* =====================================================
+   DÜŞÜK YÜKSEKLİKLİ EKRANLAR
+===================================================== */
+
+@media (
+  max-height: 760px
+) and (
+  min-width: 701px
+) {
+  .dynamic-page-hero-frame {
+    padding-top: 105px;
+    padding-bottom: 27px;
+  }
+
+  .dynamic-page-hero-copy h1 {
+    font-size:
+      clamp(
+        58px,
+        7.4vw,
+        120px
+      );
+  }
+
+  .dynamic-page-hero-copy > p {
+    margin-top: 22px;
+  }
+
+  .dynamic-page-hero-link {
+    margin-top: 25px;
+  }
+}
+
+/* =====================================================
+   HAREKET AZALTMA
+===================================================== */
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+  .dynamic-page-hero-grain,
+  .dynamic-page-hero-scroll-mark
+    > span::after {
+    animation: none;
+  }
+
+  .dynamic-page-hero-image,
+  .dynamic-page-hero-frame,
+  .dynamic-page-hero-meta,
+  .dynamic-page-hero-line,
+  .dynamic-page-hero-kicker,
+  .dynamic-page-hero-copy > p {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* =====================================================
+   ANİMASYONLAR
+===================================================== */
+
+@keyframes dynamic-page-hero-grain {
+  0% {
+    transform:
+      translate3d(
+        0,
+        0,
+        0
+      );
+  }
+
+  25% {
+    transform:
+      translate3d(
+        -1%,
+        1.2%,
+        0
+      );
+  }
+
+  50% {
+    transform:
+      translate3d(
+        1.2%,
+        -1%,
+        0
+      );
+  }
+
+  75% {
+    transform:
+      translate3d(
+        1%,
+        1.4%,
+        0
+      );
+  }
+
+  100% {
+    transform:
+      translate3d(
+        0,
+        0,
+        0
+      );
+  }
+}
+
+@keyframes dynamic-page-scroll-line {
+  0% {
+    top: -58%;
+  }
+
+  48% {
+    top: 30%;
+  }
+
+  100% {
+    top: 108%;
+  }
+}

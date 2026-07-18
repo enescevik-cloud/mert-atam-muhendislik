@@ -1,0 +1,820 @@
+/* =========================================================
+   SERVICE DETAIL PAGE
+   Luxury, duru ve doğrudan içerik odaklı yapı
+========================================================= */
+
+.service-detail-page {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #f7f5f1;
+  color: #111111;
+}
+
+.service-detail-container {
+  width: min(1380px, calc(100% - 96px));
+  margin: 0 auto;
+}
+
+/* =========================================================
+   KISA HERO
+========================================================= */
+
+.service-detail-hero {
+  position: relative;
+  min-height: 360px;
+  padding-top: clamp(108px, 9vw, 148px);
+  overflow: hidden;
+  isolation: isolate;
+  background: #111111;
+}
+
+.service-detail-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.service-detail-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.025);
+  filter:
+    brightness(0.72)
+    contrast(1.06)
+    saturate(0.9);
+}
+
+.service-detail-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 7, 7, 0.9) 0%,
+      rgba(7, 7, 7, 0.72) 34%,
+      rgba(7, 7, 7, 0.24) 70%,
+      rgba(7, 7, 7, 0.36) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.18) 0%,
+      rgba(0, 0, 0, 0.06) 48%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+}
+
+.service-detail-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.38),
+      transparent
+    );
+}
+
+.service-detail-hero-layout {
+  min-height: 236px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 72px;
+  padding-bottom: 50px;
+}
+
+.service-detail-hero-content {
+  max-width: 820px;
+}
+
+.service-detail-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 10px;
+  font-weight: 650;
+  line-height: 1;
+  letter-spacing: 0.26em;
+}
+
+.service-detail-eyebrow::before {
+  content: "";
+  width: 42px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.service-detail-hero-content h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(48px, 5.2vw, 82px);
+  font-weight: 400;
+  line-height: 0.96;
+  letter-spacing: -0.055em;
+}
+
+.service-detail-hero-content p {
+  max-width: 660px;
+  margin: 20px 0 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: clamp(15px, 1.25vw, 18px);
+  font-weight: 400;
+  line-height: 1.66;
+  letter-spacing: -0.015em;
+}
+
+.service-detail-hero-action {
+  position: relative;
+  flex-shrink: 0;
+  min-width: 290px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 18px 0;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.44);
+}
+
+.service-detail-hero-action::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  height: 1px;
+  background: #ffffff;
+  transition:
+    width 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-detail-hero-action svg {
+  transition:
+    transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-detail-hero-action:hover::before {
+  width: 100%;
+}
+
+.service-detail-hero-action:hover svg {
+  transform: translateX(5px);
+}
+
+/* =========================================================
+   ANA İÇERİK
+========================================================= */
+
+.service-detail-content {
+  position: relative;
+  z-index: 2;
+  padding: 58px 0 104px;
+  background:
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(188, 166, 129, 0.13),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #f4f1eb 0%,
+      #ffffff 36%,
+      #ffffff 100%
+    );
+}
+
+.service-detail-introduction {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.25fr)
+    minmax(310px, 0.75fr);
+  align-items: end;
+  gap: 80px;
+  margin-bottom: 42px;
+  padding-bottom: 34px;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.14);
+}
+
+.service-detail-introduction-heading > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 15px;
+  color: rgba(17, 17, 17, 0.48);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.27em;
+}
+
+.service-detail-introduction-heading > span::before {
+  content: "";
+  width: 36px;
+  height: 1px;
+  background: rgba(17, 17, 17, 0.34);
+}
+
+.service-detail-introduction-heading h2 {
+  max-width: 820px;
+  margin: 0;
+  color: #111111;
+  font-size: clamp(34px, 3.4vw, 56px);
+  font-weight: 430;
+  line-height: 1.04;
+  letter-spacing: -0.047em;
+}
+
+.service-detail-introduction > p {
+  margin: 0;
+  color: rgba(17, 17, 17, 0.62);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.76;
+  letter-spacing: -0.01em;
+}
+
+/* =========================================================
+   HİZMET KARTLARI
+========================================================= */
+
+.service-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.service-detail-card {
+  position: relative;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 26px 28px;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.99) 0%,
+      rgba(248, 247, 244, 0.97) 100%
+    );
+  border: 1px solid rgba(17, 17, 17, 0.11);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.88) inset,
+    0 18px 46px rgba(17, 17, 17, 0.035);
+  transition:
+    transform 480ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 320ms ease,
+    box-shadow 480ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-detail-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 78% 18%,
+      rgba(187, 163, 124, 0.15),
+      transparent 44%
+    );
+  transition: opacity 420ms ease;
+}
+
+.service-detail-card::after {
+  content: "";
+  position: absolute;
+  left: 26px;
+  right: 26px;
+  top: 66px;
+  height: 1px;
+  background: rgba(17, 17, 17, 0.09);
+}
+
+.service-detail-card:hover {
+  z-index: 2;
+  transform: translateY(-6px);
+  border-color: rgba(17, 17, 17, 0.24);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 28px 68px rgba(17, 17, 17, 0.09);
+}
+
+.service-detail-card:hover::before {
+  opacity: 1;
+}
+
+.service-detail-card-top {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+
+.service-detail-card-number {
+  color: rgba(17, 17, 17, 0.4);
+  font-size: 10px;
+  font-weight: 650;
+  line-height: 1;
+  letter-spacing: 0.18em;
+}
+
+.service-detail-card-icon {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(17, 17, 17, 0.52);
+  border: 1px solid rgba(17, 17, 17, 0.13);
+  border-radius: 50%;
+  transition:
+    color 320ms ease,
+    background 320ms ease,
+    border-color 320ms ease,
+    transform 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-detail-card:hover .service-detail-card-icon {
+  color: #ffffff;
+  background: #111111;
+  border-color: #111111;
+  transform: rotate(-8deg);
+}
+
+.service-detail-card-body {
+  position: relative;
+  z-index: 2;
+  max-width: 620px;
+  padding-top: 34px;
+}
+
+.service-detail-card-body h3 {
+  margin: 0;
+  color: #151515;
+  font-size: clamp(22px, 2vw, 30px);
+  font-weight: 480;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+.service-detail-card-body p {
+  max-width: 570px;
+  margin: 16px 0 0;
+  color: rgba(17, 17, 17, 0.61);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.72;
+  letter-spacing: -0.008em;
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.service-detail-contact {
+  padding: 0 0 104px;
+  background: #ffffff;
+}
+
+.service-detail-contact-panel {
+  position: relative;
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.25fr)
+    minmax(310px, 0.75fr);
+  align-items: end;
+  gap: 90px;
+  padding: clamp(54px, 6vw, 84px);
+  overflow: hidden;
+  color: #ffffff;
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(196, 173, 135, 0.17),
+      transparent 36%
+    ),
+    linear-gradient(
+      145deg,
+      #151515 0%,
+      #0d0d0d 100%
+    );
+}
+
+.service-detail-contact-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: clamp(54px, 6vw, 84px);
+  width: 86px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.service-detail-contact-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.service-detail-contact-copy > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.25em;
+}
+
+.service-detail-contact-copy > span::before {
+  content: "";
+  width: 34px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.42);
+}
+
+.service-detail-contact-copy h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(36px, 4.1vw, 66px);
+  font-weight: 410;
+  line-height: 1.01;
+  letter-spacing: -0.052em;
+}
+
+.service-detail-contact-copy p {
+  max-width: 640px;
+  margin: 22px 0 0;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.72;
+}
+
+.service-detail-contact-actions {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.service-detail-primary-button,
+.service-detail-secondary-button {
+  min-height: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 0 22px 0 24px;
+  text-decoration: none;
+}
+
+.service-detail-primary-button {
+  position: relative;
+  overflow: hidden;
+  color: #111111;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.service-detail-primary-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #d8c6aa;
+  transform: translateY(102%);
+  transition:
+    transform 460ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-detail-primary-button span,
+.service-detail-primary-button svg {
+  position: relative;
+  z-index: 2;
+}
+
+.service-detail-primary-button:hover::before {
+  transform: translateY(0);
+}
+
+.service-detail-secondary-button {
+  color: rgba(255, 255, 255, 0.86);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  transition:
+    color 300ms ease,
+    border-color 300ms ease,
+    background 300ms ease;
+}
+
+.service-detail-secondary-button:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.46);
+}
+
+.service-detail-primary-button span,
+.service-detail-secondary-button span {
+  font-size: 13px;
+  font-weight: 550;
+  line-height: 1;
+}
+
+.service-detail-primary-button svg,
+.service-detail-secondary-button svg {
+  flex-shrink: 0;
+  transition:
+    transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-detail-primary-button:hover svg {
+  transform: translateX(4px);
+}
+
+.service-detail-secondary-button:hover svg {
+  transform: translate(3px, -3px);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .service-detail-container {
+    width: min(100% - 56px, 1180px);
+  }
+
+  .service-detail-hero-layout {
+    gap: 44px;
+  }
+
+  .service-detail-hero-action {
+    min-width: 250px;
+    gap: 24px;
+  }
+
+  .service-detail-introduction {
+    grid-template-columns:
+      minmax(0, 1fr)
+      330px;
+    gap: 46px;
+  }
+
+  .service-detail-contact-panel {
+    gap: 54px;
+  }
+}
+
+/* =========================================================
+   KÜÇÜK TABLET
+========================================================= */
+
+@media (max-width: 820px) {
+  .service-detail-container {
+    width: min(100% - 40px, 760px);
+  }
+
+  .service-detail-hero {
+    min-height: auto;
+    padding-top: 112px;
+  }
+
+  .service-detail-hero-layout {
+    min-height: 244px;
+    display: block;
+    padding-bottom: 40px;
+  }
+
+  .service-detail-hero-action {
+    width: min(100%, 310px);
+    min-width: 0;
+    margin-top: 26px;
+  }
+
+  .service-detail-content {
+    padding-top: 44px;
+  }
+
+  .service-detail-introduction {
+    display: block;
+    margin-bottom: 30px;
+    padding-bottom: 26px;
+  }
+
+  .service-detail-introduction > p {
+    max-width: 650px;
+    margin-top: 20px;
+  }
+
+  .service-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-detail-card {
+    min-height: 230px;
+  }
+
+  .service-detail-contact-panel {
+    display: block;
+    padding: 54px 42px;
+  }
+
+  .service-detail-contact-actions {
+    max-width: 420px;
+    margin-top: 36px;
+  }
+}
+
+/* =========================================================
+   MOBİL
+========================================================= */
+
+@media (max-width: 580px) {
+  .service-detail-container {
+    width: calc(100% - 28px);
+  }
+
+  .service-detail-hero {
+    padding-top: 96px;
+  }
+
+  .service-detail-hero-media img {
+    object-position: 60% center;
+  }
+
+  .service-detail-hero-layout {
+    min-height: 250px;
+    padding-bottom: 32px;
+  }
+
+  .service-detail-eyebrow {
+    margin-bottom: 15px;
+    font-size: 9px;
+    letter-spacing: 0.21em;
+  }
+
+  .service-detail-eyebrow::before {
+    width: 28px;
+  }
+
+  .service-detail-hero-content h1 {
+    font-size: clamp(42px, 13vw, 58px);
+    line-height: 0.98;
+  }
+
+  .service-detail-hero-content p {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .service-detail-hero-action {
+    width: 100%;
+    margin-top: 22px;
+    padding: 15px 0;
+    font-size: 12px;
+  }
+
+  .service-detail-content {
+    padding: 34px 0 72px;
+  }
+
+  .service-detail-introduction {
+    margin-bottom: 20px;
+    padding-bottom: 22px;
+  }
+
+  .service-detail-introduction-heading > span {
+    font-size: 9px;
+    margin-bottom: 12px;
+  }
+
+  .service-detail-introduction-heading h2 {
+    font-size: clamp(30px, 10vw, 41px);
+  }
+
+  .service-detail-introduction > p {
+    margin-top: 15px;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .service-detail-grid {
+    gap: 12px;
+  }
+
+  .service-detail-card {
+    min-height: 220px;
+    padding: 20px 20px 24px;
+  }
+
+  .service-detail-card::after {
+    left: 20px;
+    right: 20px;
+    top: 62px;
+  }
+
+  .service-detail-card-body {
+    padding-top: 30px;
+  }
+
+  .service-detail-card-body h3 {
+    font-size: 24px;
+  }
+
+  .service-detail-card-body p {
+    margin-top: 13px;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .service-detail-contact {
+    padding-bottom: 72px;
+  }
+
+  .service-detail-contact-panel {
+    padding: 46px 24px 28px;
+  }
+
+  .service-detail-contact-panel::before {
+    left: 24px;
+    width: 62px;
+  }
+
+  .service-detail-contact-copy > span {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+  }
+
+  .service-detail-contact-copy h2 {
+    font-size: clamp(32px, 10.5vw, 46px);
+  }
+
+  .service-detail-contact-copy p {
+    margin-top: 18px;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .service-detail-contact-actions {
+    max-width: none;
+    margin-top: 30px;
+  }
+
+  .service-detail-primary-button,
+  .service-detail-secondary-button {
+    min-height: 56px;
+    padding: 0 18px;
+  }
+
+  .service-detail-primary-button span,
+  .service-detail-secondary-button span {
+    font-size: 12px;
+  }
+}
+
+/* =========================================================
+   HAREKET AZALTMA
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .service-detail-hero-action::before,
+  .service-detail-hero-action svg,
+  .service-detail-card,
+  .service-detail-card::before,
+  .service-detail-card-icon,
+  .service-detail-primary-button::before,
+  .service-detail-primary-button svg,
+  .service-detail-secondary-button,
+  .service-detail-secondary-button svg {
+    transition: none;
+  }
+
+  .service-detail-card:hover {
+    transform: none;
+  }
+}

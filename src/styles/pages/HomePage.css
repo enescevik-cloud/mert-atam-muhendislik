@@ -1,672 +1,1362 @@
-.home-page {
-  width: 100%;
-  min-height: 100vh;
-  background: #ffffff;
-  color: #07111f;
-  overflow-x: hidden;
+html {
+  scroll-behavior: smooth;
 }
 
-.home-container {
-  width: min(1320px, calc(100% - 96px));
+.home-page {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: clip;
+
+  color: #0a1521;
+  background: #f3f0e9;
+}
+
+.home-shell {
+  width:
+    min(
+      1510px,
+      calc(100% - 112px)
+    );
+
   margin: 0 auto;
 }
 
-/* INTRO */
+/* =====================================================
+   SAYFA İLERLEME ÇİZGİSİ
+===================================================== */
 
-.home-intro-section {
-  padding: 110px 0 96px;
-  background: #ffffff;
+.home-page-progress {
+  position: fixed;
+
+  z-index: 1700;
+
+  top: 0;
+  right: 0;
+  left: 0;
+
+  height: 3px;
+
+  background: #df4036;
+
+  transform-origin: left center;
+
+  pointer-events: none;
 }
 
-.home-intro-grid {
-  display: grid;
-  grid-template-columns: 1fr 0.85fr;
-  gap: 96px;
-  align-items: start;
+/* =====================================================
+   MEVCUT ANA HERO
+===================================================== */
+
+.home-original-hero {
+  position: relative;
+  z-index: 2;
 }
 
-.home-red-label {
-  display: inline-flex;
-  margin-bottom: 22px;
+/* =====================================================
+   ORTAK BAŞLIK SİSTEMİ
+===================================================== */
 
-  font-size: 12px;
+.home-kicker {
+  display: inline-block;
+
+  color: #df4036;
+
+  font-size: 10px;
   line-height: 1;
-  font-weight: 800;
-  letter-spacing: 0.22em;
+  font-weight: 850;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
-
-  color: #ff3b35;
 }
 
-.home-intro-left h2,
-.home-section-head h2,
-.home-dark-content h2,
-.home-split-content h2,
-.home-partners-head h2,
-.home-red-cta h2 {
-  margin: 0;
-
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 500;
-  letter-spacing: -0.045em;
-
-  color: #07111f;
+.home-kicker-light {
+  color: #ff675e;
 }
 
-.home-intro-left h2 {
-  max-width: 820px;
-  font-size: clamp(42px, 5vw, 76px);
-  line-height: 1.02;
+.home-title-line-mask {
+  display: block;
+
+  overflow: hidden;
+
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
 }
 
-.home-intro-right p {
-  margin: 44px 0 0;
+.home-title-line {
+  display: block;
 
-  font-size: 18px;
-  line-height: 1.85;
-
-  color: #64748b;
+  will-change:
+    opacity,
+    transform;
 }
 
-.home-text-link {
+/* =====================================================
+   ORTAK METİN BAĞLANTISI
+===================================================== */
+
+.home-editorial-link {
+  position: relative;
+
   margin-top: 34px;
+  padding-bottom: 13px;
 
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 
-  color: #07111f;
-  text-decoration: none;
-
-  font-size: 15px;
-  font-weight: 800;
-}
-
-.home-text-link strong {
-  color: #ff3b35;
-  transition: transform 0.22s ease;
-}
-
-.home-text-link:hover strong {
-  transform: translateX(6px);
-}
-
-/* FEATURE STRIP */
-
-.home-feature-strip {
-  padding: 0 0 100px;
-  background: #ffffff;
-}
-
-.home-feature-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid rgba(15, 23, 42, 0.1);
-  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
-}
-
-.home-feature-item {
-  min-height: 230px;
-  padding: 42px 38px;
-
-  border-right: 1px solid rgba(15, 23, 42, 0.1);
-}
-
-.home-feature-item:last-child {
-  border-right: none;
-}
-
-.home-feature-item span {
-  display: inline-flex;
-  margin-bottom: 32px;
-
-  font-size: 13px;
-  line-height: 1;
-  font-weight: 800;
-
-  color: #ff3b35;
-}
-
-.home-feature-item h3 {
-  margin: 0 0 18px;
-
-  font-size: 25px;
-  line-height: 1.2;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-
-  color: #07111f;
-}
-
-.home-feature-item p {
-  margin: 0;
-
-  font-size: 15.5px;
-  line-height: 1.75;
-
-  color: #64748b;
-}
-
-/* SERVICES */
-
-.home-services-section {
-  padding: 108px 0 118px;
-  background: #f8fafc;
-}
-
-.home-section-head {
-  margin-bottom: 54px;
-
-  display: grid;
-  grid-template-columns: 0.28fr 1fr;
-  gap: 60px;
-  align-items: end;
-}
-
-.home-section-head > span {
-  display: inline-flex;
-  margin-bottom: 12px;
-
-  font-size: 12px;
-  line-height: 1;
-  font-weight: 800;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-
-  color: #ff3b35;
-}
-
-.home-section-head h2 {
-  max-width: 860px;
-
-  font-size: clamp(42px, 5vw, 74px);
-  line-height: 1.02;
-}
-
-.home-head-link {
-  margin-top: 28px;
-
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-
-  color: #07111f;
-  text-decoration: none;
-
-  font-size: 15px;
-  font-weight: 800;
-}
-
-.home-head-link strong {
-  color: #ff3b35;
-}
-
-.home-services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-}
-
-.home-service-card {
-  display: block;
-
-  background: #ffffff;
   color: inherit;
+
   text-decoration: none;
-
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.06);
-
-  overflow: hidden;
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
-}
-
-.home-service-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(255, 59, 53, 0.25);
-  box-shadow: 0 34px 90px rgba(15, 23, 42, 0.11);
-}
-
-.home-service-image {
-  height: 220px;
-  overflow: hidden;
-  background: #07111f;
-}
-
-.home-service-image img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-  object-fit: cover;
-  object-position: center;
-
-  filter: brightness(0.86) contrast(1.05);
-  transform: scale(1.02);
-
-  transition:
-    transform 0.55s ease,
-    filter 0.55s ease;
-}
-
-.home-service-card:hover .home-service-image img {
-  transform: scale(1.08);
-  filter: brightness(0.96) contrast(1.06);
-}
-
-.home-service-content {
-  padding: 30px 30px 34px;
-}
-
-.home-service-content span {
-  display: inline-flex;
-  margin-bottom: 22px;
 
   font-size: 13px;
   line-height: 1;
-  font-weight: 900;
-
-  color: #ff3b35;
-}
-
-.home-service-content h3 {
-  margin: 0 0 16px;
-
-  font-size: 25px;
-  line-height: 1.18;
   font-weight: 800;
-  letter-spacing: -0.03em;
-
-  color: #07111f;
 }
 
-.home-service-content p {
-  margin: 0;
+.home-editorial-link::after {
+  content: "";
 
-  font-size: 15.5px;
-  line-height: 1.72;
+  position: absolute;
 
-  color: #64748b;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #df4036 0 27%,
+      rgba(10, 21, 33, 0.24) 27% 100%
+    );
+
+  transform-origin: left center;
+
+  transition:
+    transform
+    600ms
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
 }
 
-/* DARK SECTION */
-
-.home-dark-section {
-  padding: 116px 0;
-  background: #07111f;
-  color: #ffffff;
-}
-
-.home-dark-grid {
-  display: grid;
-  grid-template-columns: 1.08fr 0.92fr;
-  gap: 86px;
-  align-items: center;
-}
-
-.home-dark-content > span {
-  display: inline-flex;
-  margin-bottom: 22px;
-
-  font-size: 12px;
-  line-height: 1;
-  font-weight: 800;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-
-  color: #ff3b35;
-}
-
-.home-dark-content h2 {
-  max-width: 820px;
-
-  font-size: clamp(40px, 4.6vw, 70px);
-  line-height: 1.03;
-
-  color: #ffffff;
-}
-
-.home-dark-content p {
-  max-width: 720px;
-  margin: 30px 0 0;
+.home-editorial-link i {
+  color: #df4036;
 
   font-size: 18px;
-  line-height: 1.85;
-
-  color: rgba(255, 255, 255, 0.72);
-}
-
-.home-dark-button {
-  margin-top: 38px;
-  height: 58px;
-  padding: 0 30px;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-
-  background: #ff3b35;
-  color: #ffffff;
-
-  text-decoration: none;
-
-  font-size: 14px;
-  font-weight: 900;
+  font-style: normal;
 
   transition:
-    transform 0.25s ease,
-    background 0.25s ease;
+    transform
+    500ms
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
 }
 
-.home-dark-button:hover {
-  transform: translateY(-3px);
-  background: #e62f2a;
+.home-editorial-link:hover::after,
+.home-editorial-link:focus-visible::after {
+  transform: scaleX(0.67);
 }
 
-.home-dark-stats {
+.home-editorial-link:hover i,
+.home-editorial-link:focus-visible i {
+  transform:
+    translate(
+      5px,
+      -5px
+    );
+}
+
+.home-editorial-link:focus-visible {
+  outline:
+    1px solid
+    rgba(10, 21, 33, 0.5);
+
+  outline-offset: 8px;
+}
+
+/* =====================================================
+   MANİFESTO
+===================================================== */
+
+.home-manifesto {
+  position: relative;
+
+  min-height: 100svh;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 82% 22%,
+      rgba(255, 255, 255, 0.94),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #efebe2 0%,
+      #f7f4ed 54%,
+      #ede8de 100%
+    );
+}
+
+.home-manifesto-layout {
+  position: relative;
+  z-index: 2;
+
+  padding:
+    125px
+    0
+    90px;
+
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+
+  grid-template-columns:
+    minmax(130px, 0.22fr)
+    minmax(600px, 1.15fr)
+    minmax(320px, 0.52fr);
+
+  gap:
+    clamp(
+      50px,
+      6.3vw,
+      118px
+    );
+
+  align-items: center;
 }
 
-.home-dark-stats div {
-  min-height: 190px;
-  padding: 34px;
+.home-manifesto-aside {
+  min-height: 590px;
+
+  padding:
+    8px
+    40px
+    0
+    0;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
-  border-right: 1px solid rgba(255, 255, 255, 0.14);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  border-right:
+    1px solid
+    rgba(10, 21, 33, 0.14);
 }
 
-.home-dark-stats div:nth-child(2n) {
-  border-right: none;
-}
-
-.home-dark-stats div:nth-child(3),
-.home-dark-stats div:nth-child(4) {
-  border-bottom: none;
-}
-
-.home-dark-stats strong {
-  font-size: 42px;
-  line-height: 1;
-  color: #ff3b35;
-}
-
-.home-dark-stats span {
-  font-size: 17px;
-  line-height: 1.3;
-  font-weight: 800;
-  color: #ffffff;
-}
-
-/* SPLIT */
-
-.home-split-section {
-  padding: 118px 0;
-  background: #ffffff;
-}
-
-.home-split-grid {
-  display: grid;
-  grid-template-columns: 1fr 0.86fr;
-  gap: 86px;
-  align-items: center;
-}
-
-.home-split-media {
-  height: 560px;
-  overflow: hidden;
-  background: #07111f;
-}
-
-.home-split-media img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-  object-fit: cover;
-  object-position: center;
-
-  filter: brightness(0.9) contrast(1.05);
-}
-
-.home-split-content h2 {
-  max-width: 720px;
-
-  font-size: clamp(40px, 4.6vw, 68px);
-  line-height: 1.04;
-}
-
-.home-split-content p {
-  max-width: 660px;
-  margin: 30px 0 0;
-
-  font-size: 18px;
-  line-height: 1.85;
-
-  color: #64748b;
-}
-
-/* PARTNERS */
-
-.home-partners-section {
-  padding: 102px 0 112px;
-  background: #f8fafc;
-}
-
-.home-partners-head {
-  margin-bottom: 46px;
-
-  display: grid;
-  grid-template-columns: 0.36fr 1fr auto;
-  gap: 42px;
-  align-items: end;
-}
-
-.home-partners-head > span {
-  display: inline-flex;
-  margin-bottom: 12px;
+.home-manifesto-aside > span {
+  color: #df4036;
 
   font-size: 12px;
   line-height: 1;
+  font-weight: 850;
+}
+
+.home-manifesto-aside p {
+  margin: 0;
+
+  color: #76808a;
+
+  font-size: 9px;
+  line-height: 1.8;
   font-weight: 800;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-
-  color: #ff3b35;
 }
 
-.home-partners-head h2 {
-  max-width: 760px;
+.home-manifesto-title {
+  margin:
+    25px
+    0
+    0;
 
-  font-size: clamp(34px, 3.2vw, 52px);
-  line-height: 1.08;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      68px,
+      7.2vw,
+      132px
+    );
+
+  line-height: 0.87;
+  font-weight: 400;
+  letter-spacing: -0.067em;
 }
 
-.home-partners-head a {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
+.home-manifesto-copy {
+  align-self: end;
 
-  color: #07111f;
-  text-decoration: none;
+  padding-bottom: 28px;
+}
+
+.home-manifesto-copy p {
+  max-width: 500px;
+
+  margin:
+    0
+    0
+    23px;
+
+  color: #68737d;
 
   font-size: 15px;
-  font-weight: 900;
+  line-height: 1.9;
 }
 
-.home-partners-head a strong {
-  color: #ff3b35;
+.home-manifesto-watermark {
+  position: absolute;
+
+  right: -2vw;
+  bottom: -4.2vw;
+
+  color:
+    rgba(10, 21, 33, 0.025);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    clamp(
+      130px,
+      17vw,
+      330px
+    );
+
+  line-height: 0.76;
+  font-weight: 950;
+  letter-spacing: -0.09em;
+
+  pointer-events: none;
+  user-select: none;
 }
 
-.home-partner-logo-grid {
+/* =====================================================
+   HİZMETLER GİRİŞİ
+===================================================== */
+
+.home-services-intro {
+  position: relative;
+
+  min-height: 88svh;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background: #ffffff;
+}
+
+.home-services-intro::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 50%;
+
+  width: 1px;
+
+  background:
+    rgba(10, 21, 33, 0.08);
+
+  pointer-events: none;
+}
+
+.home-services-intro-layout {
+  position: relative;
+  z-index: 2;
+
+  padding:
+    120px
+    0
+    105px;
+
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 18px;
+
+  grid-template-columns:
+    minmax(580px, 1fr)
+    minmax(310px, 0.44fr);
+
+  gap:
+    clamp(
+      80px,
+      11vw,
+      200px
+    );
+
+  align-items: end;
 }
 
-.home-partner-logo {
-  height: 132px;
-  padding: 24px;
+.home-services-intro-title {
+  max-width: 960px;
+
+  margin:
+    25px
+    0
+    0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      68px,
+      7vw,
+      130px
+    );
+
+  line-height: 0.87;
+  font-weight: 400;
+  letter-spacing: -0.067em;
+}
+
+.home-services-intro-copy {
+  padding-bottom: 20px;
+}
+
+.home-services-intro-copy p {
+  max-width: 510px;
+
+  margin: 0;
+
+  color: #68737d;
+
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* =====================================================
+   SİNEMATİK HİZMET SAHNELERİ
+===================================================== */
+
+.home-cinematic-services {
+  position: relative;
+
+  width: 100%;
+}
+
+/* =====================================================
+   ÇALIŞMA MODELİ
+===================================================== */
+
+.home-process {
+  position: relative;
+
+  min-height: 100svh;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 88% 18%,
+      rgba(30, 57, 80, 0.34),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      #06111d 0%,
+      #0a1826 55%,
+      #07131f 100%
+    );
+}
+
+.home-process-layout {
+  position: relative;
+  z-index: 2;
+
+  padding:
+    125px
+    0
+    90px;
+
+  display: grid;
+
+  grid-template-columns:
+    0.72fr
+    1fr;
+
+  gap:
+    clamp(
+      70px,
+      9vw,
+      170px
+    );
+
+  align-items: center;
+}
+
+.home-process-title {
+  max-width: 700px;
+
+  margin:
+    25px
+    0
+    0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      62px,
+      6.4vw,
+      116px
+    );
+
+  line-height: 0.89;
+  font-weight: 400;
+  letter-spacing: -0.064em;
+}
+
+.home-process-rail {
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.17);
+}
+
+.home-process-step {
+  min-height: 145px;
+
+  padding:
+    27px
+    0;
+
+  display: grid;
+
+  grid-template-columns:
+    76px
+    1fr;
+
+  gap: 28px;
+  align-items: center;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.17);
+}
+
+.home-process-step > span {
+  color: #ff5a50;
+
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 850;
+}
+
+.home-process-step h3 {
+  margin:
+    0
+    0
+    10px;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(
+      20px,
+      1.55vw,
+      27px
+    );
+
+  line-height: 1.2;
+  font-weight: 690;
+}
+
+.home-process-step p {
+  max-width: 650px;
+
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.57);
+
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.home-process-word {
+  position: absolute;
+
+  right: -2vw;
+  bottom: -3.4vw;
+
+  color:
+    rgba(255, 255, 255, 0.018);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    clamp(
+      150px,
+      20vw,
+      390px
+    );
+
+  line-height: 0.73;
+  font-weight: 950;
+  letter-spacing: -0.1em;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+/* =====================================================
+   REFERANSLAR GİRİŞİ
+===================================================== */
+
+.home-reference-preview {
+  position: relative;
+
+  min-height: 100svh;
+
+  padding:
+    130px
+    0
+    105px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(255, 255, 255, 0.95),
+      transparent 29%
+    ),
+    #f3f0e9;
+}
+
+.home-reference-preview-heading {
+  margin-bottom: 100px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    0.48fr;
+
+  gap:
+    clamp(
+      70px,
+      10vw,
+      180px
+    );
+
+  align-items: end;
+}
+
+.home-reference-title {
+  margin:
+    24px
+    0
+    0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      68px,
+      7.2vw,
+      132px
+    );
+
+  line-height: 0.87;
+  font-weight: 400;
+  letter-spacing: -0.067em;
+}
+
+.home-reference-preview-copy p {
+  max-width: 520px;
+
+  margin: 0;
+
+  color: #68737d;
+
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* =====================================================
+   KAYAN REFERANS LOGOLARI
+===================================================== */
+
+.home-partner-marquee {
+  width: 100%;
+
+  overflow: hidden;
+
+  border-top:
+    1px solid
+    rgba(10, 21, 33, 0.13);
+
+  border-bottom:
+    1px solid
+    rgba(10, 21, 33, 0.13);
+}
+
+.home-partner-track {
+  width: max-content;
+
+  display: flex;
+
+  animation:
+    home-partner-marquee
+    56s
+    linear
+    infinite;
+
+  will-change: transform;
+}
+
+.home-partner-track:hover {
+  animation-play-state: paused;
+}
+
+.home-partner-track--static {
+  width: 100%;
+
+  flex-wrap: wrap;
+
+  animation: none;
+}
+
+.home-partner-marquee-item {
+  width:
+    clamp(
+      270px,
+      20vw,
+      390px
+    );
+
+  height: 170px;
+
+  padding:
+    34px
+    45px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.04);
+  flex: 0 0 auto;
+
+  border-right:
+    1px solid
+    rgba(10, 21, 33, 0.13);
+
+  text-decoration: none;
+
+  background:
+    rgba(255, 255, 255, 0.16);
+
+  transition:
+    background
+    400ms
+    ease;
 }
 
-.home-partner-logo img {
-  max-width: 86%;
-  max-height: 72px;
+.home-partner-marquee-item:hover,
+.home-partner-marquee-item:focus-visible {
+  background:
+    rgba(255, 255, 255, 0.72);
+}
+
+.home-partner-marquee-item:focus-visible {
+  outline:
+    2px solid
+    #df4036;
+
+  outline-offset: -3px;
+}
+
+.home-partner-marquee-item img {
+  width: auto;
+  height: auto;
+
+  max-width: 76%;
+  max-height: 70px;
+
+  display: block;
+
   object-fit: contain;
+
+  filter: grayscale(1);
+
+  opacity: 0.64;
+
+  transition:
+    opacity
+    600ms
+    ease,
+    filter
+    600ms
+    ease,
+    transform
+    600ms
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
 }
 
-/* RED CTA */
+.home-partner-marquee-item:hover img,
+.home-partner-marquee-item:focus-visible img {
+  filter: grayscale(0);
 
-.home-red-cta {
-  padding: 96px 0;
-  background: #ff3b35;
+  opacity: 1;
+
+  transform: scale(1.045);
+}
+
+/* =====================================================
+   SON ÇAĞRI
+===================================================== */
+
+.home-final-stage {
+  position: relative;
+
+  min-height: 100svh;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
   color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 82% 20%,
+      rgba(255, 116, 99, 0.72),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #cb3029 0%,
+      #de4036 55%,
+      #d7372e 100%
+    );
 }
 
-.home-red-cta-grid {
+.home-final-layout {
+  position: relative;
+  z-index: 2;
+
+  padding:
+    130px
+    0
+    100px;
+
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 60px;
+
+  grid-template-columns:
+    0.2fr
+    1fr;
+
+  gap:
+    clamp(
+      65px,
+      8vw,
+      145px
+    );
+
   align-items: center;
 }
 
-.home-red-cta span {
-  display: inline-flex;
-  margin-bottom: 20px;
+.home-final-index {
+  align-self: stretch;
+
+  padding-top: 9px;
+
+  color:
+    rgba(255, 255, 255, 0.64);
 
   font-size: 12px;
-  line-height: 1;
-  font-weight: 900;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+  font-weight: 850;
 
-  color: rgba(255, 255, 255, 0.82);
+  border-right:
+    1px solid
+    rgba(255, 255, 255, 0.3);
 }
 
-.home-red-cta h2 {
-  max-width: 880px;
+.home-final-title {
+  max-width: 1190px;
 
-  font-size: clamp(38px, 4.2vw, 66px);
-  line-height: 1.04;
+  margin:
+    26px
+    0
+    0;
 
-  color: #ffffff;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      70px,
+      7.7vw,
+      146px
+    );
+
+  line-height: 0.86;
+  font-weight: 400;
+  letter-spacing: -0.068em;
 }
 
-.home-red-cta-button {
-  height: 60px;
-  padding: 0 32px;
+.home-final-copy > p {
+  max-width: 650px;
+
+  margin:
+    35px
+    0
+    0;
+
+  color:
+    rgba(255, 255, 255, 0.76);
+
+  font-size: 16px;
+  line-height: 1.82;
+}
+
+.home-final-actions {
+  margin-top: 42px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.home-final-primary,
+.home-final-secondary {
+  min-height: 58px;
+
+  padding:
+    0
+    28px;
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-
-  background: #ffffff;
-  color: #07111f;
+  gap: 15px;
 
   text-decoration: none;
 
-  font-size: 14px;
-  font-weight: 900;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 820;
+
+  transition:
+    transform
+    500ms
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    ),
+    background
+    350ms
+    ease,
+    color
+    350ms
+    ease;
 }
 
-/* RESPONSIVE */
+.home-final-primary {
+  color: #111b26;
+  background: #ffffff;
+}
 
-@media (max-width: 1100px) {
-  .home-container {
-    width: calc(100% - 64px);
+.home-final-primary i {
+  color: #dc3d34;
+
+  font-size: 17px;
+  font-style: normal;
+}
+
+.home-final-secondary {
+  color: #ffffff;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.46);
+}
+
+.home-final-primary:hover,
+.home-final-secondary:hover,
+.home-final-primary:focus-visible,
+.home-final-secondary:focus-visible {
+  transform:
+    translateY(-4px);
+}
+
+.home-final-secondary:hover,
+.home-final-secondary:focus-visible {
+  color: #111b26;
+  background: #ffffff;
+}
+
+.home-final-primary:focus-visible,
+.home-final-secondary:focus-visible {
+  outline:
+    2px solid
+    rgba(255, 255, 255, 0.9);
+
+  outline-offset: 4px;
+}
+
+.home-final-watermark {
+  position: absolute;
+
+  right: -2.5vw;
+  bottom: -3.8vw;
+
+  color:
+    rgba(255, 255, 255, 0.055);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    clamp(
+      135px,
+      18vw,
+      350px
+    );
+
+  line-height: 0.75;
+  font-weight: 950;
+  letter-spacing: -0.1em;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1180px) {
+  .home-shell {
+    width:
+      calc(100% - 64px);
   }
 
-  .home-intro-grid,
-  .home-dark-grid,
-  .home-split-grid,
-  .home-red-cta-grid {
+  .home-manifesto-layout {
     grid-template-columns: 1fr;
-    gap: 48px;
+
+    gap: 52px;
   }
 
-  .home-section-head,
-  .home-partners-head {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
+  .home-manifesto-aside {
+    min-height: 78px;
 
-  .home-services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    padding:
+      0
+      0
+      25px;
 
-  .home-partner-logo-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+    flex-direction: row;
 
-  .home-feature-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .home-feature-item {
     border-right: none;
-    border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+
+    border-bottom:
+      1px solid
+      rgba(10, 21, 33, 0.14);
   }
 
-  .home-feature-item:last-child {
-    border-bottom: none;
+  .home-manifesto-aside p {
+    text-align: right;
+  }
+
+  .home-manifesto-copy {
+    max-width: 620px;
+
+    padding-bottom: 0;
+  }
+
+  .home-services-intro::before {
+    display: none;
+  }
+
+  .home-services-intro-layout {
+    grid-template-columns: 1fr;
+
+    gap: 54px;
+  }
+
+  .home-services-intro-copy {
+    max-width: 620px;
+
+    padding-bottom: 0;
+  }
+
+  .home-process-layout {
+    grid-template-columns: 1fr;
+
+    gap: 70px;
+  }
+
+  .home-reference-preview-heading {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .home-reference-preview-copy {
+    max-width: 620px;
+  }
+
+  .home-final-layout {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+  .home-final-index {
+    min-height: 68px;
+
+    border-right: none;
+
+    border-bottom:
+      1px solid
+      rgba(255, 255, 255, 0.3);
   }
 }
+
+/* =====================================================
+   MOBİL
+===================================================== */
 
 @media (max-width: 700px) {
-  .home-container {
-    width: calc(100% - 36px);
+  .home-shell {
+    width:
+      calc(100% - 36px);
   }
 
-  .home-intro-section,
-  .home-services-section,
-  .home-dark-section,
-  .home-split-section,
-  .home-partners-section,
-  .home-red-cta {
-    padding: 70px 0;
+  .home-manifesto,
+  .home-services-intro,
+  .home-process,
+  .home-reference-preview,
+  .home-final-stage {
+    min-height: auto;
   }
 
-  .home-services-grid,
-  .home-partner-logo-grid {
-    grid-template-columns: 1fr;
+  .home-manifesto-layout,
+  .home-services-intro-layout,
+  .home-process-layout,
+  .home-final-layout {
+    padding-top: 100px;
+    padding-bottom: 88px;
   }
 
-  .home-split-media {
-    height: 340px;
+  .home-manifesto-title,
+  .home-services-intro-title,
+  .home-process-title,
+  .home-reference-title {
+    font-size:
+      clamp(
+        48px,
+        14.5vw,
+        74px
+      );
+
+    line-height: 0.89;
+    letter-spacing: -0.058em;
   }
 
-  .home-dark-stats {
-    grid-template-columns: 1fr;
+  .home-manifesto-aside {
+    min-height: 67px;
   }
 
-  .home-dark-stats div {
-    border-right: none;
+  .home-manifesto-aside p {
+    font-size: 8px;
   }
 
-  .home-intro-left h2,
-  .home-section-head h2,
-  .home-dark-content h2,
-  .home-split-content h2,
-  .home-red-cta h2 {
-    font-size: 40px;
+  .home-manifesto-copy p,
+  .home-services-intro-copy p,
+  .home-reference-preview-copy p {
+    font-size: 14px;
+    line-height: 1.82;
+  }
+
+  .home-process-step {
+    min-height: 132px;
+
+    grid-template-columns:
+      46px
+      1fr;
+
+    gap: 18px;
+  }
+
+  .home-process-step p {
+    font-size: 12px;
+  }
+
+  .home-reference-preview {
+    padding-top: 100px;
+    padding-bottom: 90px;
+  }
+
+  .home-reference-preview-heading {
+    margin-bottom: 65px;
+  }
+
+  .home-partner-marquee-item {
+    width: 250px;
+    height: 130px;
+
+    padding:
+      25px
+      34px;
+  }
+
+  .home-partner-marquee-item img {
+    max-width: 78%;
+    max-height: 58px;
+  }
+
+  .home-final-title {
+    font-size:
+      clamp(
+        51px,
+        15vw,
+        78px
+      );
+
+    line-height: 0.88;
+    letter-spacing: -0.06em;
+  }
+
+  .home-final-copy > p {
+    font-size: 15px;
+  }
+
+  .home-final-actions {
+    flex-direction: column;
+  }
+
+  .home-final-primary,
+  .home-final-secondary {
+    width: 100%;
+  }
+}
+
+/* =====================================================
+   DÜŞÜK YÜKSEKLİKLİ EKRAN
+===================================================== */
+
+@media (
+  max-height: 760px
+) and (
+  min-width: 701px
+) {
+  .home-manifesto-layout,
+  .home-services-intro-layout,
+  .home-process-layout,
+  .home-final-layout {
+    padding-top: 96px;
+    padding-bottom: 72px;
+  }
+
+  .home-manifesto-title,
+  .home-services-intro-title,
+  .home-process-title,
+  .home-reference-title,
+  .home-final-title {
+    font-size:
+      clamp(
+        58px,
+        6.3vw,
+        105px
+      );
+  }
+}
+
+/* =====================================================
+   HAREKET AZALTMA
+===================================================== */
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .home-partner-track {
+    width: 100%;
+
+    flex-wrap: wrap;
+
+    animation: none;
+  }
+
+  .home-title-line,
+  .home-page-progress {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* =====================================================
+   ANİMASYONLAR
+===================================================== */
+
+@keyframes home-partner-marquee {
+  from {
+    transform:
+      translateX(0);
+  }
+
+  to {
+    transform:
+      translateX(-50%);
   }
 }

@@ -1,165 +1,511 @@
-import elektrikProjelendirmeHero from "../assets/services/elektrik-projelendirme/hero.jpg";
-import agSistemleriHero from "../assets/services/ag-sistemleri/hero.jpg";
-import ogSistemleriHero from "../assets/services/og-sistemleri/hero.jpg";
-import trafoProjeleriHero from "../assets/services/trafo-projeleri/hero.jpg";
-import enerjiNakilHatlariHero from "../assets/services/enerji-nakil-hatlari/hero.jpg";
-import kesifMetrajHero from "../assets/services/kesif-metraj/hero.jpg";
-import akilliEvOtomasyonHero from "../assets/services/akilli-ev-otomasyon/hero.jpg";
+import energyTransmissionHero from "../assets/services/enerji-nakil-hatlari/hero.jpg";
 
-import servicesMainHero from "../assets/services/hero.jpg";
+import electricProjectHero from "../assets/services/elektrik-projelendirme/hero.jpg";
 
-export const servicesHero = servicesMainHero;
+import electricCommitmentHero from "../assets/services/taahhut-hizmetleri/hero.jpg";
+
+import smartHomeHero from "../assets/services/akilli-ev-otomasyon/hero.jpg";
+
+import engineeringHero from "../assets/services/teknik-danismanlik/hero.jpg";
+
+/*
+  /hizmetler sayfasının açılış Hero görseli
+*/
+export const servicesHero =
+  energyTransmissionHero;
 
 export const services = [
   {
-    id: 1,
-    slug: "elektrik-projelendirme",
-    title: "Elektrik Projelendirme",
+    number: "01",
+
+    slug: "elektrik-proje",
+
+    eyebrow:
+      "Elektrik Projelendirme",
+
+    title:
+      "Elektrik Proje Hizmetlerimiz",
+
     shortText:
-      "Yapıların elektrik altyapısını güvenli, verimli ve uygulanabilir şekilde projelendiriyoruz.",
-    hero: elektrikProjelendirmeHero,
-    eyebrow: "Projelendirme",
+      "Yapının kullanım amacı, enerji ihtiyacı ve teknik gereklilikleri doğrultusunda elektrik projeleri hazırlanır.",
+
+    statement:
+      "Doğru proje, güçlü uygulamanın teknik zeminini oluşturur.",
+
     description:
-      "Elektrik projelendirme hizmetimiz; yapıların kullanım amacı, enerji ihtiyacı, güvenlik gereklilikleri ve yönetmelik şartları dikkate alınarak hazırlanır. Proje sürecinde teknik doğruluk, uygulanabilirlik ve uzun vadeli sistem performansı esas alınır.",
-    details: [
-      "Kuvvetli akım ve zayıf akım proje altyapısının oluşturulması",
-      "Pano, hat, kablo ve koruma elemanlarının teknik olarak planlanması",
-      "Yönetmeliklere ve saha uygulamasına uygun proje hazırlanması",
-      "Uygulama ekipleri için anlaşılır ve sürdürülebilir çizim sistemi",
+      "Konut, ticari yapı, sanayi tesisi ve enerji altyapıları için elektrik projeleri hazırlanır. Proje sürecinde güç ihtiyacı, dağıtım sistemi, koruma düzeni ve ilgili yönetmelikler birlikte değerlendirilir.",
+
+    seoText:
+      "İzmir elektrik proje, İzmir elektrik ruhsat projesi, son durum elektrik projeleri, orta gerilim projeleri, yüksek gerilim projeleri, trafo projesi ve elektrik güç yükseltme projeleri teknik hesaplarla hazırlanır.",
+
+    seoTitle:
+      "İzmir Elektrik Proje Hizmetleri | MERT ATAM MÜHENDİSLİK",
+
+    seoDescription:
+      "İzmir elektrik proje, elektrik ruhsat projesi, trafo projesi, orta gerilim, yüksek gerilim ve güç yükseltme projeleri.",
+
+    hero:
+      electricProjectHero,
+
+    homeVisual:
+      "image",
+
+    homeTitleLines: [
+      "Elektrik Proje",
+      "Hizmetlerimiz",
     ],
+
+    homeFocalPoint:
+      "center center",
+
+    highlights: [
+      "Elektrik Ruhsat Projeleri",
+      "Son Durum Elektrik Projeleri",
+      "Orta Gerilim Projeleri",
+      "Yüksek Gerilim Projeleri",
+    ],
+
+    details: [
+      "Elektrik Ruhsat Projeleri",
+
+      "Son Durum Elektrik Projeleri",
+
+      "Yüksek Gerilim Projeleri",
+
+      "Orta Gerilim Projeleri",
+
+      "Trafo Projeleri",
+
+      "Enerji Nakil Hatları",
+
+      "Dağıtım Şebekeleri",
+
+      "Elektrik Güç Yükseltme Projeleri",
+
+      "Kuvvetli Akım Projeleri",
+
+      "Zayıf Akım Projeleri",
+
+      "Aydınlatma Projeleri",
+
+      "Topraklama ve Yıldırımdan Korunma Projeleri",
+    ],
+
     processTitle:
-      "Elektrik projelerinde güvenli, düzenli ve uygulanabilir altyapı yaklaşımı.",
+      "Elektrik proje sürecini teknik hesaplardan uygulama detaylarına kadar yönetiyoruz.",
+
     processText:
-      "Her proje; teknik gereklilikler, saha koşulları, kullanıcı ihtiyaçları ve sürdürülebilir işletme hedefleri birlikte değerlendirilerek hazırlanır.",
+      "İhtiyaç analizi, teknik hesaplar, proje çizimleri ve teslim süreçleri kontrollü şekilde yürütülür.",
+
+    processSteps: [
+      {
+        title:
+          "İhtiyaç Analizi",
+
+        text:
+          "Yapının kullanım amacı, mevcut altyapısı ve enerji ihtiyacı değerlendirilir.",
+      },
+
+      {
+        title:
+          "Teknik Hesaplar",
+
+        text:
+          "Güç, gerilim düşümü, kısa devre, koruma ve kablo hesapları hazırlanır.",
+      },
+
+      {
+        title:
+          "Projelendirme",
+
+        text:
+          "Elektrik sistemleri ilgili yönetmeliklere ve uygulama koşullarına göre çizilir.",
+      },
+
+      {
+        title:
+          "Kontrol ve Teslim",
+
+        text:
+          "Proje paftaları, hesaplar ve teknik dokümanlar kontrol edilerek teslim edilir.",
+      },
+    ],
   },
+
   {
-    id: 2,
-    slug: "ag-sistemleri",
-    title: "AG Sistemleri",
+    number: "02",
+
+    slug:
+      "elektrik-taahhut",
+
+    eyebrow:
+      "Elektrik Taahhüt",
+
+    title:
+      "Elektrik Taahhüt Hizmetleri",
+
     shortText:
-      "Alçak gerilim sistemlerinde güvenli dağıtım, doğru koruma ve sürdürülebilir enerji altyapısı.",
-    hero: agSistemleriHero,
-    eyebrow: "Alçak Gerilim",
+      "Elektrik tesisatlarının malzeme, uygulama, koordinasyon, test ve devreye alma süreçleri yönetilir.",
+
+    statement:
+      "Projeyi, sahada çalışan güvenli bir elektrik sistemine dönüştürüyoruz.",
+
     description:
-      "AG sistemleri, yapıların günlük enerji kullanımında kritik rol oynar. Mert Atam Mühendislik olarak AG dağıtım altyapılarını güvenlik, süreklilik ve enerji verimliliği kriterleri doğrultusunda ele alıyoruz.",
-    details: [
-      "AG dağıtım panoları ve hat planlaması",
-      "Yük analizleri ve koruma koordinasyonu",
-      "Kablo kesiti, gerilim düşümü ve enerji sürekliliği değerlendirmesi",
-      "Saha uygulamasına uygun teknik çözüm geliştirme",
+      "Elektrik taahhüt hizmetlerinde uygulama planlaması, malzeme seçimi, saha koordinasyonu, montaj, test ve devreye alma çalışmaları bir bütün olarak yürütülür.",
+
+    seoText:
+      "İzmir elektrik uygulama, trafo kurulumu, şebeke kurulumu, elektrik pano uygulamaları, kablolama, aydınlatma ve zayıf akım tesisatları teknik şartnamelere uygun şekilde gerçekleştirilir.",
+
+    seoTitle:
+      "İzmir Elektrik Taahhüt ve Uygulama | MERT ATAM MÜHENDİSLİK",
+
+    seoDescription:
+      "İzmir elektrik uygulama, elektrik taahhüt, trafo kurulumu, şebeke kurulumu, pano ve tesisat uygulamaları.",
+
+    hero:
+      electricCommitmentHero,
+
+    homeVisual:
+      "editorial-light",
+
+    homeTitleLines: [
+      "Elektrik Taahhüt",
+      "Hizmetleri",
     ],
+
+    homeFocalPoint:
+      "center center",
+
+    highlights: [
+      "Elektrik Tesisatı Uygulamaları",
+      "Trafo Kurulumu",
+      "Şebeke Kurulumu",
+      "Pano ve Dağıtım Sistemleri",
+    ],
+
+    details: [
+      "Elektrik Tesisatı Uygulamaları",
+
+      "Trafo Kurulumu",
+
+      "Şebeke Kurulumu",
+
+      "Ana Dağıtım Panoları",
+
+      "Tali Dağıtım Panoları",
+
+      "Kablo Tavası ve Kablolama Uygulamaları",
+
+      "Aydınlatma Sistemleri",
+
+      "Topraklama Sistemleri",
+
+      "Zayıf Akım Sistemleri",
+
+      "Yangın Algılama Sistemleri",
+
+      "Test ve Devreye Alma",
+
+      "Uygulama Sonrası Teknik Kontroller",
+    ],
+
     processTitle:
-      "Alçak gerilim sistemlerinde güvenilir dağıtım ve koruma kurgusu.",
+      "Elektrik taahhüt çalışmalarını uygulama planından devreye almaya kadar yönetiyoruz.",
+
     processText:
-      "Enerji dağıtımı; yük dengesi, güvenlik, pano yapısı, kablo güzergâhı ve koruma elemanları birlikte değerlendirilerek planlanır.",
+      "Malzeme, iş programı, saha koordinasyonu ve kalite kontrolleri tek uygulama planı içerisinde yürütülür.",
+
+    processSteps: [
+      {
+        title:
+          "Saha İncelemesi",
+
+        text:
+          "Proje, uygulama alanı ve mevcut elektrik altyapısı yerinde incelenir.",
+      },
+
+      {
+        title:
+          "Uygulama Planı",
+
+        text:
+          "Malzeme listeleri, iş programı ve saha uygulama adımları hazırlanır.",
+      },
+
+      {
+        title:
+          "Montaj",
+
+        text:
+          "Elektrik tesisatı ve sistem bileşenleri teknik projeye uygun olarak uygulanır.",
+      },
+
+      {
+        title:
+          "Test ve Devreye Alma",
+
+        text:
+          "Elektriksel kontroller tamamlanarak sistem güvenli şekilde devreye alınır.",
+      },
+    ],
   },
+
   {
-    id: 3,
-    slug: "og-sistemleri",
-    title: "OG Sistemleri",
+    number: "03",
+
+    slug:
+      "akilli-ev",
+
+    eyebrow:
+      "Akıllı Ev Otomasyonu",
+
+    title:
+      "Akıllı Ev Otomasyon Hizmetlerimiz",
+
     shortText:
-      "Orta gerilim altyapılarında güvenilir, kontrollü ve profesyonel mühendislik çözümleri.",
-    hero: ogSistemleriHero,
-    eyebrow: "Orta Gerilim",
+      "Aydınlatma, iklimlendirme, perde, güvenlik ve enerji kontrolü tek otomasyon altyapısında birleştirilir.",
+
+    statement:
+      "Konforu, güvenliği ve enerji kontrolünü tek sistemde birleştiriyoruz.",
+
     description:
-      "OG sistemleri yüksek güvenlik ve teknik hassasiyet gerektirir. Orta gerilim enerji altyapılarını doğru ekipman seçimi, koruma mantığı ve sürdürülebilir işletme yaklaşımıyla değerlendiriyoruz.",
-    details: [
-      "OG hücre, trafo ve enerji giriş altyapısı değerlendirmesi",
-      "Koruma, güvenlik ve işletme sürekliliği odaklı planlama",
-      "Enerji dağıtım senaryolarının teknik analizi",
-      "Yönetmeliklere uygun mühendislik yaklaşımı",
+      "Akıllı ev otomasyon sistemleri, yapının kullanım senaryolarına göre projelendirilir. Aydınlatma, iklimlendirme, perde, güvenlik ve enerji yönetimi merkezi olarak kontrol edilir.",
+
+    seoText:
+      "İzmir akıllı ev sistemi ve İzmir KNX sistemi uygulamalarında otomasyon projelendirme, pano tasarımı, programlama, devreye alma ve kullanıcı senaryoları birlikte yönetilir.",
+
+    seoTitle:
+      "İzmir Akıllı Ev ve KNX Sistemi | MERT ATAM MÜHENDİSLİK",
+
+    seoDescription:
+      "İzmir akıllı ev sistemi, İzmir KNX sistemi, aydınlatma, iklimlendirme, perde ve enerji otomasyonu hizmetleri.",
+
+    hero:
+      smartHomeHero,
+
+    homeVisual:
+      "image",
+
+    homeTitleLines: [
+      "Akıllı Ev",
+      "Otomasyonu",
     ],
+
+    homeFocalPoint:
+      "center center",
+
+    highlights: [
+      "KNX Otomasyon Sistemleri",
+      "Aydınlatma Kontrolü",
+      "İklimlendirme Kontrolü",
+      "Enerji Yönetimi",
+    ],
+
+    details: [
+      "KNX Otomasyon Sistemleri",
+
+      "Aydınlatma Otomasyonu",
+
+      "İklimlendirme Otomasyonu",
+
+      "Perde ve Panjur Kontrolü",
+
+      "Enerji İzleme ve Yönetimi",
+
+      "Güvenlik Sistemleri Entegrasyonu",
+
+      "Uzaktan Erişim ve Mobil Kontrol",
+
+      "Dokunmatik Panel Uygulamaları",
+
+      "Otomasyon Pano Tasarımı",
+
+      "Senaryo Programlama",
+
+      "Sistem Devreye Alma",
+
+      "Kullanıcı Eğitimi",
+    ],
+
     processTitle:
-      "Orta gerilim altyapılarında kontrollü ve güvenli sistem yaklaşımı.",
+      "Akıllı ev sistemini ihtiyaç analizinden kullanıcı senaryolarına kadar tasarlıyoruz.",
+
     processText:
-      "OG sistemleri; enerji sürekliliği, işletme güvenliği, koruma koordinasyonu ve teknik standartlar dikkate alınarak ele alınır.",
+      "Otomasyon altyapısı, cihaz seçimi, programlama ve devreye alma süreçleri birlikte yürütülür.",
+
+    processSteps: [
+      {
+        title:
+          "İhtiyaçların Belirlenmesi",
+
+        text:
+          "Kontrol edilmesi istenen sistemler ve kullanım senaryoları belirlenir.",
+      },
+
+      {
+        title:
+          "Sistem Tasarımı",
+
+        text:
+          "KNX altyapısı, otomasyon panosu, cihazlar ve haberleşme yapısı projelendirilir.",
+      },
+
+      {
+        title:
+          "Programlama",
+
+        text:
+          "Aydınlatma, iklimlendirme, perde ve güvenlik senaryoları hazırlanır.",
+      },
+
+      {
+        title:
+          "Devreye Alma",
+
+        text:
+          "Sistem test edilerek kullanıcı ayarları ve kontrol arayüzleri tamamlanır.",
+      },
+    ],
   },
+
   {
-    id: 4,
-    slug: "trafo-projeleri",
-    title: "Trafo Projeleri",
+    number: "04",
+
+    slug:
+      "elektrik-muhendislik",
+
+    eyebrow:
+      "Elektrik Mühendislik",
+
+    title:
+      "Elektrik Mühendislik Hizmetlerimiz",
+
     shortText:
-      "Trafo merkezleri için doğru kapasite, güvenli yerleşim ve uygulanabilir proje yaklaşımı.",
-    hero: trafoProjeleriHero,
-    eyebrow: "Trafo Sistemleri",
+      "Elektrik tesislerinin güvenli, verimli ve mevzuata uygun işletilmesi için teknik mühendislik desteği sunulur.",
+
+    statement:
+      "Elektrik sistemlerinin güvenli ve sürdürülebilir işletilmesini sağlıyoruz.",
+
     description:
-      "Trafo projeleri, enerji altyapısının kritik noktalarından biridir. Kapasite seçimi, yerleşim, güvenlik, bakım erişimi ve işletme sürekliliği birlikte değerlendirilerek projelendirme yapılır.",
-    details: [
-      "Trafo gücü ve yük ihtiyacının değerlendirilmesi",
-      "Trafo merkezi yerleşim ve bağlantı yaklaşımı",
-      "AG/OG entegrasyonu ve pano bağlantılarının planlanması",
-      "Güvenli işletme ve bakım erişimi odaklı proje hazırlığı",
+      "Elektrik mühendislik hizmetleri kapsamında teknik danışmanlık, yüksek gerilim işletme sorumluluğu, kompanzasyon takibi, periyodik kontrol ve elektriksel ölçüm hizmetleri sunulur.",
+
+    seoText:
+      "İzmir elektrik mühendisi, İzmir elektrik mühendislik, İzmir yüksek gerilim işletme sorumluluğu, yüksek gerilim işletme, kompanzasyon takibi ve periyodik kontroller alanlarında teknik hizmet sunulur.",
+
+    seoTitle:
+      "İzmir Elektrik Mühendislik Hizmetleri | MERT ATAM MÜHENDİSLİK",
+
+    seoDescription:
+      "İzmir elektrik mühendisi, yüksek gerilim işletme sorumluluğu, kompanzasyon takibi, danışmanlık ve periyodik kontrol hizmetleri.",
+
+    /*
+      Ana sayfadaki hizmet sahnesinde
+      ve hizmet kartlarında kullanılan görsel.
+    */
+    hero:
+      engineeringHero,
+
+    /*
+      Elektrik Mühendislik detay sayfasının
+      açılış Hero görseli.
+    */
+    detailHero:
+      energyTransmissionHero,
+
+    detailFocalPoint:
+      "center center",
+
+    homeVisual:
+      "editorial-light",
+
+    homeTitleLines: [
+      "Elektrik Mühendislik",
+      "Hizmetlerimiz",
     ],
-    processTitle:
-      "Trafo merkezlerinde kapasite, güvenlik ve sürdürülebilir işletme dengesi.",
-    processText:
-      "Trafo projelerinde doğru kapasite seçimi, erişilebilir yerleşim, koruma düzeni ve enerji sürekliliği birlikte değerlendirilir.",
-  },
-  {
-    id: 5,
-    slug: "enerji-nakil-hatlari",
-    title: "Enerji Nakil Hatları",
-    shortText:
-      "Enerji iletim ve dağıtım süreçlerinde doğru güzergâh, güvenli hat ve sürdürülebilir altyapı.",
-    hero: enerjiNakilHatlariHero,
-    eyebrow: "Enerji Altyapısı",
-    description:
-      "Enerji nakil hatları; tesislerin enerji sürekliliği, güvenliği ve dağıtım performansı açısından büyük önem taşır. Hat planlaması yapılırken güzergâh, mesafe, yük, güvenlik ve bakım koşulları birlikte ele alınır.",
-    details: [
-      "Enerji iletim ve dağıtım güzergâhlarının değerlendirilmesi",
-      "Hat kapasitesi ve teknik uygunluk analizi",
-      "Saha koşullarına göre uygulanabilir çözüm geliştirme",
-      "Uzun vadeli işletme güvenliği odaklı planlama",
+
+    homeFocalPoint:
+      "center center",
+
+    highlights: [
+      "Müşavirlik ve Danışmanlık",
+      "YG İşletme Sorumluluğu",
+      "Kompanzasyon Takibi",
+      "Periyodik Kontroller ve Ölçümler",
     ],
-    processTitle:
-      "Enerji nakil hatlarında güvenilir güzergâh ve sürdürülebilir iletim yaklaşımı.",
-    processText:
-      "Hat planlamasında güzergâh, yük yapısı, mesafe, bakım erişimi ve işletme sürekliliği birlikte değerlendirilir.",
-  },
-  {
-    id: 6,
-    slug: "kesif-metraj",
-    title: "Keşif & Metraj",
-    shortText:
-      "Proje maliyetlerinin doğru analiz edilmesi için detaylı keşif ve metraj çalışmaları.",
-    hero: kesifMetrajHero,
-    eyebrow: "Maliyet Analizi",
-    description:
-      "Keşif ve metraj çalışmaları, projenin bütçe ve uygulama planlamasında temel rol oynar. Malzeme miktarları, iş kalemleri ve teknik gereklilikler detaylı şekilde değerlendirilir.",
+
     details: [
-      "Proje üzerinden malzeme ve iş kalemi çıkarımı",
-      "Elektrik tesisatı metraj çalışmalarının hazırlanması",
-      "Yaklaşık maliyet ve uygulama planlamasına destek",
-      "Teknik şartlara uygun keşif listesi oluşturma",
+      "Müşavirlik ve Teknik Danışmanlık",
+
+      "Yüksek Gerilim İşletme Sorumluluğu",
+
+      "Yüksek Gerilim Tesislerinin Kontrolü",
+
+      "Kompanzasyon Takibi",
+
+      "Reaktif Enerji Kontrolü",
+
+      "Periyodik Elektrik Kontrolleri",
+
+      "Topraklama Ölçümleri",
+
+      "İzolasyon Direnci Ölçümleri",
+
+      "Termal Kamera Kontrolleri",
+
+      "Pano ve Tesisat Kontrolleri",
+
+      "Enerji Kalitesi Analizi",
+
+      "Teknik Raporlama",
     ],
+
     processTitle:
-      "Keşif ve metraj süreçlerinde doğru maliyet ve doğru planlama yaklaşımı.",
+      "Elektrik tesislerinin teknik durumunu ölçüm, kontrol ve düzenli takip ile yönetiyoruz.",
+
     processText:
-      "Proje kapsamı; malzeme miktarı, işçilik kalemi, teknik gereklilik ve uygulama senaryoları üzerinden detaylı analiz edilir.",
-  },
-  {
-    id: 7,
-    slug: "akilli-ev-otomasyon",
-    title: "Akıllı Ev Otomasyon",
-    shortText:
-      "Konut ve ticari yapılarda konfor, güvenlik ve enerji verimliliğini artıran otomasyon çözümleri.",
-    hero: akilliEvOtomasyonHero,
-    eyebrow: "Otomasyon",
-    description:
-      "Akıllı ev otomasyon sistemleri; aydınlatma, güvenlik, iklimlendirme ve enerji kontrolünü daha verimli ve kullanıcı dostu hale getirir. Projelendirme sürecinde yapının kullanım senaryosu ve teknik altyapısı birlikte değerlendirilir.",
-    details: [
-      "Aydınlatma ve senaryo kontrol altyapısı",
-      "Güvenlik, kamera ve erişim sistemleriyle entegrasyon",
-      "Enerji verimliliği odaklı otomasyon yaklaşımı",
-      "Kullanıcı ihtiyaçlarına göre ölçeklenebilir sistem tasarımı",
+      "Tesis incelemesi, ölçümler, teknik değerlendirme ve raporlama süreçleri düzenli olarak yürütülür.",
+
+    processSteps: [
+      {
+        title:
+          "Tesis İncelemesi",
+
+        text:
+          "Elektrik altyapısı, panolar, koruma sistemleri ve işletme koşulları incelenir.",
+      },
+
+      {
+        title:
+          "Ölçüm ve Kontrol",
+
+        text:
+          "Elektriksel ölçümler ve periyodik kontroller gerçekleştirilir.",
+      },
+
+      {
+        title:
+          "Teknik Değerlendirme",
+
+        text:
+          "Tespit edilen riskler, eksikler ve iyileştirme ihtiyaçları belirlenir.",
+      },
+
+      {
+        title:
+          "Raporlama ve Takip",
+
+        text:
+          "Teknik sonuçlar raporlanır ve gerekli işletme takibi yürütülür.",
+      },
     ],
-    processTitle:
-      "Akıllı otomasyon sistemlerinde konfor, güvenlik ve enerji kontrolü.",
-    processText:
-      "Otomasyon çözümleri; kullanıcı alışkanlıkları, yapı fonksiyonu, enerji verimliliği ve teknik altyapı birlikte düşünülerek tasarlanır.",
   },
 ];
 
-export function getServiceBySlug(slug) {
-  return services.find((service) => service.slug === slug);
+export function getServiceBySlug(
+  slug,
+) {
+  return services.find(
+    (service) =>
+      service.slug === slug,
+  );
 }

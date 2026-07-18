@@ -1,29 +1,46 @@
-/* ======================================================
+/* =========================================================
    MERT ATAM MÜHENDİSLİK
-   MEGA MENU - CLEAN PREMIUM VERSION
-====================================================== */
+   MEGA MENU — REFINED LUXURY
+========================================================= */
 
 .mega-menu {
   position: absolute;
   top: 92px;
   left: 0;
   z-index: 1500;
-
   width: 100%;
   height: 430px;
-
-  background: #ffffff;
+  overflow: hidden;
   color: #111827;
+  background: rgba(255, 255, 255, 0.985);
+  border-bottom: 1px solid rgba(17, 24, 39, 0.1);
+  box-shadow: 0 30px 72px rgba(15, 23, 42, 0.1);
+  animation: megaMenuEnter 280ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
 
-  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.08);
-
-  animation: megaMenuEnter 0.24s ease forwards;
+.mega-menu::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 4% 0%,
+      rgba(22, 67, 126, 0.045),
+      transparent 28%
+    ),
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(17, 24, 39, 0.018) 52%,
+      transparent 100%
+    );
 }
 
 @keyframes megaMenuEnter {
   from {
     opacity: 0;
-    transform: translateY(-8px);
+    transform: translateY(-10px);
   }
 
   to {
@@ -32,276 +49,514 @@
   }
 }
 
-/* ANA TAŞIYICI */
+/* =========================================================
+   ANA YERLEŞİM
+========================================================= */
 
 .mega-menu-shell {
-  width: min(1580px, calc(100% - 120px));
+  position: relative;
+  z-index: 2;
+  width: min(1640px, calc(100% - 120px));
   height: 100%;
-  margin: 0 auto;
-
   display: grid;
-  grid-template-columns: 640px 1fr;
+  grid-template-columns: minmax(430px, 0.88fr) minmax(600px, 1.12fr);
   align-items: center;
-  gap: 72px;
+  gap: clamp(58px, 5vw, 92px);
+  margin-inline: auto;
+  padding: 42px 0;
 }
 
-/* SOL GÖRSEL KART */
+/* =========================================================
+   SOL ÖNE ÇIKAN GÖRSEL
+========================================================= */
 
-.mega-menu-card {
+.mega-menu-feature {
   position: relative;
-
   width: 100%;
-  height: 310px;
-
+  height: 346px;
   display: block;
   overflow: hidden;
-
   color: #ffffff;
   text-decoration: none;
-  background: #07111f;
+  background: #08111e;
 }
 
-.mega-menu-card img {
+.mega-menu-feature::after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  z-index: 3;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: border-color 320ms ease;
+}
+
+.mega-menu-feature-image {
   position: absolute;
   inset: 0;
-
   width: 100%;
   height: 100%;
-
+  display: block;
   object-fit: cover;
   object-position: center;
-
-  filter: brightness(0.78) contrast(1.04) saturate(0.98);
-  transform: scale(1.015);
-
+  filter: brightness(0.72) contrast(1.06) saturate(0.86);
+  transform: scale(1.025);
+  animation: megaMenuImageEnter 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
   transition:
-    transform 0.55s ease,
-    filter 0.55s ease;
+    transform 780ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 420ms ease;
 }
 
-.mega-menu-card:hover img {
-  transform: scale(1.055);
-  filter: brightness(0.88) contrast(1.05) saturate(1);
+@keyframes megaMenuImageEnter {
+  from {
+    opacity: 0.65;
+    transform: scale(1.055);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.025);
+  }
 }
 
-.mega-menu-card-overlay {
+.mega-menu-feature-overlay {
   position: absolute;
   inset: 0;
-  z-index: 2;
-
+  z-index: 1;
   background:
     linear-gradient(
       90deg,
-      rgba(3, 10, 22, 0.72) 0%,
-      rgba(3, 10, 22, 0.45) 52%,
-      rgba(3, 10, 22, 0.16) 100%
+      rgba(4, 12, 25, 0.82) 0%,
+      rgba(4, 12, 25, 0.48) 52%,
+      rgba(4, 12, 25, 0.18) 100%
     ),
     linear-gradient(
-      0deg,
-      rgba(3, 10, 22, 0.46) 0%,
-      rgba(3, 10, 22, 0.12) 58%,
-      rgba(3, 10, 22, 0.12) 100%
+      180deg,
+      rgba(4, 12, 25, 0.05) 22%,
+      rgba(4, 12, 25, 0.72) 100%
     );
 }
 
-.mega-menu-card-content {
+.mega-menu-feature-content {
   position: relative;
-  z-index: 3;
-
+  z-index: 4;
   height: 100%;
-  padding: 38px 44px 34px;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  padding: 38px 42px;
 }
 
-.mega-menu-card-label {
-  margin-bottom: 10px;
-
-  font-size: 11px;
-  line-height: 1;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-
-  color: rgba(255, 255, 255, 0.72);
-}
-
-.mega-menu-card h2 {
-  margin: 0;
-
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 46px;
-  line-height: 0.98;
-  font-weight: 500;
-  letter-spacing: -0.035em;
-
-  color: #ffffff;
-  text-shadow: 0 12px 34px rgba(0, 0, 0, 0.36);
-}
-
-.mega-menu-card-link {
-  position: relative;
-
-  width: 100%;
-  margin-top: 24px;
-  padding-bottom: 12px;
-
-  display: flex;
+.mega-menu-feature-eyebrow {
+  display: inline-flex;
   align-items: center;
   gap: 12px;
-
-  font-size: 13px;
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 9px;
   font-weight: 700;
-
-  color: #ffffff;
-}
-
-.mega-menu-card-link::after {
-  content: "";
-
-  position: absolute;
-  left: 0;
-  bottom: 0;
-
-  width: 100%;
-  height: 2px;
-
-  background: #ff3b35;
-}
-
-.mega-menu-card-link strong {
-  color: #ff3b35;
-  font-size: 15px;
   line-height: 1;
-
-  transform: translateX(0);
-  transition: transform 0.22s ease;
+  letter-spacing: 0.24em;
 }
 
-.mega-menu-card:hover .mega-menu-card-link strong {
-  transform: translateX(6px);
+.mega-menu-feature-eyebrow::before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.46);
 }
 
-/* SAĞ LİNK ALANI */
-
-.mega-menu-links {
-  width: 100%;
-
-  display: grid;
-  grid-template-columns: repeat(2, minmax(260px, 1fr));
-  gap: 64px;
-
-  padding: 10px 84px 10px 0;
+.mega-menu-feature-content > strong {
+  max-width: 470px;
+  color: #ffffff;
+  font-size: clamp(27px, 2.05vw, 38px);
+  font-weight: 510;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
 }
 
-.mega-menu-column {
+.mega-menu-feature-link {
+  width: min(100%, 260px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 24px;
+  padding-top: 14px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.mega-menu-feature-link svg {
+  flex: 0 0 auto;
+  transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mega-menu-feature:hover::after {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.mega-menu-feature:hover .mega-menu-feature-image {
+  filter: brightness(0.79) contrast(1.06) saturate(0.94);
+  transform: scale(1.065);
+}
+
+.mega-menu-feature:hover .mega-menu-feature-link svg {
+  transform: translate(3px, -3px);
+}
+
+/* =========================================================
+   SAĞ İÇERİK
+========================================================= */
+
+.mega-menu-content {
+  min-width: 0;
+  height: 346px;
   display: flex;
   flex-direction: column;
 }
 
-/* SATIRLAR */
+.mega-menu-header {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  align-items: start;
+  gap: 28px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(17, 24, 39, 0.12);
+}
+
+.mega-menu-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  padding-top: 5px;
+  color: rgba(17, 24, 39, 0.47);
+  font-size: 9px;
+  font-weight: 750;
+  line-height: 1;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.mega-menu-eyebrow::before {
+  content: "";
+  width: 27px;
+  height: 1px;
+  background: rgba(17, 24, 39, 0.32);
+}
+
+.mega-menu-heading-row {
+  display: grid;
+  grid-template-columns: minmax(270px, 0.95fr) minmax(250px, 1.05fr);
+  align-items: end;
+  gap: 30px;
+}
+
+.mega-menu-heading-row h2 {
+  margin: 0;
+  color: #111827;
+  font-size: clamp(24px, 1.8vw, 32px);
+  font-weight: 510;
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.mega-menu-heading-row p {
+  margin: 0;
+  color: rgba(17, 24, 39, 0.6);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   BAĞLANTILAR
+========================================================= */
+
+.mega-menu-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 36px;
+  margin-top: 17px;
+}
 
 .mega-menu-row {
-  min-height: 58px;
+  position: relative;
+  min-width: 0;
+  min-height: 61px;
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr) 32px;
+  align-items: center;
+  gap: 11px;
+  overflow: hidden;
+  color: #111827;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(17, 24, 39, 0.12);
+}
 
+.mega-menu-row::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 1px;
+  background: #123e73;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 360ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mega-menu-row-number {
+  color: rgba(17, 24, 39, 0.34);
+  font-size: 8px;
+  font-weight: 750;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  transition: color 260ms ease;
+}
+
+.mega-menu-row-label {
+  min-width: 0;
+  color: currentColor;
+  font-size: 13px;
+  font-weight: 570;
+  line-height: 1.28;
+  letter-spacing: -0.015em;
+  transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mega-menu-row-icon {
+  width: 29px;
+  height: 29px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(17, 24, 39, 0.5);
+  border: 1px solid rgba(17, 24, 39, 0.13);
+  border-radius: 50%;
+  transition:
+    color 280ms ease,
+    background 280ms ease,
+    border-color 280ms ease,
+    transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mega-menu-row:hover::before,
+.mega-menu-row.is-active::before {
+  transform: scaleX(1);
+}
+
+.mega-menu-row:hover .mega-menu-row-number,
+.mega-menu-row.is-active .mega-menu-row-number {
+  color: #123e73;
+}
+
+.mega-menu-row:hover .mega-menu-row-label,
+.mega-menu-row.is-active .mega-menu-row-label {
+  transform: translateX(3px);
+}
+
+.mega-menu-row:hover .mega-menu-row-icon,
+.mega-menu-row.is-active .mega-menu-row-icon {
+  color: #ffffff;
+  background: #123e73;
+  border-color: #123e73;
+  transform: rotate(-4deg);
+}
+
+/* =========================================================
+   ALT CTA
+========================================================= */
+
+.mega-menu-cta {
+  position: relative;
+  min-height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 22px;
-
-  border-bottom: 1px solid rgba(17, 24, 39, 0.13);
-
-  color: #111827;
+  gap: 30px;
+  margin-top: auto;
+  padding: 0 17px 0 19px;
+  overflow: hidden;
+  color: #ffffff;
   text-decoration: none;
-
-  transition:
-    color 0.22s ease,
-    padding-left 0.22s ease,
-    border-color 0.22s ease;
+  background: #101827;
 }
 
-.mega-menu-row:first-child {
-  border-top: 1px solid rgba(17, 24, 39, 0.13);
+.mega-menu-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, #123e73, #18528f);
+  transform: translateX(-101%);
+  transition: transform 480ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.mega-menu-row span {
-  font-size: 15.5px;
-  line-height: 1.35;
-  font-weight: 500;
-  letter-spacing: -0.005em;
-
-  color: currentColor;
+.mega-menu-cta-copy,
+.mega-menu-cta-icon {
+  position: relative;
+  z-index: 2;
 }
 
-.mega-menu-row strong {
-  color: #ff3b35;
+.mega-menu-cta-copy {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
 
-  font-size: 15px;
+.mega-menu-cta-copy small {
+  flex: 0 0 auto;
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 8px;
+  font-weight: 750;
   line-height: 1;
-  font-weight: 700;
-
-  opacity: 0.7;
-  transform: translateX(-5px);
-
-  transition:
-    opacity 0.22s ease,
-    transform 0.22s ease;
+  letter-spacing: 0.2em;
 }
 
-.mega-menu-row:hover {
-  color: #ff3b35;
-  padding-left: 10px;
-  border-color: rgba(255, 59, 53, 0.34);
+.mega-menu-cta-copy strong {
+  overflow: hidden;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.mega-menu-row:hover strong {
-  opacity: 1;
+.mega-menu-cta-icon {
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #111827;
+  background: #ffffff;
+  border-radius: 50%;
+  transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mega-menu-cta:hover::before {
   transform: translateX(0);
 }
 
-/* RESPONSIVE */
+.mega-menu-cta:hover .mega-menu-cta-icon {
+  transform: translateX(4px);
+}
 
-@media (max-width: 1400px) {
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1450px) {
   .mega-menu-shell {
-    width: calc(100% - 80px);
-    grid-template-columns: 560px 1fr;
-    gap: 54px;
+    width: calc(100% - 88px);
+    grid-template-columns: minmax(390px, 0.82fr) minmax(590px, 1.18fr);
+    gap: 58px;
+  }
+
+  .mega-menu-header {
+    grid-template-columns: 125px minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .mega-menu-heading-row {
+    gap: 22px;
   }
 
   .mega-menu-links {
-    gap: 44px;
-    padding-right: 44px;
-  }
-
-  .mega-menu-card h2 {
-    font-size: 42px;
+    column-gap: 28px;
   }
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 1220px) {
+  .mega-menu-shell {
+    width: calc(100% - 64px);
+    grid-template-columns: 390px minmax(0, 1fr);
+    gap: 42px;
+  }
+
+  .mega-menu-feature-content {
+    padding: 34px;
+  }
+
+  .mega-menu-header {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .mega-menu-eyebrow {
+    padding-top: 0;
+  }
+
+  .mega-menu-heading-row {
+    grid-template-columns: minmax(230px, 0.95fr) minmax(220px, 1.05fr);
+  }
+
+  .mega-menu-row-label {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1040px) {
   .mega-menu {
-    height: auto;
+    height: 430px;
   }
 
   .mega-menu-shell {
-    padding: 36px 0;
-    grid-template-columns: 1fr;
+    width: calc(100% - 48px);
+    grid-template-columns: 340px minmax(0, 1fr);
     gap: 34px;
   }
 
-  .mega-menu-card {
-    height: 270px;
+  .mega-menu-feature,
+  .mega-menu-content {
+    height: 336px;
+  }
+
+  .mega-menu-feature-content {
+    padding: 29px;
+  }
+
+  .mega-menu-heading-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .mega-menu-heading-row p {
+    display: none;
   }
 
   .mega-menu-links {
-    padding-right: 0;
+    column-gap: 22px;
   }
 }
 
 @media (max-width: 900px) {
   .mega-menu {
     display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mega-menu,
+  .mega-menu-feature-image,
+  .mega-menu-feature::after,
+  .mega-menu-feature-link svg,
+  .mega-menu-row::before,
+  .mega-menu-row-number,
+  .mega-menu-row-label,
+  .mega-menu-row-icon,
+  .mega-menu-cta::before,
+  .mega-menu-cta-icon {
+    animation: none;
+    transition: none;
   }
 }

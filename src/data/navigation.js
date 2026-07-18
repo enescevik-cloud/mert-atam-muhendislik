@@ -1,18 +1,83 @@
 export const aboutLinks = [
-  { label: 'Biz Kimiz?', path: '/hakkinda/biz-kimiz' },
-  { label: 'Vizyon', path: '/hakkinda/vizyon' },
-  { label: 'Misyon', path: '/hakkinda/misyon' }
+  {
+    label: "Biz Kimiz?",
+    path: "/kurumsal#biz-kimiz",
+  },
+  {
+    label: "Vizyonumuz",
+    path: "/kurumsal#vizyon",
+  },
+  {
+    label: "Misyonumuz",
+    path: "/kurumsal#misyon",
+  },
+  {
+    label: "Kurumsal Yaklaşım",
+    path: "/kurumsal#kurumsal-yaklasim",
+  },
+  {
+    label: "Mühendislik Anlayışımız",
+    path: "/kurumsal#muhendislik-anlayisi",
+  },
+  {
+    label: "Kalite Politikamız",
+    path: "/kurumsal#kalite-politikasi",
+  },
 ];
 
 export const serviceLinks = [
-  { label: 'Elektrik Projelendirme', slug: 'elektrik-projelendirme' },
-  { label: 'AG Sistemleri', slug: 'ag-sistemleri' },
-  { label: 'OG Sistemleri', slug: 'og-sistemleri' },
-  { label: 'Trafo Projeleri', slug: 'trafo-projeleri' },
-  { label: 'Enerji Nakil Hatları', slug: 'enerji-nakil-hatlari' },
-  { label: 'GES Sistemleri', slug: 'ges-sistemleri' },
-  { label: 'AutoCAD Teknik Çizim', slug: 'autocad-teknik-cizim' },
-  { label: 'Keşif & Metraj', slug: 'kesif-metraj' },
-  { label: 'Teknik Danışmanlık', slug: 'teknik-danismanlik' },
-  { label: 'Taahhüt Hizmetleri', slug: 'taahhut-hizmetleri' }
+  {
+    label: "Elektrik Proje Hizmetlerimiz",
+    path: "/hizmetler/elektrik-proje-hizmetleri",
+  },
+  {
+    label: "Elektrik Taahhüt Hizmetleri",
+    path: "/hizmetler/elektrik-taahhut-hizmetleri",
+  },
+  {
+    label: "Akıllı Ev Otomasyon Hizmetlerimiz",
+    path: "/hizmetler/akilli-ev-otomasyon-hizmetleri",
+  },
+  {
+    label: "Elektrik Mühendislik Hizmetlerimiz",
+    path: "/hizmetler/elektrik-muhendislik-hizmetleri",
+  },
+];
+
+export const serviceSupportLinks = [
+  {
+    label: "Teklif ve Proje Talebi",
+    path: "/iletisim#teklif-talebi",
+  },
+  {
+    label: "İletişim",
+    path: "/iletisim",
+  },
+];
+
+export const referenceLinks = [
+  {
+    label: "Referanslarımız",
+    path: "/referanslar",
+  },
+  {
+    label: "Proje Alanlarımız",
+    path: "/projeler",
+  },
+  {
+    label: "Elektrik Proje Hizmetlerimiz",
+    path: "/hizmetler/elektrik-proje-hizmetleri",
+  },
+  {
+    label: "Elektrik Taahhüt Hizmetleri",
+    path: "/hizmetler/elektrik-taahhut-hizmetleri",
+  },
+  {
+    label: "Teklif Talebi",
+    path: "/iletisim#teklif-talebi",
+  },
+  {
+    label: "İletişim",
+    path: "/iletisim",
+  },
 ];

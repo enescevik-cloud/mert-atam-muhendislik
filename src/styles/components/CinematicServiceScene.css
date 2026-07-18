@@ -1,0 +1,1303 @@
+.cinematic-scene {
+  position: relative;
+
+  width: 100%;
+  height: 178vh;
+  min-height: 1180px;
+
+  overflow: clip;
+
+  background: #07111d;
+}
+
+.cinematic-scene-sticky {
+  position: sticky;
+  top: 0;
+
+  width: 100%;
+  height: 100svh;
+  min-height: 720px;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  background: #07111d;
+}
+
+.cinematic-scene-media,
+.cinematic-scene-image-layer,
+.cinematic-scene-surface-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.cinematic-scene-image-layer {
+  inset: -5%;
+
+  will-change: transform;
+}
+
+.cinematic-scene-image-layer img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  filter:
+    brightness(0.78)
+    saturate(0.92)
+    contrast(1.06);
+
+  will-change: transform;
+}
+
+.cinematic-scene-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 9, 16, 0.86) 0%,
+      rgba(3, 9, 16, 0.5) 37%,
+      rgba(3, 9, 16, 0.12) 72%,
+      rgba(3, 9, 16, 0.28) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(3, 9, 16, 0.28) 0%,
+      rgba(3, 9, 16, 0.03) 38%,
+      rgba(3, 9, 16, 0.64) 100%
+    );
+
+  pointer-events: none;
+}
+
+.cinematic-scene[data-align="right"]
+  .cinematic-scene-overlay {
+  background:
+    linear-gradient(
+      270deg,
+      rgba(3, 9, 16, 0.9) 0%,
+      rgba(3, 9, 16, 0.55) 38%,
+      rgba(3, 9, 16, 0.1) 73%,
+      rgba(3, 9, 16, 0.24) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(3, 9, 16, 0.24) 0%,
+      rgba(3, 9, 16, 0.03) 40%,
+      rgba(3, 9, 16, 0.66) 100%
+    );
+}
+
+.cinematic-scene-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+
+  box-shadow:
+    inset 0 0 170px
+    rgba(0, 0, 0, 0.22),
+    inset 0 -150px 180px
+    rgba(0, 0, 0, 0.22);
+
+  pointer-events: none;
+}
+
+.cinematic-scene-film-grain {
+  position: absolute;
+  inset: -45%;
+  z-index: 4;
+
+  width: 190%;
+  height: 190%;
+
+  opacity: 0.035;
+
+  background-image:
+    radial-gradient(
+      rgba(255, 255, 255, 0.8)
+      0.6px,
+      transparent 0.72px
+    );
+
+  background-size: 4px 4px;
+
+  mix-blend-mode: soft-light;
+
+  animation:
+    cinematic-film-grain
+    10s
+    steps(8)
+    infinite;
+
+  pointer-events: none;
+}
+
+.cinematic-scene-frame {
+  position: relative;
+  z-index: 6;
+
+  width:
+    min(
+      1690px,
+      calc(100% - 100px)
+    );
+
+  height: 100%;
+  margin: 0 auto;
+
+  padding:
+    clamp(
+      118px,
+      13vh,
+      148px
+    )
+    0
+    38px;
+
+  display: grid;
+
+  grid-template-rows:
+    auto
+    1fr
+    auto;
+}
+
+.cinematic-scene-meta {
+  display: grid;
+
+  grid-template-columns:
+    auto
+    minmax(70px, 1fr)
+    auto;
+
+  gap: 19px;
+  align-items: center;
+
+  color:
+    rgba(255, 255, 255, 0.78);
+
+  will-change: transform;
+}
+
+.cinematic-scene-number {
+  color: #ff5148;
+
+  font-size:
+    clamp(
+      13px,
+      1vw,
+      18px
+    );
+
+  line-height: 1;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+}
+
+.cinematic-scene-meta-rule {
+  height: 1px;
+
+  background:
+    rgba(255, 255, 255, 0.22);
+}
+
+.cinematic-scene-eyebrow {
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 850;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.cinematic-scene-copy {
+  align-self: center;
+
+  width:
+    min(
+      1060px,
+      74vw
+    );
+
+  will-change:
+    opacity,
+    transform;
+}
+
+.cinematic-scene[data-align="right"]
+  .cinematic-scene-copy {
+  margin-left: auto;
+}
+
+.cinematic-scene-kicker {
+  display: inline-block;
+
+  margin-bottom:
+    clamp(
+      17px,
+      2.2vh,
+      28px
+    );
+
+  color: #ff5148;
+
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 850;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.cinematic-scene-title {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      72px,
+      8.4vw,
+      158px
+    );
+
+  line-height: 0.84;
+  font-weight: 400;
+  letter-spacing: -0.069em;
+
+  text-wrap: balance;
+}
+
+.cinematic-scene-title-mask {
+  display: block;
+
+  overflow: hidden;
+
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+
+.cinematic-scene-title-line {
+  display: block;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 22px 56px
+    rgba(0, 0, 0, 0.28);
+
+  will-change:
+    opacity,
+    transform;
+}
+
+.cinematic-scene-statement {
+  max-width: 730px;
+
+  margin:
+    clamp(
+      23px,
+      3vh,
+      38px
+    )
+    0
+    0;
+
+  color:
+    rgba(255, 255, 255, 0.8);
+
+  font-size:
+    clamp(
+      17px,
+      1.45vw,
+      25px
+    );
+
+  line-height: 1.58;
+  font-weight: 430;
+
+  text-wrap: balance;
+}
+
+.cinematic-scene-link {
+  position: relative;
+
+  margin-top:
+    clamp(
+      29px,
+      4vh,
+      47px
+    );
+
+  padding-bottom: 13px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 17px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 820;
+}
+
+.cinematic-scene-link::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff5148 0 28%,
+      rgba(255, 255, 255, 0.35)
+      28% 100%
+    );
+
+  transform-origin: left;
+
+  transition:
+    transform
+    600ms
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+}
+
+.cinematic-scene-link i {
+  color: #ff5148;
+
+  font-size: 18px;
+  font-style: normal;
+
+  transition:
+    transform
+    500ms
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+}
+
+.cinematic-scene-link:hover::after {
+  transform:
+    scaleX(0.67);
+}
+
+.cinematic-scene-link:hover i {
+  transform:
+    translate(
+      5px,
+      -5px
+    );
+}
+
+.cinematic-scene-footer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  color:
+    rgba(255, 255, 255, 0.64);
+
+  font-size: 9px;
+  line-height: 1;
+  font-weight: 850;
+  letter-spacing: 0.23em;
+  text-transform: uppercase;
+}
+
+.cinematic-scene-footer-rule {
+  height: 1px;
+  flex: 1;
+
+  background:
+    rgba(255, 255, 255, 0.22);
+}
+
+.cinematic-scene-progress-mark {
+  position: absolute;
+  z-index: 7;
+
+  top: 50%;
+  right: 24px;
+
+  width: 1px;
+  height: 82px;
+
+  overflow: hidden;
+
+  background:
+    rgba(255, 255, 255, 0.2);
+
+  transform:
+    translateY(-50%);
+}
+
+.cinematic-scene-progress-mark span {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  background: #ff5148;
+
+  transform-origin: top;
+}
+
+/* =====================================================
+   KREM TEKNİK SAHNE
+===================================================== */
+
+.cinematic-scene[data-visual="editorial-light"],
+.cinematic-scene[data-visual="editorial-light"]
+  .cinematic-scene-sticky {
+  background: #f2eee6;
+}
+
+.cinematic-surface {
+  position: absolute;
+  inset: -6%;
+
+  overflow: hidden;
+}
+
+.cinematic-surface--editorial-light {
+  background:
+    radial-gradient(
+      circle at 78% 20%,
+      rgba(255, 255, 255, 0.98),
+      transparent 31%
+    ),
+    radial-gradient(
+      circle at 20% 82%,
+      rgba(228, 63, 52, 0.045),
+      transparent 25%
+    ),
+    linear-gradient(
+      135deg,
+      #eee9df 0%,
+      #f7f4ed 46%,
+      #ebe6dc 100%
+    );
+}
+
+.cinematic-scene[data-visual="editorial-light"]
+  .cinematic-scene-overlay {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(242, 238, 230, 0.17),
+      transparent 44%,
+      rgba(242, 238, 230, 0.12)
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.08),
+      transparent 48%,
+      rgba(223, 216, 203, 0.28)
+    );
+}
+
+.cinematic-scene[data-visual="editorial-light"]
+  .cinematic-scene-vignette {
+  box-shadow:
+    inset 0 0 150px
+    rgba(63, 56, 47, 0.035),
+    inset 0 -120px 150px
+    rgba(63, 56, 47, 0.04);
+}
+
+.cinematic-scene[data-visual="editorial-light"]
+  .cinematic-scene-film-grain {
+  opacity: 0.055;
+
+  background-image:
+    radial-gradient(
+      rgba(33, 42, 51, 0.48)
+      0.55px,
+      transparent 0.7px
+    );
+
+  mix-blend-mode: multiply;
+}
+
+.cinematic-scene[data-visual="editorial-light"]
+  .cinematic-scene-meta,
+.cinematic-scene[data-visual="editorial-light"]
+  .cinematic-scene-footer {
+  color:
+    rgba(13, 27, 40, 0.64);
+}
+
+.cinematic-scene[data-visual="editorial-light"]
+  .cinematic-scene-meta-rule,
+.cinematic-scene[data-visual="editorial-light"]
+  .cinematic-scene-footer-rule {
+  background:
+    rgba(13, 27, 40, 0.16);
+}
+
+.cinematic-scene[data-visual="editorial-light"]
+  .cinematic-scene-title-line {
+  color: #0a1724;
+
+  text-shadow: none;
+}
+
+.cinematic-scene[data-visual="editorial-light"]
+  .cinematic-scene-statement {
+  color: #596672;
+}
+
+.cinematic-scene[data-visual="editorial-light"]
+  .cinematic-scene-link {
+  color: #0a1724;
+}
+
+.cinematic-scene[data-visual="editorial-light"]
+  .cinematic-scene-link::after {
+  background:
+    linear-gradient(
+      90deg,
+      #df4036 0 28%,
+      rgba(13, 27, 40, 0.22)
+      28% 100%
+    );
+}
+
+.cinematic-scene[data-visual="editorial-light"]
+  .cinematic-scene-progress-mark {
+  background:
+    rgba(13, 27, 40, 0.16);
+}
+
+.cinematic-scene[data-visual="editorial-light"]
+  .cinematic-surface-noise {
+  opacity: 0.055;
+}
+
+.cinematic-scene[data-visual="editorial-light"]
+  .cinematic-surface-grid {
+  opacity: 0.1;
+
+  background-image:
+    linear-gradient(
+      rgba(13, 27, 40, 0.16)
+      1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(13, 27, 40, 0.16)
+      1px,
+      transparent 1px
+    );
+}
+
+.cinematic-scene[data-visual="editorial-light"]
+  .cinematic-surface-line {
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(13, 27, 40, 0.13),
+      rgba(223, 64, 54, 0.23),
+      transparent
+    );
+}
+
+.cinematic-scene[data-visual="editorial-light"]
+  .cinematic-surface-node {
+  border-color:
+    rgba(13, 27, 40, 0.24);
+
+  background: #f2eee6;
+
+  box-shadow:
+    0 0 0 8px
+    rgba(13, 27, 40, 0.025),
+    0 0 24px
+    rgba(13, 27, 40, 0.04);
+}
+
+.cinematic-scene[data-visual="editorial-light"]
+  .cinematic-surface-panel {
+  border-color:
+    rgba(13, 27, 40, 0.08);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.2),
+      rgba(13, 27, 40, 0.012)
+    );
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.4);
+}
+
+.cinematic-scene[data-visual="editorial-light"]
+  .cinematic-surface-arc {
+  border-color:
+    rgba(13, 27, 40, 0.07);
+}
+
+.cinematic-scene[data-visual="editorial-light"]
+  .cinematic-surface-scan {
+  opacity: 0.11;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(223, 64, 54, 0.12),
+      transparent
+    );
+}
+
+.cinematic-scene[data-visual="editorial-light"]
+  .cinematic-surface-word {
+  color:
+    rgba(13, 27, 40, 0.025);
+}
+
+/* =====================================================
+   KOYU TEKNİK SAHNE
+===================================================== */
+
+.cinematic-surface--technical-dark {
+  background:
+    radial-gradient(
+      circle at 22% 28%,
+      rgba(48, 108, 174, 0.17),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 80% 73%,
+      rgba(226, 64, 53, 0.075),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #06101b 0%,
+      #091724 48%,
+      #050b14 100%
+    );
+}
+
+/* =====================================================
+   TEKNİK YÜZEY KATMANLARI
+===================================================== */
+
+.cinematic-surface-noise {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.04;
+
+  background-image:
+    radial-gradient(
+      rgba(255, 255, 255, 0.7)
+      0.55px,
+      transparent 0.7px
+    );
+
+  background-size: 5px 5px;
+}
+
+.cinematic-surface-grid {
+  position: absolute;
+  inset: -12%;
+
+  opacity: 0.1;
+
+  background-image:
+    linear-gradient(
+      rgba(163, 198, 228, 0.2)
+      1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(163, 198, 228, 0.2)
+      1px,
+      transparent 1px
+    );
+
+  background-size:
+    74px
+    74px;
+
+  transform:
+    perspective(1000px)
+    rotateX(63deg)
+    rotateZ(-8deg)
+    translateY(18%);
+
+  transform-origin: center;
+
+  animation:
+    cinematic-surface-grid-shift
+    22s
+    linear
+    infinite;
+}
+
+.cinematic-surface-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(6px);
+
+  opacity: 0.62;
+}
+
+.cinematic-surface-glow--one {
+  top: 8%;
+  left: 7%;
+
+  width: 40vw;
+  height: 40vw;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(56, 121, 191, 0.15),
+      transparent 68%
+    );
+
+  animation:
+    cinematic-surface-glow-one
+    11s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+.cinematic-surface-glow--two {
+  right: 3%;
+  bottom: -18%;
+
+  width: 43vw;
+  height: 43vw;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(226, 70, 56, 0.08),
+      transparent 69%
+    );
+
+  animation:
+    cinematic-surface-glow-two
+    14s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+.cinematic-surface-line {
+  position: absolute;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(161, 205, 239, 0.32),
+      rgba(226, 71, 58, 0.27),
+      transparent
+    );
+}
+
+.cinematic-surface-line--one {
+  top: 23%;
+  left: 9%;
+
+  width: 58%;
+
+  transform:
+    rotate(24deg);
+}
+
+.cinematic-surface-line--two {
+  top: 56%;
+  left: 34%;
+
+  width: 45%;
+
+  transform:
+    rotate(-20deg);
+}
+
+.cinematic-surface-line--three {
+  top: 72%;
+  left: 15%;
+
+  width: 62%;
+
+  transform:
+    rotate(8deg);
+}
+
+.cinematic-surface-node {
+  position: absolute;
+
+  width: 10px;
+  height: 10px;
+
+  border:
+    1px solid
+    rgba(184, 220, 247, 0.46);
+
+  border-radius: 50%;
+
+  background: #081624;
+
+  box-shadow:
+    0 0 0 8px
+    rgba(87, 150, 202, 0.04),
+    0 0 24px
+    rgba(87, 150, 202, 0.12);
+
+  animation:
+    cinematic-surface-node-pulse
+    3.9s
+    ease-in-out
+    infinite;
+}
+
+.cinematic-surface-node--one {
+  top: 20%;
+  right: 20%;
+}
+
+.cinematic-surface-node--two {
+  top: 44%;
+  right: 36%;
+
+  animation-delay: 0.8s;
+}
+
+.cinematic-surface-node--three {
+  top: 63%;
+  right: 17%;
+
+  animation-delay: 1.5s;
+}
+
+.cinematic-surface-node--four {
+  top: 76%;
+  right: 34%;
+
+  animation-delay: 2.1s;
+}
+
+.cinematic-surface-panel {
+  position: absolute;
+
+  border:
+    1px solid
+    rgba(166, 205, 237, 0.1);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.02),
+      rgba(255, 255, 255, 0.008)
+    );
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.035);
+
+  backdrop-filter: blur(4px);
+}
+
+.cinematic-surface-panel--one {
+  top: 15%;
+  right: 8%;
+
+  width: 24%;
+  height: 17%;
+}
+
+.cinematic-surface-panel--two {
+  right: 14%;
+  bottom: 13%;
+
+  width: 29%;
+  height: 18%;
+}
+
+.cinematic-surface-arc {
+  position: absolute;
+
+  border:
+    1px solid
+    rgba(145, 194, 231, 0.11);
+
+  border-radius: 50%;
+
+  animation:
+    cinematic-surface-orbit
+    30s
+    linear
+    infinite;
+}
+
+.cinematic-surface-arc--one {
+  top: 5%;
+  right: 3%;
+
+  width: 43vw;
+  height: 43vw;
+}
+
+.cinematic-surface-arc--two {
+  top: 28%;
+  right: 18%;
+
+  width: 24vw;
+  height: 24vw;
+
+  border-style: dashed;
+
+  animation-direction: reverse;
+  animation-duration: 23s;
+}
+
+.cinematic-surface-scan {
+  position: absolute;
+
+  top: -20%;
+  bottom: -20%;
+  left: -20%;
+
+  width: 20%;
+
+  opacity: 0.13;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(143, 200, 239, 0.25),
+      transparent
+    );
+
+  filter: blur(14px);
+
+  transform:
+    skewX(-12deg);
+
+  animation:
+    cinematic-surface-scan
+    9s
+    cubic-bezier(
+      0.45,
+      0,
+      0.55,
+      1
+    )
+    infinite;
+}
+
+.cinematic-surface-word {
+  position: absolute;
+
+  right: -2%;
+  bottom: -3%;
+
+  color:
+    rgba(255, 255, 255, 0.018);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    clamp(
+      110px,
+      17vw,
+      320px
+    );
+
+  line-height: 0.75;
+  font-weight: 950;
+  letter-spacing: -0.1em;
+
+  pointer-events: none;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1180px) {
+  .cinematic-scene {
+    height: 155vh;
+    min-height: 1000px;
+  }
+
+  .cinematic-scene-frame {
+    width:
+      calc(100% - 64px);
+  }
+
+  .cinematic-scene-copy {
+    width:
+      min(
+        940px,
+        82vw
+      );
+  }
+
+  .cinematic-scene-title {
+    font-size:
+      clamp(
+        62px,
+        9.5vw,
+        116px
+      );
+  }
+
+  .cinematic-scene-progress-mark {
+    display: none;
+  }
+}
+
+/* =====================================================
+   MOBİL
+===================================================== */
+
+@media (max-width: 700px) {
+  .cinematic-scene {
+    height: 135vh;
+    min-height: 900px;
+  }
+
+  .cinematic-scene-sticky {
+    min-height: 650px;
+  }
+
+  .cinematic-scene-frame {
+    width:
+      calc(100% - 36px);
+
+    padding-top: 104px;
+    padding-bottom: 26px;
+  }
+
+  .cinematic-scene-meta {
+    grid-template-columns:
+      auto
+      1fr;
+
+    gap: 13px;
+  }
+
+  .cinematic-scene-eyebrow {
+    grid-column: 1 / -1;
+
+    margin-top: 5px;
+  }
+
+  .cinematic-scene-copy,
+  .cinematic-scene[data-align="right"]
+    .cinematic-scene-copy {
+    width: 100%;
+    margin: 0;
+  }
+
+  .cinematic-scene-title {
+    font-size:
+      clamp(
+        48px,
+        14.5vw,
+        75px
+      );
+
+    line-height: 0.88;
+  }
+
+  .cinematic-scene-statement {
+    font-size: 16px;
+  }
+
+  .cinematic-scene-footer
+    span:last-child {
+    display: none;
+  }
+
+  .cinematic-surface-panel {
+    display: none;
+  }
+}
+
+/* =====================================================
+   HAREKET AZALTMA
+===================================================== */
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+  .cinematic-scene {
+    height: 100svh;
+    min-height: 720px;
+  }
+
+  .cinematic-scene-film-grain,
+  .cinematic-surface-grid,
+  .cinematic-surface-glow,
+  .cinematic-surface-node,
+  .cinematic-surface-arc,
+  .cinematic-surface-scan {
+    animation: none;
+  }
+
+  .cinematic-scene-image-layer,
+  .cinematic-scene-surface-layer,
+  .cinematic-scene-copy,
+  .cinematic-scene-meta {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* =====================================================
+   ANİMASYONLAR
+===================================================== */
+
+@keyframes cinematic-film-grain {
+  0% {
+    transform:
+      translate3d(0, 0, 0);
+  }
+
+  25% {
+    transform:
+      translate3d(-1%, 1.2%, 0);
+  }
+
+  50% {
+    transform:
+      translate3d(1.2%, -1%, 0);
+  }
+
+  75% {
+    transform:
+      translate3d(1%, 1.4%, 0);
+  }
+
+  100% {
+    transform:
+      translate3d(0, 0, 0);
+  }
+}
+
+@keyframes cinematic-surface-grid-shift {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position:
+      74px 74px;
+  }
+}
+
+@keyframes cinematic-surface-glow-one {
+  from {
+    transform:
+      translate3d(-3%, -2%, 0)
+      scale(0.95);
+  }
+
+  to {
+    transform:
+      translate3d(5%, 4%, 0)
+      scale(1.08);
+  }
+}
+
+@keyframes cinematic-surface-glow-two {
+  from {
+    transform:
+      translate3d(3%, 2%, 0)
+      scale(0.94);
+  }
+
+  to {
+    transform:
+      translate3d(-5%, -4%, 0)
+      scale(1.08);
+  }
+}
+
+@keyframes cinematic-surface-node-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+
+    transform:
+      scale(0.82);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform:
+      scale(1.18);
+  }
+}
+
+@keyframes cinematic-surface-orbit {
+  from {
+    transform:
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+}
+
+@keyframes cinematic-surface-scan {
+  0% {
+    left: -20%;
+  }
+
+  55%,
+  100% {
+    left: 118%;
+  }
+}

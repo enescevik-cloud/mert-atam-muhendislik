@@ -1,6 +1,9 @@
-import { useRoutes } from 'react-router-dom';
-import { routes } from './router/routes.jsx';
+import { useRoutes } from "react-router-dom";
 
-export default function App() {
+import routes from "./router/routes.jsx";
+
+function App() {
   return useRoutes(routes);
 }
+
+export default App;

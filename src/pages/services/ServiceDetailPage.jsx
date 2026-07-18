@@ -1,140 +1,387 @@
-import { Link, useParams } from "react-router-dom";
-import { getServiceBySlug, services } from "../../data/services";
-import "../../styles/pages/ServicesPages.css";
+import {
+  useEffect,
+  useMemo,
+} from "react";
+import {
+  Link,
+  Navigate,
+  useParams,
+} from "react-router-dom";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Check,
+} from "lucide-react";
+import { motion } from "framer-motion";
+
+import {
+  getServiceBySlug,
+} from "../../data/services";
+
+import "../../styles/pages/ServiceDetailPage.css";
+
+function setMetaDescription(content) {
+  let meta = document.querySelector(
+    'meta[name="description"]',
+  );
+
+  if (!meta) {
+    meta = document.createElement("meta");
+    meta.setAttribute(
+      "name",
+      "description",
+    );
+    document.head.appendChild(meta);
+  }
+
+  meta.setAttribute("content", content);
+}
+
+function setCanonical(pathname) {
+  let canonical = document.querySelector(
+    'link[rel="canonical"]',
+  );
+
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.setAttribute(
+      "rel",
+      "canonical",
+    );
+    document.head.appendChild(canonical);
+  }
+
+  canonical.setAttribute(
+    "href",
+    `${window.location.origin}${pathname}`,
+  );
+}
+
+function setOpenGraph({
+  title,
+  description,
+  image,
+  pathname,
+}) {
+  const values = [
+    ["og:type", "website"],
+    ["og:title", title],
+    ["og:description", description],
+    [
+      "og:url",
+      `${window.location.origin}${pathname}`,
+    ],
+    [
+      "og:image",
+      image.startsWith("http")
+        ? image
+        : new URL(
+            image,
+            window.location.origin,
+          ).href,
+    ],
+  ];
+
+  values.forEach(([property, content]) => {
+    let meta = document.querySelector(
+      `meta[property="${property}"]`,
+    );
+
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.setAttribute("property", property);
+      document.head.appendChild(meta);
+    }
+
+    meta.setAttribute("content", content);
+  });
+}
 
 function ServiceDetailPage() {
-  const { slug } = useParams();
+  const { serviceSlug } = useParams();
 
-  const service = getServiceBySlug(slug);
+  const service = useMemo(
+    () => getServiceBySlug(serviceSlug),
+    [serviceSlug],
+  );
+
+  useEffect(() => {
+    if (!service) {
+      return undefined;
+    }
+
+    const pathname =
+      `/hizmetler/${service.slug}`;
+
+    document.title =
+      service.seoTitle ||
+      `${service.title} | MERT ATAM MÜHENDİSLİK`;
+
+    setMetaDescription(
+      service.seoDescription ||
+        service.description,
+    );
+
+    setCanonical(pathname);
+
+    setOpenGraph({
+      title:
+        service.seoTitle ||
+        service.title,
+      description:
+        service.seoDescription ||
+        service.description,
+      image:
+        service.detailHero ||
+        service.hero,
+      pathname,
+    });
+
+    const schemaId =
+      "service-detail-schema";
+
+    document
+      .getElementById(schemaId)
+      ?.remove();
+
+    const schema =
+      document.createElement("script");
+
+    schema.id = schemaId;
+    schema.type = "application/ld+json";
+    schema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: service.title,
+      description: service.description,
+      provider: {
+        "@type": "Organization",
+        name: "MERT ATAM MÜHENDİSLİK",
+        url: window.location.origin,
+      },
+      areaServed: {
+        "@type": "AdministrativeArea",
+        name: "İzmir",
+      },
+      url:
+        `${window.location.origin}${pathname}`,
+    });
+
+    document.head.appendChild(schema);
+
+    return () => {
+      document
+        .getElementById(schemaId)
+        ?.remove();
+    };
+  }, [service]);
 
   if (!service) {
     return (
-      <main className="services-page">
-        <section className="service-not-found">
-          <h1>Hizmet bulunamadı</h1>
-          <p>Aradığınız hizmet sayfası mevcut değil.</p>
-          <Link to="/hizmetler">Hizmetlere Dön</Link>
-        </section>
-      </main>
+      <Navigate
+        to="/hizmetler"
+        replace
+      />
     );
   }
 
-  const otherServices = services
-    .filter((item) => item.slug !== service.slug)
-    .slice(0, 3);
+  const heroImage =
+    service.detailHero || service.hero;
 
   return (
-    <main className="services-page">
-      <section
-        className="services-hero service-detail-hero"
-        style={{ backgroundImage: `url(${service.hero})` }}
-      >
-        <div className="services-hero-overlay"></div>
+    <main className="service-detail-page">
+      <section className="service-detail-hero">
+        <div className="service-detail-hero-media">
+          <img
+            src={heroImage}
+            alt={`${service.title} hizmeti`}
+            loading="eager"
+            decoding="async"
+            style={{
+              objectPosition:
+                service.detailFocalPoint ||
+                service.homeFocalPoint ||
+                "center center",
+            }}
+          />
 
-        <div className="services-hero-content">
-          <span>{service.eyebrow}</span>
-          <h1>{service.title}</h1>
+          <span
+            className="service-detail-hero-overlay"
+            aria-hidden="true"
+          />
+        </div>
+
+        <div className="service-detail-container service-detail-hero-layout">
+          <motion.div
+            className="service-detail-hero-content"
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.7,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+          >
+            <span className="service-detail-eyebrow">
+              {service.eyebrow}
+            </span>
+
+            <h1>{service.title}</h1>
+
+            <p>{service.shortText}</p>
+          </motion.div>
+
+          <Link
+            to="/iletisim#teklif-talebi"
+            className="service-detail-hero-action"
+          >
+            <span>
+              Teklif ve Proje Talebi
+            </span>
+
+            <ArrowRight
+              size={18}
+              strokeWidth={1.7}
+              aria-hidden="true"
+            />
+          </Link>
         </div>
       </section>
 
-      <section className="service-detail-intro">
-        <div className="services-container service-detail-grid">
-          <div className="service-detail-heading">
-            <span>{service.eyebrow}</span>
-            <h2>{service.title}</h2>
+      <section className="service-detail-content">
+        <div className="service-detail-container">
+          <header className="service-detail-introduction">
+            <div className="service-detail-introduction-heading">
+              <span>HİZMET KAPSAMI</span>
+
+              <h2>
+                {service.statement}
+              </h2>
+            </div>
+
+            <p>
+              {service.description}
+              {service.seoText
+                ? ` ${service.seoText}`
+                : ""}
+            </p>
+          </header>
+
+          <div className="service-detail-grid">
+            {service.details.map(
+              (item, index) => (
+                <motion.article
+                  className="service-detail-card"
+                  key={item}
+                  initial={{
+                    opacity: 0,
+                    y: 20,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  viewport={{
+                    once: true,
+                    amount: 0.2,
+                  }}
+                  transition={{
+                    duration: 0.52,
+                    delay:
+                      (index % 2) * 0.05,
+                    ease: [
+                      0.16,
+                      1,
+                      0.3,
+                      1,
+                    ],
+                  }}
+                >
+                  <div className="service-detail-card-top">
+                    <span className="service-detail-card-number">
+                      {String(index + 1).padStart(
+                        2,
+                        "0",
+                      )}
+                    </span>
+
+                    <span className="service-detail-card-icon">
+                      <Check
+                        size={17}
+                        strokeWidth={1.7}
+                        aria-hidden="true"
+                      />
+                    </span>
+                  </div>
+
+                  <div className="service-detail-card-body">
+                    <h3>{item}</h3>
+                  </div>
+                </motion.article>
+              ),
+            )}
           </div>
+        </div>
+      </section>
 
-          <div className="service-detail-text">
-            <p>{service.description}</p>
+      <section className="service-detail-contact">
+        <div className="service-detail-container">
+          <div className="service-detail-contact-panel">
+            <div className="service-detail-contact-copy">
+              <span>
+                PROJENİZİ DEĞERLENDİRELİM
+              </span>
 
-            <div className="service-detail-list">
-              {service.details.map((detail, index) => (
-                <div className="service-detail-item" key={detail}>
-                  <strong>{String(index + 1).padStart(2, "0")}</strong>
-                  <span>{detail}</span>
-                </div>
-              ))}
+              <h2>
+                İhtiyacınıza uygun teknik
+                çözümü birlikte belirleyelim.
+              </h2>
+
+              <p>
+                Projenizin kapsamını, mevcut
+                durumunu ve beklentilerinizi
+                paylaşın. Size uygun mühendislik
+                yaklaşımını netleştirelim.
+              </p>
+            </div>
+
+            <div className="service-detail-contact-actions">
+              <Link
+                to="/iletisim#teklif-talebi"
+                className="service-detail-primary-button"
+              >
+                <span>
+                  Teklif ve Proje Talebi
+                </span>
+
+                <ArrowRight
+                  size={18}
+                  strokeWidth={1.7}
+                  aria-hidden="true"
+                />
+              </Link>
+
+              <Link
+                to="/iletisim"
+                className="service-detail-secondary-button"
+              >
+                <span>
+                  İletişim bilgileri
+                </span>
+
+                <ArrowUpRight
+                  size={17}
+                  strokeWidth={1.7}
+                  aria-hidden="true"
+                />
+              </Link>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="service-process-section">
-        <div className="services-container">
-          <div className="service-process-header">
-            <span>Çalışma Yaklaşımı</span>
-            <h2>{service.processTitle}</h2>
-            <p>{service.processText}</p>
-          </div>
-
-          <div className="service-process-grid">
-            <article>
-              <span>01</span>
-              <h3>Analiz</h3>
-              <p>
-                Projenin ihtiyaçları, saha koşulları, enerji gereksinimleri ve
-                teknik gereklilikleri detaylı şekilde değerlendirilir.
-              </p>
-            </article>
-
-            <article>
-              <span>02</span>
-              <h3>Planlama</h3>
-              <p>
-                Güvenlik, maliyet, uygulanabilirlik, yönetmelik şartları ve uzun
-                vadeli sistem performansı birlikte planlanır.
-              </p>
-            </article>
-
-            <article>
-              <span>03</span>
-              <h3>Uygulama Hazırlığı</h3>
-              <p>
-                Proje çıktıları sahada kullanılabilir, açık, düzenli ve teknik
-                olarak güçlü bir yapıya dönüştürülür.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section className="other-services-section">
-        <div className="services-container">
-          <div className="other-services-header">
-            <span>Diğer Hizmetler</span>
-            <h2>Diğer mühendislik hizmetlerimizi inceleyin.</h2>
-          </div>
-
-          <div className="other-services-grid">
-            {otherServices.map((item) => (
-              <Link
-                to={`/hizmetler/${item.slug}`}
-                className="other-service-card"
-                key={item.id}
-              >
-                <img src={item.hero} alt={item.title} />
-
-                <div>
-                  <span>{item.eyebrow}</span>
-                  <h3>{item.title}</h3>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="services-dark-cta">
-        <div className="services-container services-cta-grid">
-          <div>
-            <span>İletişim</span>
-            <h2>Projeniz için doğru hizmet kapsamını birlikte belirleyelim.</h2>
-          </div>
-
-          <Link to="/iletisim" className="services-cta-button">
-            İletişime Geç
-            <strong>→</strong>
-          </Link>
         </div>
       </section>
     </main>
