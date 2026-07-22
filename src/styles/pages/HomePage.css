@@ -1359,4 +1359,181 @@ html {
     transform:
       translateX(-50%);
   }
+}/* =====================================================
+   REFERANS LOGOLARI — BÜYÜK VE SÜREKLİ RENKLİ
+===================================================== */
+
+.home-partner-marquee-item {
+  height: 158px;
+  padding: 18px 24px;
+}
+
+.home-partner-marquee-item img {
+  width: auto;
+  height: auto;
+
+  max-width: 88%;
+  max-height: 94px;
+
+  filter: none;
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.home-partner-marquee-item:hover img,
+.home-partner-marquee-item:focus-visible img {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.13);
+}
+
+@media (max-width: 700px) {
+  .home-partner-marquee-item {
+    width: 220px;
+    height: 126px;
+    padding: 16px 20px;
+  }
+
+  .home-partner-marquee-item img {
+    max-width: 88%;
+    max-height: 76px;
+    transform: scale(1.06);
+  }
+
+  .home-partner-marquee-item:hover img,
+  .home-partner-marquee-item:focus-visible img {
+    transform: scale(1.1);
+  }
+}/* =========================================================
+   ANA SAYFA REFERANS LOGOLARI
+   Sonradan eklenen kesin override ayarları
+========================================================= */
+
+.home-partner-marquee {
+  width: 100% !important;
+  overflow: hidden !important;
+
+  background: #ffffff !important;
+
+  border-top: 1px solid rgba(10, 21, 33, 0.1) !important;
+  border-bottom: 1px solid rgba(10, 21, 33, 0.1) !important;
+}
+
+.home-partner-track {
+  display: flex !important;
+  align-items: stretch !important;
+
+  background: #ffffff !important;
+}
+
+.home-partner-marquee-item {
+  flex: 0 0 clamp(360px, 24vw, 480px) !important;
+
+  width: clamp(360px, 24vw, 480px) !important;
+  height: 225px !important;
+  min-height: 225px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 18px 24px !important;
+
+  background: #ffffff !important;
+
+  border-right: 1px solid rgba(10, 21, 33, 0.1) !important;
+
+  box-sizing: border-box !important;
+}
+
+.home-partner-marquee-item img {
+  display: block !important;
+
+  width: 88% !important;
+  height: 175px !important;
+
+  max-width: 410px !important;
+  max-height: 175px !important;
+
+  object-fit: contain !important;
+  object-position: center !important;
+
+  filter: none !important;
+  opacity: 1 !important;
+
+  transform: scale(1.08) !important;
+
+  transition:
+    transform 420ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.home-partner-marquee-item:hover,
+.home-partner-marquee-item:focus-visible {
+  background: #ffffff !important;
+}
+
+.home-partner-marquee-item:hover img,
+.home-partner-marquee-item:focus-visible img {
+  filter: none !important;
+  opacity: 1 !important;
+
+  transform: scale(1.14) !important;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .home-partner-marquee-item {
+    flex-basis: 330px !important;
+
+    width: 330px !important;
+    height: 190px !important;
+    min-height: 190px !important;
+
+    padding: 16px 20px !important;
+  }
+
+  .home-partner-marquee-item img {
+    width: 90% !important;
+    height: 145px !important;
+
+    max-width: 300px !important;
+    max-height: 145px !important;
+
+    transform: scale(1.07) !important;
+  }
+
+  .home-partner-marquee-item:hover img,
+  .home-partner-marquee-item:focus-visible img {
+    transform: scale(1.12) !important;
+  }
+}
+
+/* MOBİL */
+
+@media (max-width: 600px) {
+  .home-partner-marquee-item {
+    flex-basis: 270px !important;
+
+    width: 270px !important;
+    height: 165px !important;
+    min-height: 165px !important;
+
+    padding: 14px 16px !important;
+  }
+
+  .home-partner-marquee-item img {
+    width: 92% !important;
+    height: 122px !important;
+
+    max-width: 245px !important;
+    max-height: 122px !important;
+
+    transform: scale(1.06) !important;
+  }
+
+  .home-partner-marquee-item:hover img,
+  .home-partner-marquee-item:focus-visible img {
+    transform: scale(1.1) !important;
+  }
 }

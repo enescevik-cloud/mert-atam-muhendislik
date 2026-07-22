@@ -12,6 +12,8 @@ import lydia from "../assets/partners/lydia.png";
 import oralAmbalaj from "../assets/partners/oral-ambalaj.png";
 import ozmarLojistik from "../assets/partners/ozmar-lojistik.png";
 import uzKimya from "../assets/partners/uz-kimya.png";
+import burgerOltreFallback from "../assets/partners/burger-oltre-fallback.svg";
+import alperenMakinaFallback from "../assets/partners/alperen-makina-fallback.svg";
 
 export const partners = [
   {
@@ -194,6 +196,38 @@ export const partners = [
 
     website:
       "https://uzkimya.com/",
+  },
+
+  {
+    id: 15,
+
+    name:
+      "Burger Oltre",
+
+    logo:
+      "https://burgeroltre.com/assets/new_logo_burgeroltre-Be-mZBvN.png",
+
+    fallbackLogo:
+      burgerOltreFallback,
+
+    website:
+      "https://burgeroltre.com/",
+  },
+
+  {
+    id: 16,
+
+    name:
+      "Alperen Makina",
+
+    logo:
+      "https://cdn.turkishmarketer.com/2396/conversions/4778-logo-avatar_lg.webp?v=1782255408",
+
+    fallbackLogo:
+      alperenMakinaFallback,
+
+    website:
+      "https://alperenmakina.com.tr/",
   },
 ];
 

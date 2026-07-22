@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">Burger Oltre</title>
+  <desc id="desc">Burger Oltre için yerel yedek logo</desc>
+  <rect width="1200" height="420" fill="#ffffff"/>
+  <g transform="translate(66 82)" fill="none" stroke="#17120f" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 104c12-57 59-92 126-92s114 35 126 92H20Z"/>
+    <path d="M10 132h272"/>
+    <path d="M22 170h248"/>
+    <path d="M30 200c18 31 56 50 116 50s98-19 116-50H30Z"/>
+  </g>
+  <text x="390" y="191" fill="#17120f" font-family="Arial, Helvetica, sans-serif" font-size="98" font-weight="800" letter-spacing="2">BURGER</text>
+  <text x="392" y="292" fill="#a33824" font-family="Arial, Helvetica, sans-serif" font-size="84" font-weight="700" letter-spacing="16">OLTRE</text>
+</svg>

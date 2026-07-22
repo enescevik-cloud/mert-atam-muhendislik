@@ -2,26 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mertatammuhendislik.com/</loc>
-    <priority>1.00</priority>
   </url>
-
   <url>
     <loc>https://mertatammuhendislik.com/hizmetler</loc>
-    <priority>0.90</priority>
   </url>
-
+  <url>
+    <loc>https://mertatammuhendislik.com/hizmetler/elektrik-proje</loc>
+  </url>
+  <url>
+    <loc>https://mertatammuhendislik.com/hizmetler/elektrik-taahhut</loc>
+  </url>
+  <url>
+    <loc>https://mertatammuhendislik.com/hizmetler/akilli-ev</loc>
+  </url>
+  <url>
+    <loc>https://mertatammuhendislik.com/hizmetler/elektrik-muhendislik</loc>
+  </url>
+  <url>
+    <loc>https://mertatammuhendislik.com/hakkinda</loc>
+  </url>
   <url>
     <loc>https://mertatammuhendislik.com/hakkinda/biz-kimiz</loc>
-    <priority>0.80</priority>
   </url>
-
   <url>
-    <loc>https://mertatammuhendislik.com/cozum-ortaklarimiz</loc>
-    <priority>0.75</priority>
+    <loc>https://mertatammuhendislik.com/hakkinda/vizyon</loc>
   </url>
-
+  <url>
+    <loc>https://mertatammuhendislik.com/hakkinda/misyon</loc>
+  </url>
+  <url>
+    <loc>https://mertatammuhendislik.com/referanslar</loc>
+  </url>
   <url>
     <loc>https://mertatammuhendislik.com/iletisim</loc>
-    <priority>0.85</priority>
   </url>
 </urlset>

@@ -63,16 +63,131 @@ function setCanonical(pathname) {
   );
 }
 
-function PartnersPage() {
-  useEffect(() => {
-    document.title =
-      "Referanslarımız | MERT ATAM MÜHENDİSLİK";
+function setOpenGraph({
+  title,
+  description,
+  pathname,
+  image,
+}) {
+  const values = [
+    ["og:type", "website"],
+    ["og:locale", "tr_TR"],
+    ["og:site_name", "MERT ATAM MÜHENDİSLİK"],
+    ["og:title", title],
+    ["og:description", description],
+    [
+      "og:url",
+      `${window.location.origin}${pathname}`,
+    ],
+    [
+      "og:image",
+      image.startsWith("http")
+        ? image
+        : `${window.location.origin}${image}`,
+    ],
+  ];
 
-    setMetaDescription(
-      "MERT ATAM MÜHENDİSLİK referansları; elektrik proje, elektrik taahhüt, otomasyon ve elektrik mühendislik hizmetlerinde çalışılan kurumsal markalar.",
+  values.forEach(([property, content]) => {
+    let meta = document.querySelector(
+      `meta[property="${property}"]`,
     );
 
-    setCanonical("/referanslar");
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.setAttribute("property", property);
+      document.head.appendChild(meta);
+    }
+
+    meta.setAttribute("content", content);
+  });
+}
+
+function setPartnersSchema() {
+  const schemaId =
+    "mert-atam-partners-schema";
+
+  document
+    .getElementById(schemaId)
+    ?.remove();
+
+  const schema =
+    document.createElement("script");
+
+  schema.id = schemaId;
+  schema.type =
+    "application/ld+json";
+
+  schema.textContent =
+    JSON.stringify({
+      "@context":
+        "https://schema.org",
+      "@type":
+        "ItemList",
+      name:
+        "MERT ATAM MÜHENDİSLİK Referansları",
+      description:
+        "Elektrik proje, elektrik taahhüt, KNX akıllı ev otomasyonu ve elektrik mühendislik hizmetlerinde çalışılan kurumsal referanslar.",
+      numberOfItems:
+        partners.length,
+      itemListElement:
+        partners.map(
+          (partner, index) => ({
+            "@type":
+              "ListItem",
+            position:
+              index + 1,
+            item: {
+              "@type":
+                "Organization",
+              name:
+                partner.name,
+              url:
+                partner.website,
+            },
+          }),
+        ),
+    });
+
+  document.head.appendChild(schema);
+}
+
+function PartnersPage() {
+  useEffect(() => {
+    const title =
+      "Referanslarımız | İzmir Elektrik Proje | MERT ATAM MÜHENDİSLİK";
+
+    const description =
+      "MERT ATAM MÜHENDİSLİK referansları: Burger Oltre, Alperen Makina ve farklı sektörlerde elektrik proje, taahhüt, KNX ve mühendislik çalışmaları.";
+
+    document.title =
+      title;
+
+    setMetaDescription(
+      description,
+    );
+
+    setCanonical(
+      "/referanslar",
+    );
+
+    setOpenGraph({
+      title,
+      description,
+      pathname:
+        "/referanslar",
+      image:
+        partnersHero,
+    });
+
+    setPartnersSchema();
+
+    return () => {
+      document
+        .getElementById(
+          "mert-atam-partners-schema",
+        )
+        ?.remove();
+    };
   }, []);
 
   return (
@@ -206,6 +321,19 @@ function PartnersPage() {
                       alt={`${partner.name} logosu`}
                       loading="lazy"
                       decoding="async"
+                      referrerPolicy="no-referrer"
+                      onError={(event) => {
+                        if (
+                          partner.fallbackLogo &&
+                          event.currentTarget.src !==
+                            partner.fallbackLogo
+                        ) {
+                          event.currentTarget.onerror =
+                            null;
+                          event.currentTarget.src =
+                            partner.fallbackLogo;
+                        }
+                      }}
                     />
                   </div>
 

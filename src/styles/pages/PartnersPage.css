@@ -779,4 +779,152 @@
   .references-logo-item:hover {
     transform: none;
   }
+}/* =========================================================
+   REFERANS KARTLARI — BÜYÜK VE SÜREKLİ RENKLİ LOGOLAR
+========================================================= */
+
+.references-logo-frame {
+  min-height: 210px;
+  padding: 12px 16px;
+}
+
+.references-logo-frame img {
+  display: block;
+
+  width: min(90%, 340px);
+  height: 150px;
+
+  max-width: none;
+  max-height: none;
+
+  object-fit: contain;
+  object-position: center;
+
+  filter: none;
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+.references-logo-item:hover .references-logo-frame img {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.09);
+}
+
+@media (max-width: 820px) {
+  .references-logo-frame {
+    min-height: 190px;
+  }
+
+  .references-logo-frame img {
+    width: min(88%, 310px);
+    height: 136px;
+  }
+}
+
+@media (max-width: 580px) {
+  .references-logo-frame {
+    min-height: 165px;
+    padding: 10px 12px;
+  }
+
+  .references-logo-frame img {
+    width: min(88%, 270px);
+    height: 118px;
+    transform: scale(1.03);
+  }
+
+  .references-logo-item:hover .references-logo-frame img {
+    transform: scale(1.07);
+  }
+}/* =========================================================
+   REFERANS SAYFASI
+   Beyaz logo alanı + daha büyük renkli logolar
+========================================================= */
+
+.references-logo-frame {
+  min-height: 235px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  margin: 0 !important;
+  padding: 20px 24px !important;
+
+  background: #ffffff !important;
+  box-sizing: border-box !important;
+}
+
+.references-logo-frame img {
+  display: block !important;
+
+  width: 94% !important;
+  height: 175px !important;
+
+  max-width: 390px !important;
+  max-height: 175px !important;
+
+  object-fit: contain !important;
+  object-position: center !important;
+
+  filter: none !important;
+  opacity: 1 !important;
+
+  transform: scale(1.08) !important;
+
+  transition:
+    transform 420ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.references-logo-item:hover .references-logo-frame {
+  background: #ffffff !important;
+}
+
+.references-logo-item:hover .references-logo-frame img,
+.references-logo-item:focus-visible .references-logo-frame img {
+  filter: none !important;
+  opacity: 1 !important;
+  transform: scale(1.13) !important;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .references-logo-frame {
+    min-height: 210px !important;
+    padding: 18px 20px !important;
+  }
+
+  .references-logo-frame img {
+    width: 93% !important;
+    height: 155px !important;
+
+    max-width: 340px !important;
+    max-height: 155px !important;
+  }
+}
+
+/* MOBİL */
+
+@media (max-width: 600px) {
+  .references-logo-frame {
+    min-height: 180px !important;
+    padding: 15px 16px !important;
+  }
+
+  .references-logo-frame img {
+    width: 92% !important;
+    height: 130px !important;
+
+    max-width: 285px !important;
+    max-height: 130px !important;
+
+    transform: scale(1.06) !important;
+  }
+
+  .references-logo-item:hover .references-logo-frame img,
+  .references-logo-item:focus-visible .references-logo-frame img {
+    transform: scale(1.1) !important;
+  }
 }

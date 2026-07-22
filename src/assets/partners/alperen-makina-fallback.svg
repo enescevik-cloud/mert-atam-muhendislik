@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">Alperen Makina</title>
+  <desc id="desc">Alperen Makina için yerel yedek logo</desc>
+  <rect width="1200" height="420" fill="#ffffff"/>
+  <g transform="translate(60 66)">
+    <circle cx="145" cy="145" r="112" fill="none" stroke="#184b76" stroke-width="28" stroke-dasharray="54 18"/>
+    <circle cx="145" cy="145" r="54" fill="none" stroke="#184b76" stroke-width="24"/>
+    <path d="M145 75v140M75 145h140" stroke="#184b76" stroke-width="22" stroke-linecap="round"/>
+  </g>
+  <text x="360" y="198" fill="#173b5b" font-family="Arial, Helvetica, sans-serif" font-size="100" font-weight="800" letter-spacing="1">ALPEREN</text>
+  <text x="365" y="292" fill="#6e7f8c" font-family="Arial, Helvetica, sans-serif" font-size="66" font-weight="700" letter-spacing="18">MAKİNA</text>
+</svg>

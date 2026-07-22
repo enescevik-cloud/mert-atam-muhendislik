@@ -233,10 +233,7 @@ function HomePage() {
   const featuredPartners =
     useMemo(
       () =>
-        partners.slice(
-          0,
-          12,
-        ),
+        partners,
       [],
     );
 
@@ -689,10 +686,23 @@ function HomePage() {
                       alt={
                         isDuplicate
                           ? ""
-                          : partner.name
+                          : `${partner.name} logosu`
                       }
                       loading="lazy"
                       decoding="async"
+                      referrerPolicy="no-referrer"
+                      onError={(event) => {
+                        if (
+                          partner.fallbackLogo &&
+                          event.currentTarget.src !==
+                            partner.fallbackLogo
+                        ) {
+                          event.currentTarget.onerror =
+                            null;
+                          event.currentTarget.src =
+                            partner.fallbackLogo;
+                        }
+                      }}
                     />
                   </a>
                 );
