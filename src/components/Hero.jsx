@@ -129,7 +129,7 @@ function Hero() {
               <img
                 className="hero-media"
                 src={slide.image}
-                alt={slide.title.replace("\n", " ")}
+                alt={slide.title.replace(/\n/g," ")}
               />
             )}
           </div>
