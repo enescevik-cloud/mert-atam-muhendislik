@@ -1,0 +1,195 @@
+[
+  {
+    "name": "project-cad",
+    "title": "AutoCAD ve proje hazırlığı",
+    "provenance": "generated-concept",
+    "fit": "cover"
+  },
+  {
+    "name": "project-coordination",
+    "title": "Proje ve saha eşleştirmesi",
+    "provenance": "generated-concept",
+    "fit": "cover"
+  },
+  {
+    "name": "report-singleline",
+    "title": "Tek hat şeması",
+    "provenance": "report-original",
+    "sourcePage": 8,
+    "fit": "contain"
+  },
+  {
+    "name": "taahhut-switchboard",
+    "title": "Pano yerleşimi",
+    "provenance": "generated-concept",
+    "fit": "cover"
+  },
+  {
+    "name": "v10-project-drafting",
+    "title": "Tek hat çalışması",
+    "provenance": "generated-concept",
+    "fit": "cover"
+  },
+  {
+    "name": "v10-panel-labels",
+    "title": "Devre ve cihaz eşleştirmesi",
+    "provenance": "generated-concept",
+    "fit": "cover"
+  },
+  {
+    "name": "electrical-room",
+    "title": "Elektrik dağıtım düzeni",
+    "provenance": "generated-concept",
+    "fit": "cover"
+  },
+  {
+    "name": "report-generator-handling",
+    "title": "Jeneratör saha organizasyonu",
+    "provenance": "report-original",
+    "sourcePage": 16,
+    "fit": "contain"
+  },
+  {
+    "name": "taahhut-cable-pulling",
+    "title": "Güç kablosu hazırlığı",
+    "provenance": "generated-concept",
+    "fit": "cover"
+  },
+  {
+    "name": "report-distribution-panel",
+    "title": "Dağıtım ve kompanzasyon panosu",
+    "provenance": "report-original",
+    "sourcePage": 17,
+    "fit": "contain"
+  },
+  {
+    "name": "v10-panel-installation",
+    "title": "Pano bağlantıları",
+    "provenance": "generated-concept",
+    "fit": "cover"
+  },
+  {
+    "name": "v10-generator",
+    "title": "Jeneratör yerleşimi",
+    "provenance": "generated-concept",
+    "fit": "cover"
+  },
+  {
+    "name": "cables",
+    "title": "Güç kablosu güzergâhı",
+    "provenance": "generated-concept",
+    "fit": "cover"
+  },
+  {
+    "name": "report-cable-joints",
+    "title": "Yeraltı kablo ekleri",
+    "provenance": "report-original",
+    "sourcePage": 10,
+    "fit": "contain"
+  },
+  {
+    "name": "report-warning-tape",
+    "title": "Güzergâh uyarısı",
+    "provenance": "report-original",
+    "sourcePage": 11,
+    "fit": "contain"
+  },
+  {
+    "name": "report-disconnector",
+    "title": "OG ayırıcı düzeni",
+    "provenance": "report-enhanced",
+    "sourcePage": 13,
+    "fit": "contain"
+  },
+  {
+    "name": "report-pole-transformer",
+    "title": "Direk tipi trafo bağlantısı",
+    "provenance": "report-original",
+    "sourcePage": 15,
+    "fit": "contain"
+  },
+  {
+    "name": "v10-cable-bedding",
+    "title": "Kablo yataklama",
+    "provenance": "generated-concept",
+    "fit": "cover"
+  },
+  {
+    "name": "knx-control",
+    "title": "Dokunmatik kontrol",
+    "provenance": "generated-concept",
+    "fit": "cover"
+  },
+  {
+    "name": "knx-panel",
+    "title": "Röle aktüatörleri",
+    "provenance": "generated-concept",
+    "fit": "cover"
+  },
+  {
+    "name": "smart-shading",
+    "title": "Perde senaryoları",
+    "provenance": "generated-concept",
+    "fit": "cover"
+  },
+  {
+    "name": "report-knx-panel",
+    "title": "KNX saha panosu",
+    "provenance": "report-enhanced",
+    "sourcePage": 20,
+    "fit": "contain"
+  },
+  {
+    "name": "smart-entry",
+    "title": "Giriş ve duvar kontrolü",
+    "provenance": "generated-concept",
+    "fit": "cover"
+  },
+  {
+    "name": "report-intercom-logic",
+    "title": "İnterkom ve olay mantığı",
+    "provenance": "report-original",
+    "sourcePage": 23,
+    "fit": "contain"
+  },
+  {
+    "name": "operations-compensation",
+    "title": "Kompanzasyon bileşenleri",
+    "provenance": "generated-concept",
+    "fit": "cover"
+  },
+  {
+    "name": "report-test-resistance",
+    "title": "Direnç ölçümü",
+    "provenance": "report-original",
+    "sourcePage": 19,
+    "fit": "contain"
+  },
+  {
+    "name": "report-test-loop",
+    "title": "Çevrim empedansı testi",
+    "provenance": "report-original",
+    "sourcePage": 19,
+    "fit": "contain"
+  },
+  {
+    "name": "report-transformer",
+    "title": "Dağıtım trafosu",
+    "provenance": "report-enhanced",
+    "sourcePage": 14,
+    "fit": "contain"
+  },
+  {
+    "name": "report-transformer-connections",
+    "title": "Trafo bağlantı detayları",
+    "provenance": "report-original",
+    "sourcePage": 14,
+    "fit": "contain"
+  },
+  {
+    "name": "v10-reactive-controller",
+    "title": "Reaktif güç kontrolü",
+    "provenance": "generated-concept",
+    "fit": "cover"
+  }
+]
