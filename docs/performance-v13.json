@@ -1,0 +1,42 @@
+{
+  "version": "13.0.0",
+  "baseline": "Fresh V12 production build from the previously delivered ZIP, same installed dependency versions",
+  "before": {
+    "initial_js_bytes": 308045,
+    "initial_js_gzip_bytes": 105218,
+    "total_js_bytes": 362590,
+    "total_js_gzip_bytes": 119253,
+    "total_css_bytes": 63713,
+    "dist_bytes": 9755967
+  },
+  "after": {
+    "production_build_passed": true,
+    "initial_js_bytes": 276969,
+    "initial_js_gzip_bytes": 86467,
+    "total_js_bytes": 331514,
+    "total_css_bytes": 63836,
+    "dist_bytes": 9621262,
+    "all_photo_variants_bytes": 6909018,
+    "gzip_method": "Python gzip level 9, mtime=0",
+    "total_js_gzip_bytes": 100504
+  },
+  "initial_js_gzip_reduction_percent": 17.82,
+  "checks": {
+    "clean_npm_ci_offline_passed": true,
+    "clean_production_build_passed": true,
+    "original_five_opening_media_files_byte_identical_to_v12": true,
+    "all_90_technical_photo_variants_byte_identical_to_v12": true,
+    "all_30_photo_metadata_and_srcset_strings_equivalent": true,
+    "all_16_reference_records_preserved": true,
+    "ten_webp_logos_identical_rgba_pixels": true,
+    "home_sections_after_hero_markup_unchanged": true,
+    "inner_pages_unchanged": true,
+    "no_infinite_css_animations_or_scroll_event_handlers": true,
+    "navbar_opacity_layers_and_three_unique_menu_photos_checked": true,
+    "mobile_video_ready_state_4_and_menu_pause_checked": true,
+    "home_no_overflow_320_390_768_and_desktop_checked": true,
+    "mobile_electrical_project_page_no_overflow_or_broken_loaded_images": true,
+    "downscroll_reveals_and_offscreen_video_pause_checked": true
+  },
+  "measurement_limit": "Build byte sizes and functional browser checks only. Cloud browser frame callbacks were throttled, so no FPS or Lighthouse score is claimed; live hosting response time is not measured."
+}

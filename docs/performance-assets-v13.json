@@ -1,0 +1,150 @@
+{
+  "version": "13.0.0",
+  "operation": "Lossless PNG-to-WebP reference logo encoding; original dimensions and RGBA pixels preserved.",
+  "scope": "Referenced logo network transfer only; not claimed as a homepage scrolling bottleneck.",
+  "totalPngBytesForSwitched": 278302,
+  "totalWebpBytesForSwitched": 157090,
+  "logosSwitched": 10,
+  "records": [
+    {
+      "name": "acibadem-kent",
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 44792,
+      "webpBytes": null,
+      "switched": false,
+      "rgbaPixelEquality": true,
+      "pngRetained": true
+    },
+    {
+      "name": "bati-paslanmaz",
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 42767,
+      "webpBytes": null,
+      "switched": false,
+      "rgbaPixelEquality": true,
+      "pngRetained": true
+    },
+    {
+      "name": "bati-polimer",
+      "width": 225,
+      "height": 225,
+      "pngBytes": 1736,
+      "webpBytes": 1442,
+      "switched": true,
+      "rgbaPixelEquality": true,
+      "pngRetained": true
+    },
+    {
+      "name": "blue-green-chemistry",
+      "width": 630,
+      "height": 630,
+      "pngBytes": 138064,
+      "webpBytes": 68150,
+      "switched": true,
+      "rgbaPixelEquality": true,
+      "pngRetained": true
+    },
+    {
+      "name": "borusan-lojistik",
+      "width": 225,
+      "height": 225,
+      "pngBytes": 2522,
+      "webpBytes": 2098,
+      "switched": true,
+      "rgbaPixelEquality": true,
+      "pngRetained": true
+    },
+    {
+      "name": "ersencer",
+      "width": 630,
+      "height": 630,
+      "pngBytes": 107806,
+      "webpBytes": 61262,
+      "switched": true,
+      "rgbaPixelEquality": true,
+      "pngRetained": true
+    },
+    {
+      "name": "intas-celik-boru",
+      "width": 200,
+      "height": 200,
+      "pngBytes": 4529,
+      "webpBytes": null,
+      "switched": false,
+      "rgbaPixelEquality": true,
+      "pngRetained": true
+    },
+    {
+      "name": "kartem-makina",
+      "width": 150,
+      "height": 150,
+      "pngBytes": 3238,
+      "webpBytes": 2940,
+      "switched": true,
+      "rgbaPixelEquality": true,
+      "pngRetained": true
+    },
+    {
+      "name": "kutlusan",
+      "width": 200,
+      "height": 200,
+      "pngBytes": 3996,
+      "webpBytes": null,
+      "switched": false,
+      "rgbaPixelEquality": true,
+      "pngRetained": true
+    },
+    {
+      "name": "lufian",
+      "width": 225,
+      "height": 225,
+      "pngBytes": 1773,
+      "webpBytes": 1320,
+      "switched": true,
+      "rgbaPixelEquality": true,
+      "pngRetained": true
+    },
+    {
+      "name": "lydia",
+      "width": 200,
+      "height": 200,
+      "pngBytes": 12061,
+      "webpBytes": 10170,
+      "switched": true,
+      "rgbaPixelEquality": true,
+      "pngRetained": true
+    },
+    {
+      "name": "oral-ambalaj",
+      "width": 225,
+      "height": 225,
+      "pngBytes": 2417,
+      "webpBytes": 2092,
+      "switched": true,
+      "rgbaPixelEquality": true,
+      "pngRetained": true
+    },
+    {
+      "name": "ozmar-lojistik",
+      "width": 225,
+      "height": 225,
+      "pngBytes": 4484,
+      "webpBytes": 4052,
+      "switched": true,
+      "rgbaPixelEquality": true,
+      "pngRetained": true
+    },
+    {
+      "name": "uz-kimya",
+      "width": 211,
+      "height": 239,
+      "pngBytes": 4201,
+      "webpBytes": 3564,
+      "switched": true,
+      "rgbaPixelEquality": true,
+      "pngRetained": true
+    }
+  ]
+}

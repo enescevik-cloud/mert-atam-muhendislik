@@ -1,0 +1,124 @@
+{
+  "source": "User-provided report, 24 PDF pages; content source only, no institutional affiliation.",
+  "evidence": "Reference days and printed source pages are retained in serviceStories.js and services.js.",
+  "scope": [
+    {
+      "slug": "elektrik-proje",
+      "title": "Elektrik Proje Hizmetleri",
+      "sourcePages": [
+        5,
+        6
+      ],
+      "referenceDays": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "slug": "elektrik-taahhut",
+      "title": "Elektrik Taahhüt Hizmetleri",
+      "sourcePages": [
+        8,
+        11,
+        15,
+        16
+      ],
+      "referenceDays": [
+        4,
+        7,
+        11,
+        12
+      ]
+    },
+    {
+      "slug": "enerji-baglanti-hatlari",
+      "title": "Enerji Bağlantı Hatları",
+      "sourcePages": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "referenceDays": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "slug": "akilli-ev",
+      "title": "KNX ve Akıllı Ev Otomasyon",
+      "sourcePages": [
+        19,
+        20,
+        21,
+        22
+      ],
+      "referenceDays": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "slug": "elektrik-muhendislik",
+      "title": "Elektrik Ölçümleri ve Kompanzasyon",
+      "sourcePages": [
+        16,
+        17,
+        18
+      ],
+      "referenceDays": [
+        12,
+        13,
+        14
+      ]
+    }
+  ],
+  "excludedClaims": [
+    "Ruhsat ve son durum proje ürünleri",
+    "Güç yükseltme projesi",
+    "YG işletme sorumluluğu",
+    "Termal kamera",
+    "Enerji kalitesi",
+    "Yangın algılama",
+    "Topraklama ve yıldırımdan korunma hizmeti",
+    "İzolasyon direnci ve yasal periyodik kontrol iddiası",
+    "Somut iklim ve güvenlik otomasyonu vaatleri",
+    "Kullanıcı eğitimi"
+  ],
+  "photoCount": 30,
+  "perCategory": [
+    {
+      "title": "Elektrik Projelendirme",
+      "count": 6
+    },
+    {
+      "title": "Elektrik Taahhüt",
+      "count": 6
+    },
+    {
+      "title": "Enerji Bağlantı Hatları",
+      "count": 6
+    },
+    {
+      "title": "KNX ve Akıllı Ev Otomasyon",
+      "count": 6
+    },
+    {
+      "title": "Elektrik Ölçümleri ve Kompanzasyon",
+      "count": 6
+    }
+  ]
+}

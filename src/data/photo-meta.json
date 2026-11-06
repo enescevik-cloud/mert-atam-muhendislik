@@ -1,0 +1,140 @@
+{
+  "report-singleline": {
+    "width": 1152,
+    "height": 2048,
+    "fit": "contain",
+    "isSource": true,
+    "variantWidths": {
+      "400": 400,
+      "800": 800,
+      "1600": 1152
+    }
+  },
+  "report-generator-handling": {
+    "width": 794,
+    "height": 1418,
+    "fit": "contain",
+    "isSource": true,
+    "variantWidths": {
+      "400": 400,
+      "800": 794,
+      "1600": 794
+    }
+  },
+  "report-distribution-panel": {
+    "width": 1064,
+    "height": 1418,
+    "fit": "contain",
+    "isSource": true,
+    "variantWidths": {
+      "400": 400,
+      "800": 800,
+      "1600": 1064
+    }
+  },
+  "report-cable-joints": {
+    "width": 1047,
+    "height": 1418,
+    "fit": "contain",
+    "isSource": true,
+    "variantWidths": {
+      "400": 400,
+      "800": 800,
+      "1600": 1047
+    }
+  },
+  "report-warning-tape": {
+    "width": 447,
+    "height": 814,
+    "fit": "contain",
+    "isSource": true,
+    "variantWidths": {
+      "400": 400,
+      "800": 447,
+      "1600": 447
+    }
+  },
+  "report-disconnector": {
+    "width": 1089,
+    "height": 814,
+    "fit": "contain",
+    "isSource": true,
+    "variantWidths": {
+      "400": 400,
+      "800": 800,
+      "1600": 1089
+    }
+  },
+  "report-pole-transformer": {
+    "width": 604,
+    "height": 814,
+    "fit": "contain",
+    "isSource": true,
+    "variantWidths": {
+      "400": 400,
+      "800": 604,
+      "1600": 604
+    }
+  },
+  "report-knx-panel": {
+    "width": 1046,
+    "height": 1418,
+    "fit": "contain",
+    "isSource": true,
+    "variantWidths": {
+      "400": 400,
+      "800": 800,
+      "1600": 1046
+    }
+  },
+  "report-intercom-logic": {
+    "width": 1689,
+    "height": 731,
+    "fit": "contain",
+    "isSource": true
+  },
+  "report-test-resistance": {
+    "width": 608,
+    "height": 814,
+    "fit": "contain",
+    "isSource": true,
+    "variantWidths": {
+      "400": 400,
+      "800": 608,
+      "1600": 608
+    }
+  },
+  "report-test-loop": {
+    "width": 613,
+    "height": 814,
+    "fit": "contain",
+    "isSource": true,
+    "variantWidths": {
+      "400": 400,
+      "800": 613,
+      "1600": 613
+    }
+  },
+  "report-transformer": {
+    "width": 603,
+    "height": 814,
+    "fit": "contain",
+    "isSource": true,
+    "variantWidths": {
+      "400": 400,
+      "800": 603,
+      "1600": 603
+    }
+  },
+  "report-transformer-connections": {
+    "width": 604,
+    "height": 814,
+    "fit": "contain",
+    "isSource": true,
+    "variantWidths": {
+      "400": 400,
+      "800": 604,
+      "1600": 604
+    }
+  }
+}

@@ -1,20 +1,24 @@
 {
-  "name": "mert-atam-eksiksiz",
+  "name": "mert-atam-muhendislik-luxury",
   "private": true,
-  "version": "1.0.0",
+  "version": "13.0.0",
   "type": "module",
   "scripts": {
+    "predev": "node scripts/prepare-photo-meta.mjs",
     "dev": "vite --host 0.0.0.0",
+    "prebuild": "node scripts/prepare-photo-meta.mjs",
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "latest",
-    "framer-motion": "latest",
-    "lucide-react": "latest",
-    "react": "latest",
-    "react-dom": "latest",
+    "@vitejs/plugin-react": "6.0.2",
+    "lucide-react": "1.16.0",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
     "react-router-dom": "7.18.1",
-    "vite": "latest"
+    "vite": "8.1.5"
+  },
+  "engines": {
+    "node": ">=22.12.0"
   }
 }

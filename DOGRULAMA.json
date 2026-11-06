@@ -1,0 +1,150 @@
+{
+  "version": "13.0.0",
+  "base": "Delivered V12 source; approved V2 luxury design preserved",
+  "preserved_base_sha256": {
+    "src/styles.css": "e7f0e290388d627de311b8efdc6fb585d79e46d13902a3a0a852f8516186bcde",
+    "src/pages/inner.css": "a3c4c9d4246048815978bac4e8dfe97607dc8f73ec157c19875eceb917756b64",
+    "src/assets/logo/logo-dark.png": "bbae4bc7b3b1bc0f03631f59e682c4b173a4e9e8bbfa2e8f18588e3a1ab8002b"
+  },
+  "original_fonts_exactly_preserved": true,
+  "content_source": {
+    "document_sha256": "96c30fc243c8ce3c68d8180569d5a05508d116de0985bca9ae1e545f7b1a299b",
+    "pdf_pages": 24,
+    "source_scope_only": true,
+    "institutional_affiliation_added": false,
+    "unsupported_service_claims_removed_from_pages_seo_menu_and_contact_choices": true,
+    "source_evidence": "docs/content-scope-v10.json; sourcePages and referenceDays in services.js and serviceStories.js"
+  },
+  "photography": {
+    "total": 30,
+    "per_service": 6,
+    "report_originals": 10,
+    "report_enhanced": 3,
+    "retained_scope_checked_concepts": 11,
+    "new_report_grounded_concepts": 6,
+    "responsive_webp_files": 90,
+    "no_upscaling_of_small_report_originals": true,
+    "native_source_aspect_ratios_retained": true,
+    "technical_drawing_and_test_screens_not_regenerated": true,
+    "rejected_enhancements_not_used": true,
+    "retired_photo_names": 19,
+    "unsupported_or_unrealistic_original_hero_media_replaced": false,
+    "original_hero_media_restored_explicit_user_request": true
+  },
+  "design": {
+    "shared_photo_left_copy_right_hero": true,
+    "service_feature_stories_each": 4,
+    "navbar_transparent_white_green_preserved": true,
+    "mega_three_distinct_photos_each": true,
+    "downscroll_reveals_preserved": true,
+    "corporate_services_applications_share_editorial_hero": true,
+    "gallery_removed": true,
+    "vision_mission_distinct_concept_photos": true,
+    "home_electrical_photo_story": true,
+    "home_process_real_panel_and_tester_photos": true
+  },
+  "media": {
+    "opening-mobile.mp4": 326155,
+    "opening-desktop.mp4": 936385,
+    "hero-3.jpg": 204132,
+    "opening-poster.jpg": 79261,
+    "hero-2.jpg": 205922
+  },
+  "browser_checks": {
+    "desktop_photo_left_copy_right_11_pages": true,
+    "no_horizontal_overflow_desktop_11_pages": true,
+    "no_broken_loaded_images_desktop_11_pages": true,
+    "mobile_320_all_five_service_pages_photo_above_copy": true,
+    "mobile_320_all_five_services_no_horizontal_overflow": true,
+    "mobile_menu_body_lock_and_video_pause": true,
+    "mobile_engineering_mega_three_photos_five_services": true,
+    "knx_contact_prefill": true,
+    "contact_options_only_five_scoped_services_and_other": true,
+    "no_gallery_links_in_home_header_footer": true,
+    "no_home_gallery_section": true,
+    "old_gallery_url_redirects_services": true,
+    "applications_mega_three_photos_no_gallery_link": true,
+    "vision_mission_two_different_photos_each_loaded": true,
+    "vision_mission_no_horizontal_overflow": true,
+    "restored_opening_video_ready_state_4": true,
+    "hero_2_and_3_controls_load_restored_media": true,
+    "home_new_electrical_photos_desktop_loaded": true,
+    "home_new_photos_320_390_768_loaded": true,
+    "home_no_horizontal_overflow_320_390_768_desktop": true,
+    "home_source_panel_and_test_device_images_loaded": true,
+    "original_opening_media_hashes_unchanged_from_v11": true,
+    "all_other_source_pages_unchanged_from_v11": true
+  },
+  "build": {
+    "production_build_passed": true,
+    "initial_js_bytes": 276969,
+    "initial_js_gzip_bytes": 86467,
+    "total_js_bytes": 331514,
+    "total_css_bytes": 63836,
+    "dist_bytes": 9621262,
+    "all_photo_variants_bytes": 6909018,
+    "gzip_method": "Python gzip level 9, mtime=0"
+  },
+  "note": "Observed local browser behavior and build outputs only; not live-domain Lighthouse/performance measurement.",
+  "requested_changes": [
+    "Reduce scrolling and repeated rendering work while retaining the approved design, content and opening media.",
+    "Deliver root-level GitHub-ready source ZIP with clean install/build verified."
+  ],
+  "github_package": {
+    "root_level_project": true,
+    "node_version": "24",
+    "build_command": "npm run build",
+    "publish_directory": "dist",
+    "node_modules_included": false,
+    "dist_included": false,
+    "git_push_performed": false,
+    "clean_npm_ci_passed": true,
+    "clean_staging_build_passed": true,
+    "web_upload_images_group_count": 91,
+    "archive_name": "mert-atam-github-guncelleme.zip"
+  },
+  "reference_records_preserved": true,
+  "current_partner_imports_sha256": "3e3a17ba696bbceb742002dd80ad3587620ddd51a14465f8c1ce9e7798f47d73",
+  "performance_v13": {
+    "version": "13.0.0",
+    "baseline": "Fresh V12 production build from the previously delivered ZIP, same installed dependency versions",
+    "before": {
+      "initial_js_bytes": 308045,
+      "initial_js_gzip_bytes": 105218,
+      "total_js_bytes": 362590,
+      "total_js_gzip_bytes": 119253,
+      "total_css_bytes": 63713,
+      "dist_bytes": 9755967
+    },
+    "after": {
+      "production_build_passed": true,
+      "initial_js_bytes": 276969,
+      "initial_js_gzip_bytes": 86467,
+      "total_js_bytes": 331514,
+      "total_css_bytes": 63836,
+      "dist_bytes": 9621262,
+      "all_photo_variants_bytes": 6909018,
+      "gzip_method": "Python gzip level 9, mtime=0",
+      "total_js_gzip_bytes": 100504
+    },
+    "initial_js_gzip_reduction_percent": 17.82,
+    "checks": {
+      "clean_npm_ci_offline_passed": true,
+      "clean_production_build_passed": true,
+      "original_five_opening_media_files_byte_identical_to_v12": true,
+      "all_90_technical_photo_variants_byte_identical_to_v12": true,
+      "all_30_photo_metadata_and_srcset_strings_equivalent": true,
+      "all_16_reference_records_preserved": true,
+      "ten_webp_logos_identical_rgba_pixels": true,
+      "home_sections_after_hero_markup_unchanged": true,
+      "inner_pages_unchanged": true,
+      "no_infinite_css_animations_or_scroll_event_handlers": true,
+      "navbar_opacity_layers_and_three_unique_menu_photos_checked": true,
+      "mobile_video_ready_state_4_and_menu_pause_checked": true,
+      "home_no_overflow_320_390_768_and_desktop_checked": true,
+      "mobile_electrical_project_page_no_overflow_or_broken_loaded_images": true,
+      "downscroll_reveals_and_offscreen_video_pause_checked": true
+    },
+    "measurement_limit": "Build byte sizes and functional browser checks only. Cloud browser frame callbacks were throttled, so no FPS or Lighthouse score is claimed; live hosting response time is not measured."
+  }
+}

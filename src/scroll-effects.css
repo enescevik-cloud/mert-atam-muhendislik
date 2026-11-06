@@ -1,0 +1,33 @@
+/* One-time entry effects, driven by the existing IntersectionObserver. */
+[data-reveal].reveal-ready{
+  opacity:0;
+  transform:translate3d(var(--reveal-x,0),var(--reveal-y,30px),0);
+  transition:opacity .7s ease var(--reveal-delay,0ms),transform .85s cubic-bezier(.2,.7,.2,1) var(--reveal-delay,0ms);
+}
+[data-reveal="left"]{--reveal-x:-28px;--reveal-y:0px}
+[data-reveal="right"]{--reveal-x:28px;--reveal-y:0px}
+[data-reveal].revealed{opacity:1;transform:none}
+.solution-grid>.solution:nth-child(even){--reveal-delay:100ms}
+.places-grid>.place:nth-child(2){--reveal-delay:110ms}
+.process-list>li:nth-child(2){--reveal-delay:70ms}
+.process-list>li:nth-child(3){--reveal-delay:140ms}
+.process-list>li:nth-child(4){--reveal-delay:210ms}
+.in-principles-grid>article:nth-child(2),.in-process-grid>article:nth-child(2){--reveal-delay:70ms}
+.in-principles-grid>article:nth-child(3),.in-process-grid>article:nth-child(3){--reveal-delay:140ms}
+.in-process-grid>article:nth-child(4){--reveal-delay:210ms}
+.home-logos[data-reveal]{--reveal-delay:70ms}
+.knx-section,.knx-visual{overflow:clip}
+/* Keep one entry animation per card; large photos no longer scale inside it. */
+.hero-scroll{animation:scroll-cue 1.9s ease-in-out 3}
+.hero-scroll:hover,.hero-scroll:focus-visible{animation-play-state:paused}
+@keyframes scroll-cue{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+@media(max-width:700px){
+  [data-reveal="left"],[data-reveal="right"]{--reveal-x:0px;--reveal-y:22px}
+  [data-reveal].reveal-ready{transition-duration:.6s,.7s}
+  .solution-grid>.solution:nth-child(even),.places-grid>.place:nth-child(2){--reveal-delay:0ms}
+  .process-list>li:nth-child(n){--reveal-delay:40ms}
+}
+@media(prefers-reduced-motion:reduce){
+  [data-reveal].reveal-ready,[data-reveal].revealed{opacity:1;transform:none;transition:none!important}
+  .hero-scroll{animation:none!important}
+}

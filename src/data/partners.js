@@ -1,17 +1,17 @@
 import acibademKent from "../assets/partners/acibadem-kent.png";
 import batiPaslanmaz from "../assets/partners/bati-paslanmaz.png";
-import batiPolimer from "../assets/partners/bati-polimer.png";
-import blueGreenChemistry from "../assets/partners/blue-green-chemistry.png";
-import borusanLojistik from "../assets/partners/borusan-lojistik.png";
-import ersencer from "../assets/partners/ersencer.png";
+import batiPolimer from "../assets/partners/bati-polimer.webp";
+import blueGreenChemistry from "../assets/partners/blue-green-chemistry.webp";
+import borusanLojistik from "../assets/partners/borusan-lojistik.webp";
+import ersencer from "../assets/partners/ersencer.webp";
 import intasCelikBoru from "../assets/partners/intas-celik-boru.png";
-import kartemMakina from "../assets/partners/kartem-makina.png";
+import kartemMakina from "../assets/partners/kartem-makina.webp";
 import kutlusan from "../assets/partners/kutlusan.png";
-import lufian from "../assets/partners/lufian.png";
-import lydia from "../assets/partners/lydia.png";
-import oralAmbalaj from "../assets/partners/oral-ambalaj.png";
-import ozmarLojistik from "../assets/partners/ozmar-lojistik.png";
-import uzKimya from "../assets/partners/uz-kimya.png";
+import lufian from "../assets/partners/lufian.webp";
+import lydia from "../assets/partners/lydia.webp";
+import oralAmbalaj from "../assets/partners/oral-ambalaj.webp";
+import ozmarLojistik from "../assets/partners/ozmar-lojistik.webp";
+import uzKimya from "../assets/partners/uz-kimya.webp";
 import burgerOltreFallback from "../assets/partners/burger-oltre-fallback.svg";
 import alperenMakinaFallback from "../assets/partners/alperen-makina-fallback.svg";
 
@@ -205,7 +205,7 @@ export const partners = [
       "Burger Oltre",
 
     logo:
-      "https://burgeroltre.com/assets/new_logo_burgeroltre-Be-mZBvN.png",
+      burgerOltreFallback,
 
     fallbackLogo:
       burgerOltreFallback,
@@ -221,7 +221,7 @@ export const partners = [
       "Alperen Makina",
 
     logo:
-      "https://cdn.turkishmarketer.com/2396/conversions/4778-logo-avatar_lg.webp?v=1782255408",
+      alperenMakinaFallback,
 
     fallbackLogo:
       alperenMakinaFallback,

@@ -1,511 +1,216 @@
-import energyTransmissionHero from "../assets/services/enerji-nakil-hatlari/hero.jpg";
-
-import electricProjectHero from "../assets/services/elektrik-projelendirme/hero.jpg";
-
-import electricCommitmentHero from "../assets/services/taahhut-hizmetleri/hero.jpg";
-
-import smartHomeHero from "../assets/services/akilli-ev-otomasyon/hero.jpg";
-
-import engineeringHero from "../assets/services/teknik-danismanlik/hero.jpg";
-
-/*
-  /hizmetler sayfasının açılış Hero görseli
-*/
-export const servicesHero =
-  energyTransmissionHero;
+export const servicesHero = '/images/v10-panel-installation-800.webp';
 
 export const services = [
   {
-    number: "01",
-
-    slug: "elektrik-proje",
-
-    eyebrow:
-      "Elektrik Projelendirme",
-
-    title:
-      "Elektrik Proje Hizmetlerimiz",
-
-    shortText:
-      "Yapının kullanım amacı, enerji ihtiyacı ve teknik gereklilikleri doğrultusunda elektrik projeleri hazırlanır.",
-
-    statement:
-      "Doğru proje, güçlü uygulamanın teknik zeminini oluşturur.",
-
-    description:
-      "Konut, ticari yapı, sanayi tesisi ve enerji altyapıları için elektrik projeleri hazırlanır. Proje sürecinde güç ihtiyacı, dağıtım sistemi, koruma düzeni ve ilgili yönetmelikler birlikte değerlendirilir.",
-
-    seoText:
-      "İzmir elektrik proje, İzmir elektrik ruhsat projesi, son durum elektrik projeleri, orta gerilim projeleri, yüksek gerilim projeleri, trafo projesi ve elektrik güç yükseltme projeleri teknik hesaplarla hazırlanır.",
-
-    seoTitle:
-      "İzmir Elektrik Proje Hizmetleri | MERT ATAM MÜHENDİSLİK",
-
-    seoDescription:
-      "İzmir elektrik proje, elektrik ruhsat projesi, trafo projesi, orta gerilim, yüksek gerilim ve güç yükseltme projeleri.",
-
-    hero:
-      electricProjectHero,
-
-    homeVisual:
-      "image",
-
-    homeTitleLines: [
-      "Elektrik Proje",
-      "Hizmetlerimiz",
-    ],
-
-    homeFocalPoint:
-      "center center",
-
-    highlights: [
-      "Elektrik Ruhsat Projeleri",
-      "Son Durum Elektrik Projeleri",
-      "Orta Gerilim Projeleri",
-      "Yüksek Gerilim Projeleri",
-    ],
-
+    number: '01',
+    slug: 'elektrik-proje',
+    eyebrow: 'Elektrik Projelendirme',
+    title: 'Elektrik Proje Hizmetleri',
+    shortText: 'AutoCAD tek hat şemaları, pano yerleşimleri, devre adları ve kablo açıklamalarını aynı çizim üzerinde birlikte ele alıyoruz.',
+    statement: 'Şemadaki bağlantının sahada açık biçimde izlenebilmesini önemsiyoruz.',
+    description: 'Elektrik çizimlerinde besleme, dağıtım noktaları ve çıkış devrelerinin birbiriyle ilişkisini ele alıyoruz. Tek hat şeması ile pano yerleşimini birlikte değerlendiriyor; koruma cihazları, kablo açıklamaları ve devre etiketlerinin tutarlı olmasına odaklanıyoruz.',
+    seoText: 'AutoCAD elektrik çizimleri; tek hat şeması, pano yerleşimi, devre adları, koruma cihazı bilgileri ve kablo açıklamalarıyla birlikte hazırlanır. Akım taşıma kapasitesi, döşeme koşulları, gerilim düşümü ve kısa devre koşulları kablo değerlendirmesinin parçalarıdır.',
+    seoTitle: 'Elektrik Proje ve AutoCAD Tek Hat Şeması | MERT ATAM MÜHENDİSLİK',
+    seoDescription: 'AutoCAD tek hat şeması, pano yerleşimi, devre etiketleri, koruma cihazı ve kablo bilgilerinin birlikte ele alındığı elektrik proje çalışmaları.',
+    hero: '/images/v10-project-drafting-800.webp',
+    photo: 'v10-project-drafting',
+    homeVisual: 'image',
+    homeTitleLines: ['Elektrik Proje', 'Hizmetleri'],
+    homeFocalPoint: 'center center',
+    highlights: ['AutoCAD Tek Hat Şeması', 'Pano Yerleşimi', 'Koruma ve Kablo Bilgileri', 'Devre ve Çizim Kayıtları'],
     details: [
-      "Elektrik Ruhsat Projeleri",
-
-      "Son Durum Elektrik Projeleri",
-
-      "Yüksek Gerilim Projeleri",
-
-      "Orta Gerilim Projeleri",
-
-      "Trafo Projeleri",
-
-      "Enerji Nakil Hatları",
-
-      "Dağıtım Şebekeleri",
-
-      "Elektrik Güç Yükseltme Projeleri",
-
-      "Kuvvetli Akım Projeleri",
-
-      "Zayıf Akım Projeleri",
-
-      "Aydınlatma Projeleri",
-
-      "Topraklama ve Yıldırımdan Korunma Projeleri",
+      'AutoCAD Tek Hat Çizimleri',
+      'Besleme ve Çıkış Devrelerinin Gösterimi',
+      'Pano Yerleşimlerinin Şemayla Eşleştirilmesi',
+      'Devre Adları ve Çizim Referansları',
+      'Koruma Cihazının Anma Akımı',
+      'Kısa Devre Kesme Kapasitesi',
+      'Kablo Akım Taşıma Kapasitesi',
+      'Kablo Döşeme Koşulları',
+      'Gerilim Düşümü ve Kısa Devre Koşulları',
+      'Aydınlatma ve Perde Çıkışlarının Tanımlanması',
+      'Pano Etiketleri ve Kablo Açıklamaları',
+      'Tutarlı Katman, Yazı ve Çizgi Düzeni',
     ],
-
-    processTitle:
-      "Elektrik proje sürecini teknik hesaplardan uygulama detaylarına kadar yönetiyoruz.",
-
-    processText:
-      "İhtiyaç analizi, teknik hesaplar, proje çizimleri ve teslim süreçleri kontrollü şekilde yürütülür.",
-
+    processTitle: 'Çizim, pano ve devre bilgilerini birlikte değerlendiriyoruz.',
+    processText: 'Bağlantıların okunması, şemanın hazırlanması, pano yerleşimiyle eşleştirme ve kayıt kontrolü.',
     processSteps: [
-      {
-        title:
-          "İhtiyaç Analizi",
-
-        text:
-          "Yapının kullanım amacı, mevcut altyapısı ve enerji ihtiyacı değerlendirilir.",
-      },
-
-      {
-        title:
-          "Teknik Hesaplar",
-
-        text:
-          "Güç, gerilim düşümü, kısa devre, koruma ve kablo hesapları hazırlanır.",
-      },
-
-      {
-        title:
-          "Projelendirme",
-
-        text:
-          "Elektrik sistemleri ilgili yönetmeliklere ve uygulama koşullarına göre çizilir.",
-      },
-
-      {
-        title:
-          "Kontrol ve Teslim",
-
-        text:
-          "Proje paftaları, hesaplar ve teknik dokümanlar kontrol edilerek teslim edilir.",
-      },
+      {title: 'Bağlantı Düzeni', text: 'Besleme, dağıtım noktaları ve çıkış devreleri birlikte incelenir.'},
+      {title: 'Tek Hat Çizimi', text: 'Devre adları, koruma cihazları ve kablo açıklamaları AutoCAD çiziminde düzenlenir.'},
+      {title: 'Pano Eşleştirmesi', text: 'Şemadaki devreler pano yerleşimi ve saha etiketleriyle karşılaştırılır.'},
+      {title: 'Kayıt Kontrolü', text: 'Çizim referansları ve devre bilgilerinin birbiriyle tutarlılığı kontrol edilir.'},
     ],
+    sourcePages: [5, 6], referenceDays: [1, 2, 3],
   },
-
   {
-    number: "02",
-
-    slug:
-      "elektrik-taahhut",
-
-    eyebrow:
-      "Elektrik Taahhüt",
-
-    title:
-      "Elektrik Taahhüt Hizmetleri",
-
-    shortText:
-      "Elektrik tesisatlarının malzeme, uygulama, koordinasyon, test ve devreye alma süreçleri yönetilir.",
-
-    statement:
-      "Projeyi, sahada çalışan güvenli bir elektrik sistemine dönüştürüyoruz.",
-
-    description:
-      "Elektrik taahhüt hizmetlerinde uygulama planlaması, malzeme seçimi, saha koordinasyonu, montaj, test ve devreye alma çalışmaları bir bütün olarak yürütülür.",
-
-    seoText:
-      "İzmir elektrik uygulama, trafo kurulumu, şebeke kurulumu, elektrik pano uygulamaları, kablolama, aydınlatma ve zayıf akım tesisatları teknik şartnamelere uygun şekilde gerçekleştirilir.",
-
-    seoTitle:
-      "İzmir Elektrik Taahhüt ve Uygulama | MERT ATAM MÜHENDİSLİK",
-
-    seoDescription:
-      "İzmir elektrik uygulama, elektrik taahhüt, trafo kurulumu, şebeke kurulumu, pano ve tesisat uygulamaları.",
-
-    hero:
-      electricCommitmentHero,
-
-    homeVisual:
-      "editorial-light",
-
-    homeTitleLines: [
-      "Elektrik Taahhüt",
-      "Hizmetleri",
-    ],
-
-    homeFocalPoint:
-      "center center",
-
-    highlights: [
-      "Elektrik Tesisatı Uygulamaları",
-      "Trafo Kurulumu",
-      "Şebeke Kurulumu",
-      "Pano ve Dağıtım Sistemleri",
-    ],
-
+    number: '02',
+    slug: 'elektrik-taahhut',
+    eyebrow: 'Elektrik Taahhüt',
+    title: 'Elektrik Taahhüt Hizmetleri',
+    shortText: 'Dağıtım panoları, güç kabloları ve elektrik ekipmanlarının saha yerleşimini; malzeme ve montaj koordinasyonuyla birlikte ele alıyoruz.',
+    statement: 'Elektrik bağlantıları kadar yerleşim ve saha düzenine de dikkat ediyoruz.',
+    description: 'Elektrik taahhüt çalışmalarında dağıtım panolarını, kablo hazırlığını ve ekipman yerleşimini birlikte değerlendiriyoruz. Pano bağlantılarının çizimlerle eşleşmesine; direk ve jeneratör gibi ekipmanların taşıma, erişim ve montaj adımlarının önceden planlanmasına odaklanıyoruz.',
+    seoText: 'Elektrik uygulamalarında dağıtım panosu düzeni, güç kablosu malzeme kayıtları, taşıma ve döşeme hazırlığı ile saha koordinasyonu birlikte değerlendirilir. Jeneratör yerleşiminde taşıma yolu, havalandırma, egzoz ve bakım erişimi dikkate alınır.',
+    seoTitle: 'Elektrik Taahhüt, Pano ve Saha Uygulaması | MERT ATAM MÜHENDİSLİK',
+    seoDescription: 'Dağıtım panoları, güç kablosu hazırlığı, jeneratör yerleşimi ve elektrik ekipmanlarının saha ve montaj koordinasyonu.',
+    hero: '/images/v10-panel-installation-800.webp',
+    photo: 'v10-panel-installation',
+    homeVisual: 'editorial-light',
+    homeTitleLines: ['Elektrik Taahhüt', 'Hizmetleri'],
+    homeFocalPoint: 'center center',
+    highlights: ['Dağıtım Panosu Düzeni', 'Güç Kablosu Hazırlığı', 'Jeneratör Yerleşimi', 'Saha ve Montaj Koordinasyonu'],
     details: [
-      "Elektrik Tesisatı Uygulamaları",
-
-      "Trafo Kurulumu",
-
-      "Şebeke Kurulumu",
-
-      "Ana Dağıtım Panoları",
-
-      "Tali Dağıtım Panoları",
-
-      "Kablo Tavası ve Kablolama Uygulamaları",
-
-      "Aydınlatma Sistemleri",
-
-      "Topraklama Sistemleri",
-
-      "Zayıf Akım Sistemleri",
-
-      "Yangın Algılama Sistemleri",
-
-      "Test ve Devreye Alma",
-
-      "Uygulama Sonrası Teknik Kontroller",
+      'Dağıtım Panosu Yerleşimi',
+      'Pano İçindeki Dağıtım ve Kompanzasyon Bölümleri',
+      'Cihaz ve Kablo Etiketlerinin Takibi',
+      'Pano Bağlantılarının Çizimle Eşleştirilmesi',
+      'Kablo Makarası ve Malzeme Kayıtları',
+      'Güç Kablosu Taşıma ve Döşeme Hazırlığı',
+      'Kablo Dış Kılıfının Korunması',
+      'Ekipman Taşıma ve Yerleştirme Planlaması',
+      'Jeneratörün Saha Yerleşimi',
+      'Şebeke ve Yedek Besleme Aktarım Düzeni',
+      'Havalandırma, Egzoz ve Bakım Erişimi',
+      'Sahadaki Montaj İşlerinin Koordinasyonu',
     ],
-
-    processTitle:
-      "Elektrik taahhüt çalışmalarını uygulama planından devreye almaya kadar yönetiyoruz.",
-
-    processText:
-      "Malzeme, iş programı, saha koordinasyonu ve kalite kontrolleri tek uygulama planı içerisinde yürütülür.",
-
+    processTitle: 'Malzeme hazırlığını, yerleşimi ve saha bağlantılarını birlikte ele alıyoruz.',
+    processText: 'Çizim ve malzeme kontrolü, taşıma ve erişim planı, montaj koordinasyonu ve devre kayıtları.',
     processSteps: [
-      {
-        title:
-          "Saha İncelemesi",
-
-        text:
-          "Proje, uygulama alanı ve mevcut elektrik altyapısı yerinde incelenir.",
-      },
-
-      {
-        title:
-          "Uygulama Planı",
-
-        text:
-          "Malzeme listeleri, iş programı ve saha uygulama adımları hazırlanır.",
-      },
-
-      {
-        title:
-          "Montaj",
-
-        text:
-          "Elektrik tesisatı ve sistem bileşenleri teknik projeye uygun olarak uygulanır.",
-      },
-
-      {
-        title:
-          "Test ve Devreye Alma",
-
-        text:
-          "Elektriksel kontroller tamamlanarak sistem güvenli şekilde devreye alınır.",
-      },
+      {title: 'Malzeme ve Çizim', text: 'Ekipman, kablo ve pano bilgilerinin proje kayıtlarıyla eşleşmesi incelenir.'},
+      {title: 'Yerleşim Planı', text: 'Taşıma yolu, montaj alanı ve ekipmana erişim birlikte değerlendirilir.'},
+      {title: 'Saha Koordinasyonu', text: 'Ekipmanın taşınması, yerleştirilmesi ve bağlantı hazırlıkları aynı saha planında ele alınır.'},
+      {title: 'Bağlantı ve Kayıt', text: 'Pano etiketleri, cihazlar ve devre referansları çizimle birlikte takip edilir.'},
     ],
+    sourcePages: [8, 11, 15, 16], referenceDays: [4, 7, 11, 12],
   },
-
   {
-    number: "03",
-
-    slug:
-      "akilli-ev",
-
-    eyebrow:
-      "Akıllı Ev Otomasyonu",
-
-    title:
-      "Akıllı Ev Otomasyon Hizmetlerimiz",
-
-    shortText:
-      "Aydınlatma, iklimlendirme, perde, güvenlik ve enerji kontrolü tek otomasyon altyapısında birleştirilir.",
-
-    statement:
-      "Konforu, güvenliği ve enerji kontrolünü tek sistemde birleştiriyoruz.",
-
-    description:
-      "Akıllı ev otomasyon sistemleri, yapının kullanım senaryolarına göre projelendirilir. Aydınlatma, iklimlendirme, perde, güvenlik ve enerji yönetimi merkezi olarak kontrol edilir.",
-
-    seoText:
-      "İzmir akıllı ev sistemi ve İzmir KNX sistemi uygulamalarında otomasyon projelendirme, pano tasarımı, programlama, devreye alma ve kullanıcı senaryoları birlikte yönetilir.",
-
-    seoTitle:
-      "İzmir Akıllı Ev ve KNX Sistemi | MERT ATAM MÜHENDİSLİK",
-
-    seoDescription:
-      "İzmir akıllı ev sistemi, İzmir KNX sistemi, aydınlatma, iklimlendirme, perde ve enerji otomasyonu hizmetleri.",
-
-    hero:
-      smartHomeHero,
-
-    homeVisual:
-      "image",
-
-    homeTitleLines: [
-      "Akıllı Ev",
-      "Otomasyonu",
-    ],
-
-    homeFocalPoint:
-      "center center",
-
-    highlights: [
-      "KNX Otomasyon Sistemleri",
-      "Aydınlatma Kontrolü",
-      "İklimlendirme Kontrolü",
-      "Enerji Yönetimi",
-    ],
-
+    number: '03',
+    slug: 'enerji-baglanti-hatlari',
+    eyebrow: 'Enerji Bağlantı Hatları',
+    title: 'Enerji Bağlantı Hatları',
+    shortText: 'Yeraltı güç kabloları, ek noktaları, yataklama, direk, ayırıcı ve trafo bağlantılarını güzergâh kayıtlarıyla birlikte ele alıyoruz.',
+    statement: 'Güzergâhı ve bağlantı noktaları tanımlanmış bir enerji altyapısı.',
+    description: 'Enerji bağlantılarında kablo güzergâhı, malzeme bilgileri ve ek noktalarını birlikte değerlendiriyoruz. Yeraltı hattındaki yataklama ve dolgu adımları ile direk, ayırıcı ve trafo bağlantı düzenlerini; saha koşulları ve uygulama kayıtlarıyla birlikte ele alıyoruz.',
+    seoText: 'Güç kablosu güzergâhı, kablo ekleri, yataklama, dolgu ve uyarı bandı; direk, OG ayırıcı ve dağıtım trafosu bağlantılarıyla birlikte değerlendirilir. Devre tanımları ve bağlantı noktaları güzergâhın izlenebilmesini destekler.',
+    seoTitle: 'Enerji Bağlantıları, Güç Kabloları ve Trafo | MERT ATAM MÜHENDİSLİK',
+    seoDescription: 'Yeraltı güç kabloları, kablo ekleri, yataklama ve uyarı bandı; direk, OG ayırıcı ve dağıtım trafosu bağlantı düzenleri.',
+    hero: '/images/v10-cable-bedding-800.webp',
+    photo: 'v10-cable-bedding',
+    homeVisual: 'image',
+    homeTitleLines: ['Enerji Bağlantı', 'Hatları'],
+    homeFocalPoint: 'center center',
+    highlights: ['Yeraltı Güç Kabloları', 'Kablo Ek ve Güzergâh Kayıtları', 'Yataklama ve Uyarı Bandı', 'Direk, Ayırıcı ve Trafo'],
     details: [
-      "KNX Otomasyon Sistemleri",
-
-      "Aydınlatma Otomasyonu",
-
-      "İklimlendirme Otomasyonu",
-
-      "Perde ve Panjur Kontrolü",
-
-      "Enerji İzleme ve Yönetimi",
-
-      "Güvenlik Sistemleri Entegrasyonu",
-
-      "Uzaktan Erişim ve Mobil Kontrol",
-
-      "Dokunmatik Panel Uygulamaları",
-
-      "Otomasyon Pano Tasarımı",
-
-      "Senaryo Programlama",
-
-      "Sistem Devreye Alma",
-
-      "Kullanıcı Eğitimi",
+      'Kablo Makarası ve Malzeme Kontrolü',
+      'Güzergâhın Başlangıç ve Bitiş Noktaları',
+      'Geçişler, Diğer Altyapılar ve Saha Erişimi',
+      'Kablo Çekme ve Bükülme Koşulları',
+      'Yeraltı Kablo Ek Düzeni',
+      'Devre ve İletken Tanımlarının Takibi',
+      'Ek Noktalarının Kayıt Altına Alınması',
+      'Kablo Yataklama ve Dolgu Düzeni',
+      'Güzergâh Ölçümleri ve Uyarı Bandı',
+      'Direk ve Ekipman Destek Düzeni',
+      'OG Ayırıcı Bileşenleri ve Bağlantıları',
+      'Dağıtım Trafosu ve Havai Hat Bağlantıları',
     ],
-
-    processTitle:
-      "Akıllı ev sistemini ihtiyaç analizinden kullanıcı senaryolarına kadar tasarlıyoruz.",
-
-    processText:
-      "Otomasyon altyapısı, cihaz seçimi, programlama ve devreye alma süreçleri birlikte yürütülür.",
-
+    processTitle: 'Güzergâh, kablo ve bağlantı düzenini birlikte değerlendiriyoruz.',
+    processText: 'Malzeme ve güzergâh hazırlığı, bağlantı noktaları, saha yerleşimi ve kayıt takibi.',
     processSteps: [
-      {
-        title:
-          "İhtiyaçların Belirlenmesi",
-
-        text:
-          "Kontrol edilmesi istenen sistemler ve kullanım senaryoları belirlenir.",
-      },
-
-      {
-        title:
-          "Sistem Tasarımı",
-
-        text:
-          "KNX altyapısı, otomasyon panosu, cihazlar ve haberleşme yapısı projelendirilir.",
-      },
-
-      {
-        title:
-          "Programlama",
-
-        text:
-          "Aydınlatma, iklimlendirme, perde ve güvenlik senaryoları hazırlanır.",
-      },
-
-      {
-        title:
-          "Devreye Alma",
-
-        text:
-          "Sistem test edilerek kullanıcı ayarları ve kontrol arayüzleri tamamlanır.",
-      },
+      {title: 'Güzergâh Hazırlığı', text: 'Başlangıç ve bitiş noktaları, geçişler ve saha erişimi birlikte incelenir.'},
+      {title: 'Kablo ve Bağlantı', text: 'Kablo yapısı, ek düzeni ve devre tanımları malzeme kayıtlarıyla karşılaştırılır.'},
+      {title: 'Saha Düzeni', text: 'Yataklama, dolgu ve ekipman yerleşimi ilgili uygulama adımlarıyla ele alınır.'},
+      {title: 'Güzergâh Kaydı', text: 'Ek konumları, ölçüm referansları ve bağlantı noktaları kayıtlarla takip edilir.'},
     ],
+    sourcePages: [8, 9, 10, 11, 12, 13, 14], referenceDays: [4, 5, 6, 7, 8, 9, 10],
   },
-
   {
-    number: "04",
-
-    slug:
-      "elektrik-muhendislik",
-
-    eyebrow:
-      "Elektrik Mühendislik",
-
-    title:
-      "Elektrik Mühendislik Hizmetlerimiz",
-
-    shortText:
-      "Elektrik tesislerinin güvenli, verimli ve mevzuata uygun işletilmesi için teknik mühendislik desteği sunulur.",
-
-    statement:
-      "Elektrik sistemlerinin güvenli ve sürdürülebilir işletilmesini sağlıyoruz.",
-
-    description:
-      "Elektrik mühendislik hizmetleri kapsamında teknik danışmanlık, yüksek gerilim işletme sorumluluğu, kompanzasyon takibi, periyodik kontrol ve elektriksel ölçüm hizmetleri sunulur.",
-
-    seoText:
-      "İzmir elektrik mühendisi, İzmir elektrik mühendislik, İzmir yüksek gerilim işletme sorumluluğu, yüksek gerilim işletme, kompanzasyon takibi ve periyodik kontroller alanlarında teknik hizmet sunulur.",
-
-    seoTitle:
-      "İzmir Elektrik Mühendislik Hizmetleri | MERT ATAM MÜHENDİSLİK",
-
-    seoDescription:
-      "İzmir elektrik mühendisi, yüksek gerilim işletme sorumluluğu, kompanzasyon takibi, danışmanlık ve periyodik kontrol hizmetleri.",
-
-    /*
-      Ana sayfadaki hizmet sahnesinde
-      ve hizmet kartlarında kullanılan görsel.
-    */
-    hero:
-      engineeringHero,
-
-    /*
-      Elektrik Mühendislik detay sayfasının
-      açılış Hero görseli.
-    */
-    detailHero:
-      energyTransmissionHero,
-
-    detailFocalPoint:
-      "center center",
-
-    homeVisual:
-      "editorial-light",
-
-    homeTitleLines: [
-      "Elektrik Mühendislik",
-      "Hizmetlerimiz",
-    ],
-
-    homeFocalPoint:
-      "center center",
-
-    highlights: [
-      "Müşavirlik ve Danışmanlık",
-      "YG İşletme Sorumluluğu",
-      "Kompanzasyon Takibi",
-      "Periyodik Kontroller ve Ölçümler",
-    ],
-
+    number: '04',
+    slug: 'akilli-ev',
+    eyebrow: 'KNX ve Akıllı Ev Otomasyon',
+    title: 'KNX ve Akıllı Ev Otomasyon',
+    shortText: 'KNX pano donanımı, ETS adresleme, DALI aydınlatma grupları, perde ve kullanıcı arayüzlerini aynı işlev planında ele alıyoruz.',
+    statement: 'Paneldeki komuttan sahadaki çıkışa, birbiriyle eşleşen işlevler.',
+    description: 'KNX otomasyonunda pano donanımı, bus haberleşmesi ve kullanıcı kontrollerini birlikte değerlendiriyoruz. Aydınlatma ve perde çıkışlarını ETS bilgileriyle eşleştiriyor; DALI grupları, mobil ve dokunmatik panel kontrolleri ile interkom komutlarını aynı sistem içinde ele alıyoruz.',
+    seoText: 'KNX bus bağlantısı, ETS cihaz ve grup adresleri, DALI cihaz eşleştirmeleri, aydınlatma grupları ve perde çıkışları birlikte yapılandırılır. Mobil arayüz, dokunmatik panel, interkom ve bildirim işlevlerinin doğru çıkışlarla eşleşmesi kontrol edilir.',
+    seoTitle: 'KNX ve Akıllı Ev Otomasyon | MERT ATAM MÜHENDİSLİK',
+    seoDescription: 'KNX pano ve ETS programlama, DALI aydınlatma grupları, perde kontrolü, mobil ve dokunmatik panel, interkom ve kapı açma entegrasyonu.',
+    hero: '/images/knx-control-800.webp',
+    photo: 'knx-control',
+    homeVisual: 'image',
+    homeTitleLines: ['KNX ve Akıllı Ev', 'Otomasyon'],
+    homeFocalPoint: 'center center',
+    highlights: ['KNX Pano ve Aktüatörler', 'ETS ve DALI Eşleştirmeleri', 'Aydınlatma ve Perde Kontrolü', 'Panel, Mobil Arayüz ve İnterkom'],
     details: [
-      "Müşavirlik ve Teknik Danışmanlık",
-
-      "Yüksek Gerilim İşletme Sorumluluğu",
-
-      "Yüksek Gerilim Tesislerinin Kontrolü",
-
-      "Kompanzasyon Takibi",
-
-      "Reaktif Enerji Kontrolü",
-
-      "Periyodik Elektrik Kontrolleri",
-
-      "Topraklama Ölçümleri",
-
-      "İzolasyon Direnci Ölçümleri",
-
-      "Termal Kamera Kontrolleri",
-
-      "Pano ve Tesisat Kontrolleri",
-
-      "Enerji Kalitesi Analizi",
-
-      "Teknik Raporlama",
+      'KNX Pano ve Besleme Düzeni',
+      'Çok Kanallı Röle Aktüatörleri',
+      'Güç Devreleri ile Bus Haberleşmesinin Eşleştirilmesi',
+      'KNX Arayüzü Üzerinden Bus Bağlantısı',
+      'ETS Cihaz ve Grup Adresleri',
+      'Parametre ve Uygulama Bilgilerinin Yüklenmesi',
+      'KNX ve DALI Arasındaki Geçit Eşleştirmeleri',
+      'DALI Cihaz ve Aydınlatma Grupları',
+      'Anahtarlama ve Parlaklık Kontrolleri',
+      'Perde Açma, Kapama ve Durdurma Çıkışları',
+      'Mobil ve Dokunmatik Panel Arayüzleri',
+      'Komut ve Durum Geri Bildirimi',
+      'İnterkom ve Kapı Açma Komutları',
+      'Dijital Giriş ve Bildirim Mantığı',
+      'Yazılım İşlevi ile Fiziksel Çıkışın Kontrolü',
     ],
-
-    processTitle:
-      "Elektrik tesislerinin teknik durumunu ölçüm, kontrol ve düzenli takip ile yönetiyoruz.",
-
-    processText:
-      "Tesis incelemesi, ölçümler, teknik değerlendirme ve raporlama süreçleri düzenli olarak yürütülür.",
-
+    processTitle: 'Donanım, yazılım ve kullanıcı komutlarını aynı işlev planında buluşturuyoruz.',
+    processText: 'Pano çıkışlarının eşleştirilmesi, bus haberleşmesi, ETS ve DALI yapılandırması, fiziksel işlev kontrolleri.',
     processSteps: [
-      {
-        title:
-          "Tesis İncelemesi",
-
-        text:
-          "Elektrik altyapısı, panolar, koruma sistemleri ve işletme koşulları incelenir.",
-      },
-
-      {
-        title:
-          "Ölçüm ve Kontrol",
-
-        text:
-          "Elektriksel ölçümler ve periyodik kontroller gerçekleştirilir.",
-      },
-
-      {
-        title:
-          "Teknik Değerlendirme",
-
-        text:
-          "Tespit edilen riskler, eksikler ve iyileştirme ihtiyaçları belirlenir.",
-      },
-
-      {
-        title:
-          "Raporlama ve Takip",
-
-        text:
-          "Teknik sonuçlar raporlanır ve gerekli işletme takibi yürütülür.",
-      },
+      {title: 'Çıkış Eşleştirmesi', text: 'Aydınlatma ve perde işlevleri pano kanalları ve kablo etiketleriyle birlikte tanımlanır.'},
+      {title: 'Bus Bağlantısı', text: 'Bilgisayar ile KNX kurulumu arasındaki arayüz ve cihaz haberleşmesi kontrol edilir.'},
+      {title: 'Yapılandırma', text: 'ETS adresleri, parametreler, DALI grupları ve arayüz bağlantıları birlikte düzenlenir.'},
+      {title: 'İşlev Kontrolü', text: 'Komutun doğru ışığı, perdeyi veya ilgili çıkışı çalıştırdığı sahada gözlenir.'},
     ],
+    sourcePages: [19, 20, 21, 22], referenceDays: [15, 16, 17, 18, 19, 20],
+  },
+  {
+    number: '05',
+    slug: 'elektrik-muhendislik',
+    eyebrow: 'Elektrik Ölçümleri ve Kompanzasyon',
+    title: 'Elektrik Ölçümleri ve Kompanzasyon',
+    shortText: 'Kompanzasyon bileşenlerini, reaktif güç kontrolörünü ve tesisat ölçüm kayıtlarını ilgili devre bilgileriyle birlikte değerlendiriyoruz.',
+    statement: 'Ölçüm değeri, test noktası ve devre bilgisi birlikte anlam kazanır.',
+    description: 'Dağıtım ve kompanzasyon panosundaki bileşenleri, reaktif güç kontrolörünün ölçüm ve kademe göstergeleriyle birlikte ele alıyoruz. Tesisat testlerinde direnç, çevrim empedansı ve hesaplanan kısa devre akımı kayıtlarını; seçilen test modu ve ilgili devre bilgisiyle birlikte değerlendiriyoruz.',
+    seoText: 'Kondansatör kademeleri, reaktif güç kontrolörünün faz ve ölçüm bilgileriyle birlikte takip edilir. Tesisat test cihazındaki direnç, çevrim empedansı ve hesaplanan kısa devre akımı göstergeleri test noktası ve devre kaydıyla birlikte yorumlanır.',
+    seoTitle: 'Elektrik Ölçümleri ve Kompanzasyon | MERT ATAM MÜHENDİSLİK',
+    seoDescription: 'Kompanzasyon panosu, reaktif güç kontrolörü, direnç ölçümü, çevrim empedansı ve hesaplanan kısa devre akımının devre kayıtlarıyla değerlendirilmesi.',
+    hero: '/images/v10-reactive-controller-800.webp',
+    detailHero: '/images/v10-reactive-controller-800.webp',
+    photo: 'v10-reactive-controller',
+    detailFocalPoint: 'center center',
+    homeVisual: 'editorial-light',
+    homeTitleLines: ['Elektrik Ölçümleri', 've Kompanzasyon'],
+    homeFocalPoint: 'center center',
+    highlights: ['Kompanzasyon Bileşenleri', 'Reaktif Güç Kontrolörü', 'Direnç ve Çevrim Empedansı', 'Ölçüm ve Devre Kayıtları'],
+    details: [
+      'Dağıtım ve Kompanzasyon Bölümleri',
+      'Kondansatörler ve İlgili Bağlantılar',
+      'Koruma, Anahtarlama ve Kontrol İşlevleri',
+      'Reaktif Güç Kontrolörünün Ölçüm Bilgileri',
+      'Faz ve Kondansatör Kademe Göstergeleri',
+      'Ekran Değeri, Birim ve Menü Eşleştirmesi',
+      'Tesisat Test Modu ve Bağlantı Düzeni',
+      'Direnç Ölçümü',
+      'Çevrim Empedansı Kaydı',
+      'Hesaplanan Kısa Devre Akımı',
+      'Test Noktası ve İlgili Devrenin Tanımlanması',
+      'Ölçüm Sonuçlarının Devre Bilgisiyle Kaydedilmesi',
+    ],
+    processTitle: 'Pano bileşenlerini ve ölçüm sonuçlarını devre bilgileriyle birlikte ele alıyoruz.',
+    processText: 'Bileşenlerin tanınması, kontrolör göstergelerinin incelenmesi, uygun test düzeni ve ölçüm kayıtları.',
+    processSteps: [
+      {title: 'Pano Düzeni', text: 'Dağıtım, kondansatör, koruma ve kontrol bileşenleri işlevleriyle birlikte incelenir.'},
+      {title: 'Kontrolör Bilgileri', text: 'Ölçüm değerleri, faz bilgileri ve kademe göstergeleri ayrı ayrı değerlendirilir.'},
+      {title: 'Tesisat Ölçümü', text: 'Seçilen test moduna uygun bağlantı ve ölçüm noktası birlikte ele alınır.'},
+      {title: 'Devre Kaydı', text: 'Ölçüm değeri, test modu ve nokta bilgisi ilgili elektrik devresiyle kaydedilir.'},
+    ],
+    sourcePages: [16, 17, 18], referenceDays: [12, 13, 14],
   },
 ];
 
-export function getServiceBySlug(
-  slug,
-) {
-  return services.find(
-    (service) =>
-      service.slug === slug,
-  );
-}
+export function getServiceBySlug(slug) { return services.find(service => service.slug === slug); }
